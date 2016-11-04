@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="BlancoEntel">#F1F1F1</color>
+    <color name="AzulEntel">#0154A0</color>
+    <color name="NarajoEntel">#FF6702 </color>
+    <color name="GrisClaroEntel">#B3B1B3</color>
+    <color name="GrisOscuroEntel">#636467</color>
+</resources>
