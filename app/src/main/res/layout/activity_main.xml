@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
 
-
+    <!--Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
     <LinearLayout
         android:id="@+id/linear_top"
         android:layout_width="match_parent"
@@ -80,11 +80,12 @@
                     android:layout_marginTop="45dp"/>
 
             </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
+    <!-- FIN Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
 
 
+    <!--Contenedor de menu cast e iconos de conexion-->
     <LinearLayout
         android:id="@+id/linear_menucast"
         android:layout_width="match_parent"
@@ -132,8 +133,6 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -143,16 +142,12 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-
-
             </LinearLayout>
-
-
         </LinearLayout>
-
     </LinearLayout>
+    <!--FIN Contenedor de menu cast e iconos de conexion-->
 
-
+    <!--Contenedor de boton redondo (FloatingActionButton)-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="180dp"
@@ -171,13 +166,16 @@
             app:backgroundTint="@color/BlancoEntel"
             app:fabSize="mini"/>
     </LinearLayout>
+    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
 
+    <!--Contenedor ViewPager Servira para cambiar entre Fragments-->
     <android.support.v4.view.ViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/linear_menucast" />
+    <!--FIN Contenedor ViewPager Servira para cambiar entre Fragments-->
 
 
 </RelativeLayout>
