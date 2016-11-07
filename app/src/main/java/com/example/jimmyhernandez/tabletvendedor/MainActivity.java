@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -28,7 +29,7 @@ import io.karim.MaterialTabs;
 public class MainActivity extends AppCompatActivity {
 
 
-    int contSecret = 0, contCast = 0;
+    int contCast = 0;
     @BindView(R.id.material_tabs)
     MaterialTabs materialTabs;
     @BindView(R.id.linear_top)
@@ -72,16 +73,9 @@ public class MainActivity extends AppCompatActivity {
     /*
 	* Acción de clicks (botones)
 	*/
-    @OnClick({R.id.linear_secreto, R.id.linear_menucast, R.id.fab_cast})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.linear_secreto:
-                contSecret++;
-                if (contSecret == 3) {
-                    contSecret = 0;
-                    startActivity(new Intent(getApplicationContext(), SecretConfigActivity.class));
-                }
-                break;
             case R.id.linear_menucast:
                 if (contCast == 1) {
                     YoYo.with(Techniques.SlideOutDown).duration(200).playOn(linearMenucast);
@@ -90,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.fab_cast:
                 if (contCast == 0) {
+                    Toast.makeText(this, "Aqui", Toast.LENGTH_SHORT).show();
                     YoYo.with(Techniques.SlideInUp).duration(200).playOn(linearMenucast);
                     linearMenucast.setVisibility(View.VISIBLE);
                     contCast = 1;

@@ -86,6 +86,13 @@
 
 
     <!--Contenedor de menu cast e iconos de conexion-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear_top"
+        android:layout_alignParentEnd="true" />
+
     <LinearLayout
         android:id="@+id/linear_menucast"
         android:layout_width="match_parent"
@@ -94,7 +101,7 @@
         android:background="@color/NarajoEntel"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -148,6 +155,10 @@
     <!--FIN Contenedor de menu cast e iconos de conexion-->
 
     <!--Contenedor de boton redondo (FloatingActionButton)-->
+    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
+
+    <!--Contenedor ViewPager Servira para cambiar entre Fragments-->
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="180dp"
@@ -166,15 +177,6 @@
             app:backgroundTint="@color/BlancoEntel"
             app:fabSize="mini"/>
     </LinearLayout>
-    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
-
-    <!--Contenedor ViewPager Servira para cambiar entre Fragments-->
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/linear_menucast" />
     <!--FIN Contenedor ViewPager Servira para cambiar entre Fragments-->
 
 
