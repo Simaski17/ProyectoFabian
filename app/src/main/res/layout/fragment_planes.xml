@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_planes"
-    tools:context="la.fabian.rinno.tabletvendedor.PlanesFragment">
+    tools:context=".PlanesFragment">
 
 
     <LinearLayout
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:text="Planes destAcados_"
                 android:textColor="@color/AzulEntel"
-                android:textSize="50sp"
+                android:textSize="80sp"
                 android:textStyle="bold|italic" />
         </LinearLayout>
 

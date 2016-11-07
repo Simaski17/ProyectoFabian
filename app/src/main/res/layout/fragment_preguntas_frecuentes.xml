@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="la.fabian.rinno.tabletvendedor.PreguntasFrecuentesFragment">
+    tools:context=".PreguntasFrecuentesFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

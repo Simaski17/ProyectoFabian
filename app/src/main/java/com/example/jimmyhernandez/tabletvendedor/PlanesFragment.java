@@ -1,6 +1,5 @@
-package la.fabian.rinno.tabletvendedor;
+package com.example.jimmyhernandez.tabletvendedor;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,12 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-
-import java.util.zip.Inflater;
-
 
 
 public class PlanesFragment extends Fragment {

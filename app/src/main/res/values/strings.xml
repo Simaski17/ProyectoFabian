@@ -7,4 +7,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Array de strings -->
+    <string-array name="array_tabs">
+        <item>Promociones</item>
+        <item>Planes</item>
+        <item>Equipos</item>
+        <item>Accesorios</item>
+        <item>Hogar</item>
+        <item>Preguntas Frecuentes</item>
+    </string-array>
+
 </resources>

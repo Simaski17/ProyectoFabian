@@ -7,15 +7,9 @@
     android:layout_height="match_parent"
     android:background="@color/BlancoEntel"
     android:orientation="vertical"
-    tools:context="la.fabian.rinno.tabletvendedor.MainActivity">
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linear_secreto"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:orientation="vertical">
 
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear_top"
@@ -25,22 +19,24 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/logoentel" />
+                android:layout_width="66dp"
+                android:layout_height="47dp"
+                android:src="@drawable/logoentel"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="35dp"
+                android:id="@+id/logoEntel" />
         </LinearLayout>
 
         <io.karim.MaterialTabs
             android:id="@+id/material_tabs"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_weight="7.3"
+            android:layout_weight="7.32"
             android:background="@color/BlancoEntel"
             android:textColor="@color/GrisOscuroEntel"
             android:textSize="19sp"
@@ -54,38 +50,39 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.7"
-            android:gravity="center"
             android:orientation="horizontal">
 
 
             <LinearLayout
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/user">
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="30dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/iconoclientes"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="45dp"
+                    android:id="@+id/iconoClientes"/>
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/bell">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/icononotificaciones"
+                    android:id="@+id/iconoNotificaciones"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="45dp"/>
 
             </LinearLayout>
-
 
         </LinearLayout>
     </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/linear_top" />
 
 
     <LinearLayout
@@ -96,7 +93,7 @@
         android:background="@color/NarajoEntel"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,10 +132,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    app:actualImageUri="http://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/avatar.jpeg" />
+
 
             </LinearLayout>
 
@@ -149,10 +143,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <com.facebook.drawee.view.SimpleDraweeView
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    app:actualImageUri="http://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/avatar.jpeg" />
+
 
             </LinearLayout>
 
@@ -166,10 +157,10 @@
         android:id="@+id/linearLayout"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:gravity="center"
-        android:paddingEnd="50dp">
+        android:paddingEnd="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_cast"
@@ -180,6 +171,13 @@
             app:backgroundTint="@color/BlancoEntel"
             app:fabSize="mini"/>
     </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/linear_menucast" />
 
 
 </RelativeLayout>

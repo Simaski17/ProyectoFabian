@@ -1,4 +1,4 @@
-package la.fabian.rinno.tabletvendedor;
+package com.example.jimmyhernandez.tabletvendedor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
