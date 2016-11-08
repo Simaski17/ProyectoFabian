@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blanco"
+    android:background="@color/BlancoEntel"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="7.32"
-            android:background="@color/blanco"
+            android:background="@color/BlancoEntel"
             android:textColor="@color/GrisOscuroEntel"
             android:textSize="19sp"
             app:mtIndicatorColor="@android:color/transparent"
