@@ -5,158 +5,216 @@
     tools:context=".PromocionesFragment"
     android:layout_marginTop="100dp">
 
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <RelativeLayout
+        android:id="@+id/rlImagenMujer"
         android:layout_width="match_parent"
-        android:layout_height="119dp">
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true">
 
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="119dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="48.50dp"
-                android:layout_marginTop="56dp"
-                android:text="[ "
-                android:textColor="@color/NarajoEntel"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
-        </LinearLayout>
+        <ImageView
+            android:layout_width="520dp"
+            android:layout_height="570dp"
+            android:layout_marginLeft="445dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/minatelefono"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="119dp">
 
-            <TextView
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Planes destAcados_"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="2dp"
-                android:textColor="@color/AzulEntel"
-                android:textSize="40sp"
-                android:textStyle="bold|italic" />
+                android:layout_height="119dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="48.50dp"
+                    android:layout_marginTop="56dp"
+                    android:text="[ "
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="119dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Planes destAcados_"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/AzulEntel"
+                    android:textSize="40sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlBotonesPlanes"
-        android:layout_width="match_parent"
-        android:layout_height="146dp"
-        android:layout_marginTop="120dp">
-
         <RelativeLayout
-            android:id="@+id/rlPlanesSmart"
-            android:layout_width="115dp"
-            android:layout_height="106dp"
-            android:background="@color/NarajoEntel"
-            android:layout_marginTop="21dp"
-            android:layout_marginLeft="47dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+            android:id="@+id/rlBotonesPlanes"
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:layout_marginTop="120dp">
 
-        <RelativeLayout
-            android:id="@+id/rlPlanesVoz"
-            android:layout_width="115dp"
-            android:layout_height="106dp"
-            android:background="@color/NarajoEntel"
-            android:layout_marginTop="21dp"
-            android:layout_marginLeft="170dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+            <RelativeLayout
+                android:id="@+id/rlPlanesSmart"
+                android:layout_width="115dp"
+                android:layout_height="106dp"
+                android:background="@color/NarajoEntel"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="47dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:id="@+id/rlPlanesPrimerPlan"
-            android:layout_width="115dp"
-            android:layout_height="106dp"
-            android:background="@color/NarajoEntel"
-            android:layout_marginTop="21dp"
-            android:layout_marginLeft="293dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+                <ImageView
+                    android:id="@+id/ivBotonCast"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@drawable/cast"
+                    android:backgroundTint="@color/blanco"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="3dp"/>
 
-        <RelativeLayout
-            android:id="@+id/rlPlanesPotabilidad"
-            android:layout_width="115dp"
-            android:layout_height="106dp"
-            android:background="@drawable/square_boton_planes_portabilidad"
-            android:layout_marginTop="21dp"
-            android:layout_marginLeft="415dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+            </RelativeLayout>
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rlPlanesVoz"
+                android:layout_width="115dp"
+                android:layout_height="106dp"
+                android:background="@color/NarajoEntel"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="170dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
 
-    <RelativeLayout
-        android:id="@+id/rlTextoBoton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="280dp">
+                <ImageView
+                    android:id="@+id/ivBotonCast2"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@drawable/cast"
+                    android:backgroundTint="@color/blanco"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="3dp"/>
 
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/rlPlanesPrimerPlan"
+                android:layout_width="115dp"
+                android:layout_height="106dp"
+                android:background="@color/NarajoEntel"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="293dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:id="@+id/rlClienteIndeciso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:layout_marginLeft="47dp">
+                <ImageView
+                    android:id="@+id/ivBotonCast3"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@drawable/cast"
+                    android:backgroundTint="@color/blanco"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="3dp"/>
 
-            <TextView
-                android:id="@+id/tvClienteIndeciso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="¿Cliente indeciso?"
-                android:textColor="@color/NarajoEntel"
-                android:textSize="34.50sp"
-                android:textStyle="bold|italic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPlanesPotabilidad"
+                android:layout_width="115dp"
+                android:layout_height="106dp"
+                android:background="@drawable/square_boton_planes_portabilidad"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="415dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/ivBotonCast4"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@drawable/cast"
+                    android:backgroundTint="@color/blanco"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginTop="3dp"/>
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rlAyudalo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rlClienteIndeciso"
-            android:layout_marginLeft="47dp">
+            android:id="@+id/rlTextoBoton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="280dp">
 
-            <TextView
-                android:id="@+id/tvAyudalo"
+
+
+            <RelativeLayout
+                android:id="@+id/rlClienteIndeciso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ayudalo a encontrar su plan"
-                android:textColor="@color/GrisOscuroEntel"
-                android:textSize="26.25sp"
-                android:textStyle="italic" />
-        </RelativeLayout>
+                android:layout_marginTop="43dp"
+                android:layout_marginLeft="47dp">
 
-        <RelativeLayout
-            android:id="@+id/rlBuscadorPlanes"
-            android:layout_width="287dp"
-            android:layout_height="60dp"
-            android:layout_below="@+id/rlAyudalo"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="48dp"
-            android:background="@drawable/square_boton_buscador_planes"
-            android:backgroundTint="@color/AzulEntel"
-            android:elevation="5dp"
-            android:gravity="center">
+                <TextView
+                    android:id="@+id/tvClienteIndeciso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Cliente indeciso?"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="34.50sp"
+                    android:textStyle="bold|italic" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tvBuscadorPlanes"
+            <RelativeLayout
+                android:id="@+id/rlAyudalo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Buscador de planes"
-                android:paddingRight="15dp"
-                android:textColor="@color/BlancoEntel"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:layout_below="@+id/rlClienteIndeciso"
+                android:layout_marginLeft="47dp">
+
+                <TextView
+                    android:id="@+id/tvAyudalo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ayudalo a encontrar su plan"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="26.25sp"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlBuscadorPlanes"
+                android:layout_width="287dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/rlAyudalo"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="48dp"
+                android:background="@drawable/square_boton_buscador_planes"
+                android:backgroundTint="@color/AzulEntel"
+                android:elevation="5dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvBuscadorPlanes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buscador de planes"
+                    android:paddingRight="15dp"
+                    android:textColor="@color/BlancoEntel"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
         </RelativeLayout>
 
     </RelativeLayout>

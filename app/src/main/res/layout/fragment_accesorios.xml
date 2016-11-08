@@ -2,31 +2,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccesoriosFragment">
+    tools:context=".PromocionesFragment"
+    android:layout_marginTop="100dp">
+
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp">
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="93dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[ "
-            android:textColor="@color/NarajoEntel"
-            android:textSize="50sp"
-            android:textStyle="bold|italic" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accesorios destAcados_"
-            android:textColor="@color/AzulEntel"
-            android:textSize="50sp"
-            android:textStyle="bold|italic" />
+            android:layout_height="93dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="55dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="93dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accesorios destAcados_"
+                android:layout_marginTop="49dp"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/AzulEntel"
+                android:textSize="38sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="91dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="550dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="450dp"
+                android:layout_height="450dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/ivBotonCast"
+                    android:layout_width="26dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/cast"
+                    android:backgroundTint="@color/blanco"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="210dp"/>
+
+                <TextView
+                    android:id="@+id/tvNombreEquipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BeoPlay S3"
+                    android:layout_marginLeft="172dp"
+                    android:layout_marginTop="39dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="30sp" />
+
+
+                <TextView
+                    android:id="@+id/tvModeloEquipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speaker"
+                    android:layout_marginLeft="172dp"
+                    android:layout_marginTop="65dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="34sp"
+                    android:textStyle="italic|bold"/>
+
+                <TextView
+                    android:id="@+id/tvPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 140.990"
+                    android:layout_marginLeft="291dp"
+                    android:layout_marginTop="123dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="29sp"
+                    android:textStyle="italic|bold"/>
+
+                <TextView
+                    android:id="@+id/tvCuotas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="o en 12 cuotas de"
+                    android:layout_marginLeft="277dp"
+                    android:layout_marginTop="161dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="10.5sp"
+                    android:textStyle="italic"/>
+
+                <TextView
+                    android:id="@+id/tvPrecioCuotas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$11.990"
+                    android:layout_marginLeft="363dp"
+                    android:layout_marginTop="156dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="17sp"
+                    android:textStyle="italic|bold"/>
+
+                <Button
+                    android:id="@+id/btCaracteristicas"
+                    android:layout_width="206dp"
+                    android:layout_height="48dp"
+                    android:text="Caracteristicas"
+                    android:textAllCaps="false"
+                    android:background="@drawable/boton_redondeado"
+                    android:backgroundTint="@color/NarajoEntel"
+                    android:textColor="@color/blanco"
+                    android:layout_marginLeft="219dp"
+                    android:layout_marginTop="197dp"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="358dp"
+                android:layout_height="227dp"
+                android:background="@drawable/bordes_relative_accesorios"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
 
 
 </FrameLayout>
