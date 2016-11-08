@@ -3,29 +3,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PromocionesFragment"
-    android:background="@drawable/bg_promo">
+    android:layout_marginTop="100dp">
+
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp">
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="119dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[ "
-            android:textColor="@color/NarajoEntel"
-            android:textSize="50sp"
-            android:textStyle="bold|italic" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Promociones vigEntes_"
-            android:textColor="@color/AzulEntel"
-            android:textSize="50sp"
-            android:textStyle="bold|italic" />
+            android:layout_height="119dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="97dp"
+                android:layout_marginTop="56dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="119dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promociones vigEntes_"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/AzulEntel"
+                android:textSize="40sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp">
+
+
+        <RelativeLayout
+            android:layout_height="292dp"
+            android:background="#f54fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="89dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="270dp"/>
+
+        <RelativeLayout
+            android:layout_height="292dp"
+            android:background="#f54fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="379dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="270dp" />
+
+        <RelativeLayout
+            android:layout_height="292dp"
+            android:background="#f54fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="669dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="270dp" />
+
+    </RelativeLayout>
+
+
 </FrameLayout>
+
