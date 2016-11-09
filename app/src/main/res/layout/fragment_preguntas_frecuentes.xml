@@ -2,15 +2,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreguntasFrecuentesFragment">
+    android:layout_marginTop="100dp"
+    tools:context=".PromocionesFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="100dp"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="107dp"
+                android:layout_marginTop="55dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="49dp"
+                android:text="Preguntas frEcuentes_"
+                android:textColor="@color/AzulEntel"
+                android:textSize="39sp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="101dp"
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Que tal un pack?"
+                android:layout_marginLeft="53dp"
+                android:layout_marginTop="29dp"
+                android:textColor="@color/AzulEntel"
+                android:textSize="38sp"
+                android:textStyle="italic|bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ayudalo a encontrar su pack ideal"
+                android:layout_marginLeft="46dp"
+                android:layout_marginTop="75dp"
+                android:textColor="@color/GrisOscuroEntel"
+                android:textSize="21sp"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:id="@+id/rlDoblePack"
+                android:layout_width="288dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/rlAyudalo"
+                android:layout_marginTop="109dp"
+                android:layout_marginLeft="56dp"
+                android:background="@color/AzulEntel"
+                android:elevation="5dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvDoblePack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doble Pack_"
+                    android:textColor="@color/BlancoEntel"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTriplePack"
+                android:layout_width="288dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/rlAyudalo"
+                android:layout_marginTop="184dp"
+                android:layout_marginLeft="56dp"
+                android:background="@drawable/square_boton_buscador_planes"
+                android:backgroundTint="@color/AzulEntel"
+                android:elevation="5dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvTriplePack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Triple Pack_"
+                    android:paddingRight="2dp"
+                    android:textColor="@color/BlancoEntel"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
 
 
 
     </LinearLayout>
-
 </FrameLayout>

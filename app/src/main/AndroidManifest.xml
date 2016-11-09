@@ -17,8 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.jimmyhernandez.tabletvendedor.MainActivity"> </activity>
-        <activity android:name="com.example.jimmyhernandez.tabletvendedor.SecretConfigActivity">
+        <activity android:name="com.example.jimmyhernandez.tabletvendedor.MainActivity"
+            android:screenOrientation="landscape">> </activity>
+        <activity android:name="com.example.jimmyhernandez.tabletvendedor.SecretConfigActivity"
+            android:screenOrientation="landscape">>
 
         </activity>
     </application>

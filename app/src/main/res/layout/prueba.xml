@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/entelaccesorios"
+    android:background="@drawable/doblepack"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -98,237 +98,242 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PromocionesFragment"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        tools:context=".PromocionesFragment">
 
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="93dp">
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="93dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="48dp"
-                    android:layout_marginTop="55dp"
-                    android:text="[ "
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="30sp"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="93dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Accesorios destAcados_"
-                    android:layout_marginTop="49dp"
-                    android:layout_marginLeft="3dp"
-                    android:textColor="@color/AzulEntel"
-                    android:textSize="38sp"
-                    android:textStyle="bold|italic" />
-            </LinearLayout>
-
-        </LinearLayout>
-
+        <!-- LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO"-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="91dp"
             android:orientation="horizontal">
 
+            <!-- INICIO LINEARLAYOUT IZQUIERDO"-->
             <LinearLayout
-                android:layout_width="550dp"
+                android:id="@+id/linearIzquierdo"
+                android:layout_width="620dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="450dp"
-                    android:layout_height="450dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true">
+                <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ Doble pAck_)"-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
 
-                    <ImageView
+                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="47dp"
+                            android:layout_marginTop="60dp"
+                            android:text="[ "
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="31sp"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+
+                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( Doble pAck_)"-->
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-
-                    <ImageView
-                        android:id="@+id/ivBotonCast"
-                        android:layout_width="26dp"
-                        android:layout_height="24dp"
-                        android:background="@drawable/cast"
-                        android:backgroundTint="@color/blanco"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="210dp"/>
+                        android:layout_height="100dp"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/tvNombreEquipo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BeoPlay S3"
-                            android:layout_marginLeft="172dp"
-                            android:layout_marginTop="39dp"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="30sp" />
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="55dp"
+                            android:text="Doble pAck_"
+                            android:textColor="@color/AzulEntel"
+                            android:textSize="38sp"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( Doble pAck_)"-->
 
+                </LinearLayout>
+                <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ Doble pAck_)"-->
 
-                        <TextView
-                            android:id="@+id/tvModeloEquipo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Speaker"
-                            android:layout_marginLeft="172dp"
-                            android:layout_marginTop="65dp"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="34sp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvPrecio"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$ 140.990"
-                            android:layout_marginLeft="291dp"
-                            android:layout_marginTop="123dp"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="29sp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvCuotas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="o en 12 cuotas de"
-                            android:layout_marginLeft="277dp"
-                            android:layout_marginTop="161dp"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="10.5sp"
-                            android:textStyle="italic"/>
+                <!-- INICIO RELATIVELAYOUT CONTENEDOR TEXTO ( Ayuda a tu....) imagen y Boton Redondo)"-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvPrecioCuotas"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tvAyuda"
+                        android:layout_width="290dp"
                         android:layout_height="wrap_content"
-                        android:text="$11.990"
-                        android:layout_marginLeft="363dp"
-                        android:layout_marginTop="156dp"
-                        android:textColor="@color/NarajoEntel"
-                        android:textSize="17sp"
-                        android:textStyle="italic|bold"/>
+                        android:text="Ayuda a tu cliente a encontrar la combinacion perfecta para el"
+                        android:layout_marginLeft="64dp"
+                        android:layout_marginTop="3dp"
+                        android:lineSpacingExtra="-5dp"
+                        android:textColor="@color/GrisOscuroEntel"
+                        android:textSize="21sp"
+                        android:textStyle="italic" />
 
-                    <Button
-                        android:id="@+id/btCaracteristicas"
-                        android:layout_width="206dp"
-                        android:layout_height="48dp"
-                        android:text="Caracteristicas"
-                        android:textAllCaps="false"
-                        android:background="@drawable/boton_redondeado"
-                        android:backgroundTint="@color/NarajoEntel"
-                        android:textColor="@color/blanco"
-                        android:layout_marginLeft="219dp"
-                        android:layout_marginTop="197dp"
-                        android:textSize="17sp" />
+                    <ImageView
+                        android:layout_below="@+id/tvAyuda"
+                        android:layout_width="580dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="32dp" />
+
+                    <!--Contenedor de boton redondo (FloatingActionButton)-->
+                    <LinearLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginTop="125dp"
+                        android:layout_marginLeft="30dp"
+                        android:gravity="center">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:clickable="true"
+                            android:src="@drawable/flecha"
+                            android:backgroundTint="@color/blanco"
+                            app:backgroundTint="@color/NarajoEntel"
+                            app:elevation="0dp"
+                            app:borderWidth="1dp"
+                            app:fabSize="mini"/>
+
+                    </LinearLayout>
+                    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
 
                 </RelativeLayout>
+                <!-- FIN RELATIVELAYOUT CONTENEDOR TEXTO ( Ayuda a tu....) imagen y Boton Redondo-->
+
             </LinearLayout>
+            <!-- FIN LINEARLAYOUT IZQUIERDO"-->
 
 
-
+            <!-- INICIO LINEARLAYOUT DERECHO"-->
             <LinearLayout
+                android:id="@+id/linearDerecho"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
+                <!-- INICIO RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
                 <RelativeLayout
-                    android:layout_width="358dp"
-                    android:layout_height="227dp"
-                    android:background="@drawable/bordes_relative_accesorios"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginLeft="30dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/ly2"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Ademas destacamos este mes"
-                                android:textColor="@color/AzulEntel"
-                                android:layout_marginLeft="42dp"
-                                android:layout_marginTop="14dp"
-                                android:textSize="21sp"
-                                android:textStyle="bold"/>
-
-                        </LinearLayout>
-
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
                     <RelativeLayout
-                        android:orientation="horizontal"
-                        android:layout_width="180dp"
-                        android:layout_below="@+id/ly2"
-                        android:layout_height="match_parent">
+                        android:id="@+id/rlTvTf"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:background="@color/NarajoEntel"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="19dp">
+
+                        <TextView
+                            android:id="@+id/tvDoblePack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Television + Telefonia fija"
+                            android:textColor="@color/BlancoEntel"
+                            android:layout_marginLeft="38dp"
+                            android:layout_marginTop="53dp"
+                            android:textSize="19.7sp"
+                            android:textStyle="bold" />
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="110dp"
-                            android:layout_marginLeft="25dp"
-                            android:background="@drawable/user"
-                            android:foregroundGravity="center"
-                            android:layout_marginTop="15dp"/>
+                            android:layout_width="22dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/cast"
+                            android:backgroundTint="@color/BlancoEntel" />
 
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + INTER-->
+                    <RelativeLayout
+                        android:id="@+id/rlTvInt"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:background="@color/NarajoEntel"
+                        android:layout_below="@+id/rlTvTf"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="19dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="hols"
-                            android:textColor="@color/NarajoEntel"
-                            android:layout_marginLeft="42dp"
-                            android:layout_marginTop="150dp"
-                            android:textSize="27sp"
-                            android:textStyle="bold|italic" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:orientation="horizontal"
-                        android:layout_width="180dp"
-                        android:layout_below="@+id/ly2"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentEnd="true">
+                            android:text="Television + Internet"
+                            android:textColor="@color/BlancoEntel"
+                            android:layout_marginLeft="58dp"
+                            android:layout_marginTop="52dp"
+                            android:textSize="19.7sp"
+                            android:textStyle="bold" />
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="110dp"
-                            android:background="@drawable/user"
-                            android:foregroundGravity="center"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginTop="15dp"/>
+                            android:layout_width="22dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/cast"
+                            android:backgroundTint="@color/BlancoEntel" />
 
                     </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + INTER-->
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + Tf-->
+                    <RelativeLayout
+                        android:id="@+id/rlIntTf"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:layout_below="@+id/rlTvInt"
+                        android:background="@drawable/square_boton_buscador_planes"
+                        android:backgroundTint="@color/NarajoEntel"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Internet + Telefonia fija"
+                            android:textColor="@color/BlancoEntel"
+                            android:layout_marginLeft="52dp"
+                            android:layout_marginTop="52dp"
+                            android:textSize="19.7sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/cast"
+                            android:backgroundTint="@color/BlancoEntel" />
+
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + Tf-->
+
+
 
                 </RelativeLayout>
-
+                <!-- FIN RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
 
             </LinearLayout>
-
+            <!-- FIN LINEARLAYOUT DERECHO"-->
 
 
         </LinearLayout>
+        <!-- FIN LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO-->
+
+
+
     </FrameLayout>
 
 
