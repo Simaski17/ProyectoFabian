@@ -320,6 +320,65 @@
                     </RelativeLayout>
                     <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + Tf-->
 
+                    <!-- INICIO TEXTVIEW TEXTO (Revisa el...)-->
+                    <TextView
+                        android:id="@+id/tvRevisa"
+                        android:layout_width="190dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlIntTf"
+                        android:gravity="center"
+                        android:lineSpacingExtra="-5dp"
+                        android:text="Revisa el detalle de cada producto"
+                        android:textColor="@color/AzulEntel"
+                        android:layout_marginLeft="76dp"
+                        android:layout_marginTop="21dp"
+                        android:textSize="21.5sp"
+                        android:textStyle="italic|normal" />
+                    <!-- FIN TEXTVIEW TEXTO (Revisa el...)-->
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
+                    <RelativeLayout
+                        android:id="@+id/rlBtRedondos"
+                        android:layout_width="302dp"
+                        android:layout_height="125dp"
+                        android:layout_below="@+id/tvRevisa"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp">
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_hd"
+                            android:layout_width="76dp"
+                            android:layout_height="73dp"
+                            android:clickable="true"
+                            android:layout_marginLeft="17dp"
+                            android:layout_marginTop="10dp"
+                            app:backgroundTint="@color/NarajoEntel"
+                            app:fabSize="mini"/>
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_tlf"
+                            android:layout_width="76dp"
+                            android:layout_height="73dp"
+                            android:clickable="true"
+                            android:layout_marginLeft="111dp"
+                            android:layout_marginTop="10dp"
+                            app:backgroundTint="@color/NarajoEntel"
+                            app:fabSize="mini"/>
+
+                        <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/fab_inter"
+                            android:layout_width="76dp"
+                            android:layout_height="73dp"
+                            android:clickable="true"
+                            android:layout_marginLeft="207dp"
+                            android:layout_marginTop="10dp"
+                            app:backgroundTint="@color/NarajoEntel"
+                            app:fabSize="mini"/>
+
+
+
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
 
 
                 </RelativeLayout>
