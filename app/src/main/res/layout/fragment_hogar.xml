@@ -67,7 +67,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Telefonía Fija"
+                    android:text="@string/telefonia_fija"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/BlancoEntel"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Television HD"
+                    android:text="@string/television_hd"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/BlancoEntel"
@@ -121,7 +121,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Internet   "
+                    android:text="@string/internet"
                     android:layout_marginLeft="53dp"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/BlancoEntel"
@@ -146,7 +146,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Que tal un pack?"
+                android:text="@string/que_tal_un_pack"
                 android:layout_marginLeft="53dp"
                 android:layout_marginTop="29dp"
                 android:textColor="@color/NarajoEntel"
@@ -156,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ayudalo a encontrar su pack ideal"
+                android:text="@string/ayudalo_encontrar_pack"
                 android:layout_marginLeft="46dp"
                 android:layout_marginTop="75dp"
                 android:textColor="@color/GrisOscuroEntel"
@@ -177,7 +177,7 @@
                     android:id="@+id/tvDoblePack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Doble Pack_"
+                    android:text="@string/doble_pack"
                     android:textColor="@color/BlancoEntel"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -198,7 +198,7 @@
                     android:id="@+id/tvTriplePack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Triple Pack_"
+                    android:text="@string/triple_pack"
                     android:paddingRight="2dp"
                     android:textColor="@color/BlancoEntel"
                     android:textSize="25sp"

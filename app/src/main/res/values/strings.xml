@@ -21,14 +21,34 @@
     <!--IngresoVendedorClienteActivity -->
     <string name="nombre_ejecutivo">Ignacio Ramirez</string>
     <string name="etiqueta_ejecutivo_tienda">Ejecutivo Venta entel Manquehue</string>
-    <string name="ver_catalogo_libremente">ver catalogo libremente</string>
-    <string name="cerrar_sesion">cerrar sesion</string>
+    <string name="ver_catalogo_libremente">ver cat\u00E1logo libremente</string>
+    <string name="cerrar_sesion">cerrar sesi\u00F3n</string>
     <string name="atender_nuevo_cliente">Atender nuevo cliente</string>
     <string name="rut_cliente">RUT cliente</string>
     <string name="email_cliente">Email Cliente</string>
-    <string name="ir_al_catalogo">ir al catalogo</string>
+    <string name="ir_al_catalogo">ir al cat\u00E1logo</string>
 
+    <!--HogarFragment -->
+    <string name="telefonia_fija">Telefon\u00EDa Fija</string>
+    <string name="television_hd">Televisi\u00F3n HD</string>
+    <string name="internet">Internet</string>
+    <string name="que_tal_un_pack">¿Que tal un pack?</string>
+    <string name="ayudalo_encontrar_pack">ay\u00FAdalo a encontrar su pack ideal</string>
+    <string name="doble_pack">Doble Pack_</string>
+    <string name="triple_pack">Triple Pack_</string>
 
+    <!--TriplePackFragment -->
+    <string name="triple_pack2">Triple pAck_</string>
+    <string name="recomienda_entel_hogar">Recomienda a tu cliente la experiencia completa entel hogar</string>
+    <string name="television_telefonia_internet">Televisi\u00F3n + Telefon\u00EDa fija + Internet</string>
+    <string name="revisa_detalle_cada_producto">Revisa el detalle de cada producto</string>
+
+    <!--DoblePackFragment -->
+    <string name="doble_pack2">Doble pAck_</string>
+    <string name="ayuda_cliente_combinacion_perfecta">Ayuda a tu cliente a encontrar la combinacion perfecta para el</string>
+    <string name="television_telefonia">Televisi\u00F3n + Telefon\u00EDa fija</string>
+    <string name="television_internet">Televisi\u00F3n + Internet</string>
+    <string name="internet_telefonia">Internet + Telefon\u00EDa fija</string>
 
 
 </resources>
