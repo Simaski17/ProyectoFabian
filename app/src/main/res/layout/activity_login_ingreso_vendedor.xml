@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
+                <!--Logo entel-->
                 <ImageView
                     android:id="@+id/logoEntel"
                     android:layout_width="90dp"
@@ -52,9 +52,10 @@
                     android:background="@drawable/user"
                     android:layout_marginLeft="145dp"/>
 
+                <!--Label ingreso vendedor-->
                 <TextView
                     android:id="@+id/tvIngresoVendedor"
-                    android:text="Ingreso Vendedor"
+                    android:text="@string/ingreso_vendedor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/logoEntel"
@@ -63,9 +64,10 @@
                     android:layout_marginTop="7dp"
                     android:textSize="16.5sp"/>
 
+                <!--Label nombre vendedor-->
                 <TextView
                     android:id="@+id/tvNombreVendedor"
-                    android:text="Nombre vendedor"
+                    android:text="@string/nombre_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvIngresoVendedor"
@@ -74,6 +76,7 @@
                     android:layout_marginLeft="17dp"
                     android:textSize="11.5dp"/>
 
+                <!--Campo nombre vendedor-->
                 <EditText
                     android:id="@+id/etNombreVendedor"
                     android:layout_width="350dp"
@@ -85,9 +88,10 @@
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="17dp"/>
 
+                <!--Label RUT vendedor-->
                 <TextView
                     android:id="@+id/tvRutVendedor"
-                    android:text="RUT vendedor"
+                    android:text="@string/rut_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/etNombreVendedor"
@@ -96,6 +100,7 @@
                     android:layout_marginLeft="17dp"
                     android:textSize="11.5dp"/>
 
+                <!--Campo RUT vendedor-->
                 <EditText
                     android:id="@+id/etRutVendedor"
                     android:layout_width="350dp"
@@ -107,9 +112,10 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="17dp"/>
 
+                <!--Boton ingreso vendedor-->
                 <Button
                     android:id="@+id/btEntrarVendedor"
-                    android:text="entrar"
+                    android:text="@string/entrar"
                     android:textSize="17dp"
                     android:textColor="@color/BlancoEntel"
                     android:textAllCaps="false"

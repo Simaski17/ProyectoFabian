@@ -9,14 +9,26 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="edClienteModeloEspecifico">¿El Cliente busca un\n modelo especifico?</string>
 
-    <!-- Array de strings -->
-    <string-array name="array_tabs">
-        <item>Promociones</item>
-        <item>Planes</item>
-        <item>Equipos</item>
-        <item>Accesorios</item>
-        <item>Hogar</item>
-        <item>Preguntas Frecuentes</item>
-    </string-array>
+    <!--MainActivity -->
+    <string name="tvSelecciona_dispositivo"><b>Selecciona un dispositivo</b> para transmitir</string>
+
+    <!--LoginIngresoVendedorActivity -->
+    <string name="ingreso_vendedor">Ingreso Vendedor</string>
+    <string name="nombre_vendedor">Nombre vendedor</string>
+    <string name="rut_vendedor">RUT vendedor</string>
+    <string name="entrar">entrar</string>
+
+    <!--IngresoVendedorClienteActivity -->
+    <string name="nombre_ejecutivo">Ignacio Ramirez</string>
+    <string name="etiqueta_ejecutivo_tienda">Ejecutivo Venta entel Manquehue</string>
+    <string name="ver_catalogo_libremente">ver catalogo libremente</string>
+    <string name="cerrar_sesion">cerrar sesion</string>
+    <string name="atender_nuevo_cliente">Atender nuevo cliente</string>
+    <string name="rut_cliente">RUT cliente</string>
+    <string name="email_cliente">Email Cliente</string>
+    <string name="ir_al_catalogo">ir al catalogo</string>
+
+
+
 
 </resources>

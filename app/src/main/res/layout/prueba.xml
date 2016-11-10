@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/triplepack"
+    android:background="@drawable/hogarver"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -99,230 +99,209 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
+        android:background="@drawable/fondohogar"
         tools:context=".PromocionesFragment">
 
-        <!-- LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="55dp"
+                    android:text="[ "
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="49dp"
+                    android:text="Productos hOgar_"
+                    android:textColor="@color/AzulEntel"
+                    android:textSize="38sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_marginTop="101dp"
+            android:orientation="vertical">
 
-            <!-- INICIO LINEARLAYOUT IZQUIERDO"-->
-            <LinearLayout
-                android:id="@+id/linearIzquierdo"
-                android:layout_width="620dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-                <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ Triple pAck_)"-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/rlhogar1"
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
 
-                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="100dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="47dp"
-                            android:layout_marginTop="55dp"
-                            android:text="[ "
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="31sp"
-                            android:textStyle="bold|italic" />
-                    </LinearLayout>
-                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
-
-                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( Triple pAck_)"-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:layout_marginTop="51dp"
-                            android:text="Triple pAck_"
-                            android:textColor="@color/AzulEntel"
-                            android:textSize="38sp"
-                            android:textStyle="bold|italic" />
-                    </LinearLayout>
-                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( Triple pAck_)"-->
-
-                </LinearLayout>
-                <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ Triple pAck_)"-->
-
-                <!-- INICIO RELATIVELAYOUT CONTENEDOR TEXTO ( Recomienda a tu....) imagen y Boton Redondo)"-->
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="222dp"
+                    android:layout_height="59dp"
+                    android:layout_marginLeft="159dp"
+                    android:layout_marginTop="48dp"
+                    android:background="@drawable/all_corner_circle">
 
                     <TextView
-                        android:id="@+id/tvAyuda"
-                        android:layout_width="310dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Recomienda a tu cliente la experiencia completa entel hogar"
-                        android:layout_marginLeft="64dp"
-                        android:layout_marginTop="3dp"
-                        android:lineSpacingExtra="-5dp"
-                        android:textColor="@color/GrisOscuroEntel"
-                        android:textSize="21sp"
-                        android:textStyle="italic" />
+                        android:text="Telefonía Fija"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/BlancoEntel"
+                        android:textSize="21.7sp"
+                        android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_below="@+id/tvAyuda"
-                        android:layout_width="580dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="32dp" />
-
-                    <!--Contenedor de boton redondo (FloatingActionButton)-->
-                    <LinearLayout
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_marginTop="125dp"
-                        android:layout_marginLeft="30dp"
-                        android:gravity="center">
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:layout_width="72dp"
-                            android:layout_height="72dp"
-                            android:clickable="true"
-                            android:src="@drawable/flecha"
-                            android:backgroundTint="@color/blanco"
-                            app:backgroundTint="@color/NarajoEntel"
-                            app:elevation="0dp"
-                            app:borderWidth="1dp"
-                            app:fabSize="mini"/>
-
-                    </LinearLayout>
-                    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="184dp"
+                        android:layout_marginTop="19dp"
+                        android:background="@drawable/cast"
+                        android:backgroundTint="@color/BlancoEntel" />
 
                 </RelativeLayout>
-                <!-- FIN RELATIVELAYOUT CONTENEDOR TEXTO ( Recomienda a tu....) imagen y Boton Redondo-->
 
-            </LinearLayout>
-            <!-- FIN LINEARLAYOUT IZQUIERDO"-->
-
-
-            <!-- INICIO LINEARLAYOUT DERECHO"-->
-            <LinearLayout
-                android:id="@+id/linearDerecho"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <!-- INICIO RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="222dp"
+                    android:layout_height="59dp"
+                    android:layout_marginLeft="400dp"
+                    android:layout_marginTop="48dp"
+                    android:background="@drawable/all_corner_circle">
 
-                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
-                    <RelativeLayout
-                        android:id="@+id/rlTvTf"
-                        android:layout_width="302dp"
-                        android:layout_height="109dp"
-                        android:background="@color/NarajoEntel"
-                        android:layout_marginTop="101dp"
-                        android:layout_marginLeft="19dp">
-
-                        <TextView
-                            android:id="@+id/tvDoblePack"
-                            android:layout_width="230dp"
-                            android:layout_height="wrap_content"
-                            android:text="Television + Telefonia fija + Internet"
-                            android:textColor="@color/BlancoEntel"
-                            android:layout_marginLeft="35dp"
-                            android:layout_marginTop="53dp"
-                            android:gravity="center"
-                            android:textSize="19.7sp"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="21dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/cast"
-                            android:backgroundTint="@color/BlancoEntel" />
-
-                    </RelativeLayout>
-                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
-
-
-                    <!-- INICIO TEXTVIEW TEXTO (Revisa el...)-->
                     <TextView
-                        android:id="@+id/tvRevisa"
-                        android:layout_width="190dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlTvTf"
-                        android:gravity="center"
-                        android:lineSpacingExtra="-5dp"
-                        android:text="Revisa el detalle de cada producto"
-                        android:textColor="@color/AzulEntel"
-                        android:layout_marginLeft="76dp"
-                        android:layout_marginTop="39dp"
-                        android:textSize="21.5sp"
-                        android:textStyle="italic|normal" />
-                    <!-- FIN TEXTVIEW TEXTO (Revisa el...)-->
+                        android:text="Television HD"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/BlancoEntel"
+                        android:textSize="21.7sp"
+                        android:textStyle="bold" />
 
-                    <!-- INICIO RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
-                    <RelativeLayout
-                        android:id="@+id/rlBtRedondos"
-                        android:layout_width="302dp"
-                        android:layout_height="125dp"
-                        android:layout_below="@+id/tvRevisa"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="20dp">
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/fab_hd"
-                            android:layout_width="76dp"
-                            android:layout_height="73dp"
-                            android:clickable="true"
-                            android:layout_marginLeft="17dp"
-                            android:layout_marginTop="10dp"
-                            app:backgroundTint="@color/NarajoEntel"
-                            app:fabSize="mini"/>
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/fab_tlf"
-                            android:layout_width="76dp"
-                            android:layout_height="73dp"
-                            android:clickable="true"
-                            android:layout_marginLeft="111dp"
-                            android:layout_marginTop="10dp"
-                            app:backgroundTint="@color/NarajoEntel"
-                            app:fabSize="mini"/>
-
-                        <android.support.design.widget.FloatingActionButton
-                            android:id="@+id/fab_inter"
-                            android:layout_width="76dp"
-                            android:layout_height="73dp"
-                            android:clickable="true"
-                            android:layout_marginLeft="207dp"
-                            android:layout_marginTop="10dp"
-                            app:backgroundTint="@color/NarajoEntel"
-                            app:fabSize="mini"/>
-                    </RelativeLayout>
-                    <!-- FIN RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="184dp"
+                        android:layout_marginTop="19dp"
+                        android:background="@drawable/cast"
+                        android:backgroundTint="@color/BlancoEntel" />
 
                 </RelativeLayout>
-                <!-- FIN RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
 
-            </LinearLayout>
-            <!-- FIN LINEARLAYOUT DERECHO"-->
+                <RelativeLayout
+                    android:layout_width="222dp"
+                    android:layout_height="59dp"
+                    android:layout_marginLeft="641dp"
+                    android:layout_marginTop="48dp"
+                    android:background="@drawable/all_corner_circle">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Internet   "
+                        android:layout_marginLeft="53dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/BlancoEntel"
+                        android:textSize="21.7sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:layout_marginLeft="184dp"
+                        android:layout_marginTop="19dp"
+                        android:background="@drawable/cast"
+                        android:backgroundTint="@color/BlancoEntel" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Que tal un pack?"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="29dp"
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="38sp"
+                    android:textStyle="italic|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ayudalo a encontrar su pack ideal"
+                    android:layout_marginLeft="46dp"
+                    android:layout_marginTop="75dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="21sp"
+                    android:textStyle="italic" />
+
+                <RelativeLayout
+                    android:id="@+id/rlDoblePack"
+                    android:layout_width="288dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/rlAyudalo"
+                    android:layout_marginTop="109dp"
+                    android:layout_marginLeft="56dp"
+                    android:background="@color/AzulEntel"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvDoblePack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doble Pack_"
+                        android:textColor="@color/BlancoEntel"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlTriplePack"
+                    android:layout_width="288dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/rlAyudalo"
+                    android:layout_marginTop="184dp"
+                    android:layout_marginLeft="56dp"
+                    android:background="@drawable/square_boton_buscador_planes"
+                    android:backgroundTint="@color/AzulEntel"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvTriplePack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Triple Pack_"
+                        android:paddingRight="2dp"
+                        android:textColor="@color/BlancoEntel"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
         </LinearLayout>
-        <!-- FIN LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO-->
-
     </FrameLayout>
 
 

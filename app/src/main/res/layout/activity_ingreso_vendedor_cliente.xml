@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ingreso_vendedor_cliente"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IngresoVendedorClienteActivity">
+
+
+    <!--Contenedor de Logo Entel, logo cliente y logo notificaciones-->
+    <LinearLayout
+        android:id="@+id/linear_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <!--Inicio Contenedor de Logo Entel-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--logo entel-->
+            <ImageView
+                android:id="@+id/logoEntel"
+                android:layout_width="66dp"
+                android:layout_height="47dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/logoentel" />
+
+        </LinearLayout>
+        <!--Fin Contenedor de Logo Entel-->
+
+        <!--Inicio Contenedor separador-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7.32"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+        <!--Fin Contenedor separador-->
+
+        <!--Inicio Contenedor logo cliente y logo notificaciones-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:orientation="horizontal">
+
+            <!--Inicio Contenedor logo cliente-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <!--logo icono clientes-->
+                <ImageView
+                    android:id="@+id/iconoClientes"
+                    android:layout_width="25dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/iconoclientes" />
+
+            </LinearLayout>
+            <!--Fin Contenedor logo cliente-->
+
+            <!--Inicio Contenedor logo notificaciones-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <!--logo icono notificaciones-->
+                <ImageView
+                    android:id="@+id/iconoNotificaciones"
+                    android:layout_width="26dp"
+                    android:layout_height="28dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/icononotificaciones" />
+
+            </LinearLayout>
+            <!--Fin Contenedor logo notificaciones-->
+
+        </LinearLayout>
+        <!--Fin Contenedor logo cliente y logo notificaciones-->
+
+    </LinearLayout>
+    <!-- Fin Contenedor de Logo Entel, logo cliente y logo notificaciones-->
+
+    <!--Inicio Contenedor Linear separador-->
+    <LinearLayout
+        android:id="@+id/rlsep"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp">
+
+    </LinearLayout>
+    <!--Fin Contenedor Linear separador-->
+
+    <!-- Inicio Contenedor Linear izquierdo y derecho-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlsep">
+
+        <!--Inicio Contenedor Linear izquierdo-->
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="500dp"
+            android:layout_height="match_parent">
+
+            <!--Inicio Contenedor Relative circleImageView, Informacion vendedor y boton cerrar sesion-->
+            <RelativeLayout
+                android:layout_width="314dp"
+                android:layout_height="239dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginLeft="148dp"
+                android:background="@drawable/boton_redondeado_ingreso_vendedor_cliente">
+
+                <!--Nombre de Vendedor-->
+                <TextView
+                    android:id="@+id/tvNombreEjecutivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre_ejecutivo"
+                    android:textSize="24dp"
+                    android:layout_marginTop="63dp"
+                    android:gravity="center"
+                    android:textColor="@color/BlancoEntel"/>
+
+                <!--Descripcion de Vendedor-->
+                <TextView
+                    android:id="@+id/tvEjecutivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/etiqueta_ejecutivo_tienda"
+                    android:textSize="14.5dp"
+                    android:layout_marginTop="90dp"
+                    android:gravity="center"
+                    android:textColor="@color/BlancoEntel"/>
+
+                <!--Texto catalogo-->
+                <TextView
+                    android:id="@+id/tvVerCatalogoLibre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvEjecutivo"
+                    android:text="@string/ver_catalogo_libremente"
+                    android:textSize="12.5dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:textColor="@color/BlancoEntel"/>
+
+                <!--Boton cerrar sesion-->
+                <Button
+                    android:id="@+id/btCerrarSesion"
+                    android:text="@string/cerrar_sesion"
+                    android:textSize="15dp"
+                    android:textColor="@color/BlancoEntel"
+                    android:textAllCaps="false"
+                    android:layout_width="164dp"
+                    android:layout_height="31dp"
+                    android:layout_below="@id/tvVerCatalogoLibre"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginLeft="75dp"
+                    android:background="@drawable/square_boton_entrar_ingreso"/>
+
+
+            </RelativeLayout>
+            <!--Fin Contenedor Relative circleImageView, Informacion vendedor y boton cerrar sesion-->
+
+            <!--Imagen de perfil-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="110dp"
+                android:layout_height="105dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/user"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/NarajoEntel"/>
+
+        </RelativeLayout>
+        <!--Fin Contenedor Linear izquierdo-->
+
+        <!--Inicio Contenedor Linear Derecho-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Inicio Contenedor Relative Derecho-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Label atender cliente-->
+                <TextView
+                    android:id="@+id/tvIngresoVendedor"
+                    android:text="@string/atender_nuevo_cliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/AzulEntel"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="45dp"
+                    android:textSize="24.5sp"/>
+
+                <!--Label RUT cliente-->
+                <TextView
+                    android:id="@+id/tvNombreVendedor"
+                    android:text="@string/rut_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvIngresoVendedor"
+                    android:textColor="@color/AzulEntel"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="28dp"
+                    android:textSize="11.5dp"/>
+
+                <!--Campo RUT vendedor-->
+                <EditText
+                    android:id="@+id/etNombreVendedor"
+                    android:layout_width="407dp"
+                    android:layout_height="47dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:layout_below="@id/tvNombreVendedor"
+                    android:background="@drawable/bordes_edittext_ingreso_vendedor_cliente"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="28dp"/>
+
+                <!--Label Email cliente-->
+                <TextView
+                    android:id="@+id/tvRutVendedor"
+                    android:text="@string/email_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etNombreVendedor"
+                    android:textColor="@color/AzulEntel"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginLeft="28dp"
+                    android:textSize="11.5dp"/>
+
+                <!--Campo Email cliente-->
+                <EditText
+                    android:id="@+id/etRutVendedor"
+                    android:layout_width="407dp"
+                    android:layout_height="47dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:layout_below="@id/tvRutVendedor"
+                    android:background="@drawable/bordes_edittext_ingreso_vendedor_cliente"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="28dp"/>
+
+                <!--Boton ingreso vendedor-->
+                <Button
+                    android:id="@+id/btIrCatalogo"
+                    android:text="@string/ir_al_catalogo"
+                    android:textSize="17dp"
+                    android:textColor="@color/BlancoEntel"
+                    android:textAllCaps="false"
+                    android:layout_width="407dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/etRutVendedor"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginLeft="28dp"
+                    android:background="@drawable/square_boton_entrar_ingreso"/>
+
+            </RelativeLayout>
+            <!--Inicio Contenedor Relative Derecho-->
+
+        </LinearLayout>
+        <!--Fin Contenedor Linear Derecho-->
+
+    </LinearLayout>
+    <!-- Fin Contenedor Linear izquierdo y derecho-->
+
+</RelativeLayout>
