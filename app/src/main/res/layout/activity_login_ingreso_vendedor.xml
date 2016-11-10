@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login_ingreso_vendedor"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AzulEntel"
+    tools:context="com.example.jimmyhernandez.tabletvendedor.LoginIngresoVendedorActivity">
+
+    <!-- INICIO LINEARLAYOUT SEPARADOR-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="320dp"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+    <!-- FIN LINEARLAYOUT SEPARADOR-->
+
+    <!-- INICIO LINEARLAYOUT CONTENEDOR IMAGEN, CAMPOS DE TEXTO Y BOTON LOGIN VENDEDOR-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="380dp"
+        android:layout_height="match_parent">
+
+        <!-- INICIO LINEARLAYOUT SEPARADOR-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+        </LinearLayout>
+        <!-- FIN LINEARLAYOUT SEPARADOR-->
+
+        <!-- INICIO LINEARLAYOUT CONTENEDOR DE RELATIVELAYOUT IMAGEN, CAMPOS DE TEXTO Y BOTON LOGIN VENDEDOR-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- INICIO RELATIVELAYOUT-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/logoEntel"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/user"
+                    android:layout_marginLeft="145dp"/>
+
+                <TextView
+                    android:id="@+id/tvIngresoVendedor"
+                    android:text="Ingreso Vendedor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logoEntel"
+                    android:textColor="@color/BlancoEntel"
+                    android:layout_marginLeft="126dp"
+                    android:layout_marginTop="7dp"
+                    android:textSize="16.5sp"/>
+
+                <TextView
+                    android:id="@+id/tvNombreVendedor"
+                    android:text="Nombre vendedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvIngresoVendedor"
+                    android:textColor="@color/BlancoEntel"
+                    android:layout_marginTop="38dp"
+                    android:layout_marginLeft="17dp"
+                    android:textSize="11.5dp"/>
+
+                <EditText
+                    android:id="@+id/etNombreVendedor"
+                    android:layout_width="350dp"
+                    android:layout_height="49dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:layout_below="@id/tvNombreVendedor"
+                    android:background="@drawable/square_edittext_ingreso"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="17dp"/>
+
+                <TextView
+                    android:id="@+id/tvRutVendedor"
+                    android:text="RUT vendedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etNombreVendedor"
+                    android:textColor="@color/BlancoEntel"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="17dp"
+                    android:textSize="11.5dp"/>
+
+                <EditText
+                    android:id="@+id/etRutVendedor"
+                    android:layout_width="350dp"
+                    android:layout_height="49dp"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:layout_below="@id/tvRutVendedor"
+                    android:background="@drawable/square_edittext_ingreso"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="17dp"/>
+
+                <Button
+                    android:id="@+id/btEntrarVendedor"
+                    android:text="entrar"
+                    android:textSize="17dp"
+                    android:textColor="@color/BlancoEntel"
+                    android:textAllCaps="false"
+                    android:layout_width="350dp"
+                    android:layout_height="49dp"
+                    android:layout_below="@id/etRutVendedor"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginLeft="17dp"
+                    android:background="@drawable/square_boton_entrar_ingreso"/>
+
+
+            </RelativeLayout>
+            <!-- FIN RELATIVELAYOUT-->
+
+        </LinearLayout>
+        <!-- FIN LINEARLAYOUT CONTENEDOR DE RELATIVELAYOUT IMAGEN, CAMPOS DE TEXTO Y BOTON LOGIN VENDEDOR-->
+
+    </LinearLayout>
+    <!-- FIN LINEARLAYOUT CONTENEDOR IMAGEN, CAMPOS DE TEXTO Y BOTON LOGIN VENDEDOR-->
+
+    <!-- INICIO LINEARLAYOUT SEPARADOR-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+    <!-- INICIO LINEARLAYOUT SEPARADOR-->
+
+
+</LinearLayout>

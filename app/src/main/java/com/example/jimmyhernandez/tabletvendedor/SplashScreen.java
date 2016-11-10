@@ -35,7 +35,7 @@ public class SplashScreen extends Activity {
 				 * Creamos un Intent que lanzará nuestra Actividad principal (en
 				 * nuestro caso Main.java)
 				 */
-                Intent miIntent = new Intent(SplashScreen.this,MainActivity.class);
+                Intent miIntent = new Intent(SplashScreen.this,LoginIngresoVendedorActivity.class);
                 SplashScreen.this.startActivity(miIntent);
                 SplashScreen.this.finish();
             }

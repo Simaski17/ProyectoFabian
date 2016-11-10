@@ -223,23 +223,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
                     <RelativeLayout
                         android:id="@+id/rlTvTf"
                         android:layout_width="302dp"
-                        android:layout_height="285dp"
+                        android:layout_height="109dp"
                         android:background="@color/NarajoEntel"
-                        android:layout_marginTop="35dp"
+                        android:layout_marginTop="101dp"
                         android:layout_marginLeft="19dp">
 
                         <TextView
                             android:id="@+id/tvDoblePack"
-                            android:layout_width="wrap_content"
+                            android:layout_width="230dp"
                             android:layout_height="wrap_content"
-                            android:text="Television + Telefonia fija"
-                            android:textColor="@color/AzulEntel"
-                            android:layout_marginLeft="38dp"
+                            android:text="Television + Telefonia fija + Internet"
+                            android:textColor="@color/BlancoEntel"
+                            android:layout_marginLeft="35dp"
                             android:layout_marginTop="53dp"
+                            android:gravity="center"
                             android:textSize="19.7sp"
                             android:textStyle="bold" />
 
@@ -250,10 +251,10 @@
                             android:layout_marginRight="8dp"
                             android:layout_marginTop="8dp"
                             android:background="@drawable/cast"
-                            android:backgroundTint="@color/AzulEntel" />
+                            android:backgroundTint="@color/BlancoEntel" />
 
                     </RelativeLayout>
-                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
 
 
                     <!-- INICIO TEXTVIEW TEXTO (Revisa el...)-->
@@ -267,7 +268,7 @@
                         android:text="Revisa el detalle de cada producto"
                         android:textColor="@color/AzulEntel"
                         android:layout_marginLeft="76dp"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="39dp"
                         android:textSize="21.5sp"
                         android:textStyle="italic|normal" />
                     <!-- FIN TEXTVIEW TEXTO (Revisa el...)-->
