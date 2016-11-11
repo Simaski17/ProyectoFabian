@@ -3,25 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/AzulEntel">
 
 
-    <TextView
-        android:id="@+id/splash_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center"
-        android:textSize="27sp"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center"/>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="116dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:background="@drawable/logoentel" >
-    </RelativeLayout>
 </LinearLayout>

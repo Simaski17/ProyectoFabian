@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new PromocionesFragment();
+                    return new HomeFragment();
                 case 1:
                     return new PlanesFragment();
                 case 2:

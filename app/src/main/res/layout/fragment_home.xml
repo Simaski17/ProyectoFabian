@@ -1,0 +1,49 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.jimmyhernandez.tabletvendedor.HomeFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:text="["
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/IngresoVendedor"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_editor_absoluteY="180dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            android:textColor="@color/AzulEntel"
+            android:textSize="31sp"
+            android:textStyle="normal|bold|italic"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp" />
+
+        <TextView
+            android:text="  dEscarga nuestra nueva App_"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombreVendedor"
+            app:layout_constraintBottom_toBottomOf="@+id/IngresoVendedor"
+            app:layout_constraintTop_toTopOf="@+id/IngresoVendedor"
+            android:textColor="@color/NarajoEntel"
+            android:textStyle="bold|italic"
+            android:textSize="38sp"
+            android:lineSpacingExtra="-8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/IngresoVendedor"
+            app:layout_constraintVertical_bias="0.06999999" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>
