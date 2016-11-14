@@ -5,7 +5,6 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -18,71 +17,88 @@
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal">
 
+        <!--Contenedor de Logo Entel-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+            <!--Logo Entel-->
             <ImageView
-                android:layout_width="66dp"
-                android:layout_height="47dp"
+                android:layout_width="54dp"
+                android:layout_height="35dp"
                 android:src="@drawable/logoentel"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="44dp"
                 android:id="@+id/logoEntel" />
         </LinearLayout>
+        <!--Fin Contenedor de Logo Entel-->
 
+        <!--Tabs-->
         <io.karim.MaterialTabs
             android:id="@+id/material_tabs"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_weight="7.32"
-            android:background="@color/blanco"
+            android:background="@color/BlancoEntel"
             android:textColor="@color/GrisOscuroEntel"
-            android:textSize="19sp"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="7dp"
             app:mtIndicatorColor="@android:color/transparent"
             app:mtMrlRippleColor="@color/BlancoEntel"
             app:mtTabPaddingLeftRight="15dp"
             app:mtTextAllCaps="false"
             app:mtTextColorSelected="@color/NarajoEntel" />
+        <!--Fin Tabs-->
 
+        <!--Contenedor de Icono cliente e icono notificacion-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.7"
             android:orientation="horizontal">
 
-
+            <!--Contenedor de Icono cliente-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
+                <!--Icono cliente-->
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="28dp"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
                     android:background="@drawable/iconoclientes"
-                    android:layout_marginLeft="33dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginLeft="52dp"
+                    android:layout_marginTop="49dp"
                     android:id="@+id/iconoClientes"/>
 
             </LinearLayout>
+            <!--Fin Contenedor de Icono cliente-->
 
+            <!--Contenedor de Icono notificacion-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
 
+                <!--Icono notificacion-->
                 <ImageView
                     android:layout_width="26dp"
                     android:layout_height="28dp"
                     android:background="@drawable/icononotificaciones"
                     android:id="@+id/iconoNotificaciones"
-                    android:layout_marginLeft="44dp"
-                    android:layout_marginTop="45dp"/>
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="50dp"/>
 
             </LinearLayout>
+            <!--Fin Contenedor de Icono notificacion-->
+
         </LinearLayout>
+        <!--Fin Contenedor de Icono cliente e icono notificacion-->
+
     </LinearLayout>
     <!-- FIN Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
+
 
 
     <!--Contenedor ViewPager Servira para cambiar entre Fragments
@@ -98,48 +114,291 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.jimmyhernandez.tabletvendedor.HomeFragment">
+        android:layout_marginTop="100dp">
 
-        <android.support.constraint.ConstraintLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="75dp">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="59dp"
+                    android:layout_marginTop="24dp"
+                    android:text="[ "
+                    android:textColor="@color/NarajoEntel"
+                    android:textSize="31sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="equipOs destAcados_"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/AzulEntel"
+                    android:textSize="38sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="76dp"
             android:layout_height="match_parent">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="535dp"
+                android:layout_height="match_parent">
+
+                <!--RelativeLayout izquierdo-->
+                <RelativeLayout
+                    android:id="@+id/rlIzquierdo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="900dp"
+                        android:layout_height="580dp"
+                        android:layout_marginLeft="0dp"
+                        android:background="@drawable/trianguloazulizquierdo"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
 
 
-            <TextView
-                android:text="["
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/IngresoVendedor"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintLeft_creator="1"
-                tools:layout_editor_absoluteY="180dp"
-                app:layout_constraintHorizontal_bias="0.1"
-                android:textColor="@color/AzulEntel"
-                android:textSize="31sp"
-                android:textStyle="bold|italic"
-                android:layout_marginLeft="3dp"
-                android:layout_marginStart="3dp" />
+                    <RelativeLayout
+                        android:id="@+id/rlOtrosEquipos"
+                        android:layout_width="305dp"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="84dp"
+                        android:layout_alignParentRight="true">
 
-            <TextView
-                android:text="  dEscarga nuestra nueva App_"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/nombreVendedor"
-                app:layout_constraintBottom_toBottomOf="@+id/IngresoVendedor"
-                app:layout_constraintTop_toTopOf="@+id/IngresoVendedor"
-                android:textColor="@color/NarajoEntel"
-                android:textStyle="bold|italic"
-                android:textSize="38sp"
-                android:lineSpacingExtra="-8dp"
-                app:layout_constraintLeft_toLeftOf="@+id/IngresoVendedor"
-                app:layout_constraintVertical_bias="0.07" />
+                    <TextView
+                        android:id="@+id/tvNombreEquipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Huawei"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="103dp"
+                        android:textColor="@color/AzulEntel"
+                        android:textSize="37sp" />
+
+                    <TextView
+                        android:id="@+id/tvModeloEquipo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P9 Lite"
+                        android:textColor="@color/AzulEntel"
+                        android:textSize="43sp"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginLeft="104dp"
+                        android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvAsterico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="10sp"
+                            android:layout_marginTop="90dp"
+                            android:layout_marginLeft="111dp"
+                            android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvPrecioVenta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Precio de Venta"
+                            android:textColor="@color/GrisOscuroEntel"
+                            android:textSize="16sp"
+                            android:layout_marginTop="88dp"
+                            android:layout_marginLeft="115dp"
+                            android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvSimboloDolar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="40sp"
+                            android:layout_marginTop="100dp"
+                            android:layout_marginLeft="109dp"
+                            android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvPrecio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="199.990"
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="40sp"
+                            android:layout_marginTop="100dp"
+                            android:layout_marginLeft="133dp"
+                            android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvCuotas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="\u00f3 en 12 cuotas de"
+                            android:textColor="@color/AzulEntel"
+                            android:textSize="14sp"
+                            android:layout_marginTop="148dp"
+                            android:layout_marginLeft="109dp"
+                            android:textStyle="italic"/>
+
+                        <TextView
+                            android:id="@+id/tvSimboloDolar2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/AzulEntel"
+                            android:textSize="22sp"
+                            android:layout_marginTop="142dp"
+                            android:layout_marginLeft="224dp"
+                            android:textStyle="italic|bold"/>
+
+                        <TextView
+                            android:id="@+id/tvPrecio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="14.990"
+                            android:textColor="@color/AzulEntel"
+                            android:textSize="22sp"
+                            android:layout_marginTop="142dp"
+                            android:layout_marginLeft="235dp"
+                            android:textStyle="italic|bold"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlClienteModeloEspecifico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="52dp"
+                        android:layout_below="@+id/rlOtrosEquipos"
+                        android:layout_marginLeft="52dp">
+
+                        <TextView
+                            android:id="@+id/tvClienteModeloEspecifico"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/edClienteModeloEspecifico"
+                            android:textColor="@color/blanco"
+                            android:lineSpacingExtra="-7dp"
+                            android:textSize="27sp"
+                            android:textStyle="bold|italic" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlAyudalo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlClienteModeloEspecifico"
+                        android:layout_marginLeft="50dp">
+
+                        <TextView
+                            android:id="@+id/tvAyudalo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="2dp"
+                            android:text="ayudalo a encontrar su equipo"
+                            android:textColor="@color/blanco"
+                            android:textSize="21sp"
+                            android:textStyle="italic|bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCatalogoEquipos"
+                        android:layout_width="288dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginLeft="45dp"
+                        android:background="@drawable/square_boton_buscador_planes"
+                        android:backgroundTint="@color/BlancoEntel"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:layout_below="@+id/rlAyudalo">
+
+                        <TextView
+                            android:id="@+id/tvCatalogoEquipos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cat\u00e1logo de equipos"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+                <!--Fin RelativeLayout izquierdo -->
+
+            </LinearLayout>
 
 
-        </android.support.constraint.ConstraintLayout>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rlImagenTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:id="@+id/ivImagenTelefono"
+                        android:layout_width="355dp"
+                        android:layout_height="320dp"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/phone2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Equipos relacionados"
+                        android:textColor="@color/AzulEntel"
+                        android:textSize="21sp"
+                        android:layout_marginTop="349dp"
+                        android:layout_marginLeft="38dp" />
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
 
     </FrameLayout>
 
@@ -216,7 +475,7 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:gravity="center"
-        android:paddingEnd="49dp"
+        android:paddingEnd="40dp"
         android:paddingTop="18dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true">

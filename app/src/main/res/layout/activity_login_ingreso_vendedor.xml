@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/AzulEntel"
-    tools:context="com.example.jimmyhernandez.tabletvendedor.LoginIngresoVendedorActivity">
+    tools:context=".LoginIngresoVendedorActivity">
 
     <!-- INICIO LINEARLAYOUT SEPARADOR-->
     <LinearLayout
@@ -47,44 +47,44 @@
                 <!--Logo entel-->
                 <ImageView
                     android:id="@+id/logoEntel"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="@drawable/user"
-                    android:layout_marginLeft="145dp"/>
+                    android:layout_marginTop="25dp"                    android:layout_width="90dp"
+                    android:layout_height="58dp"
+                    android:background="@drawable/logoentelblanco"
+                    android:layout_marginLeft="147dp"/>
 
                 <!--Label ingreso vendedor-->
                 <TextView
-                    android:id="@+id/tvIngresoVendedor"
+                    android:id="@+id/tvAtenderCliente"
                     android:text="@string/ingreso_vendedor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/logoEntel"
                     android:textColor="@color/BlancoEntel"
                     android:layout_marginLeft="126dp"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="13dp"
                     android:textSize="16.5sp"/>
 
                 <!--Label nombre vendedor-->
                 <TextView
-                    android:id="@+id/tvNombreVendedor"
+                    android:id="@+id/tvRutCliente"
                     android:text="@string/nombre_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvIngresoVendedor"
+                    android:layout_below="@id/tvAtenderCliente"
                     android:textColor="@color/BlancoEntel"
-                    android:layout_marginTop="38dp"
+                    android:layout_marginTop="39dp"
                     android:layout_marginLeft="17dp"
                     android:textSize="11.5dp"/>
 
                 <!--Campo nombre vendedor-->
                 <EditText
-                    android:id="@+id/etNombreVendedor"
+                    android:id="@+id/etRutCliente"
                     android:layout_width="350dp"
                     android:layout_height="49dp"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:layout_below="@id/tvNombreVendedor"
-                    android:background="@drawable/square_edittext_ingreso"
+                    android:layout_below="@id/tvRutCliente"
+                    android:background="@drawable/bordes_redondeados_edittext_ingreso"
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="17dp"/>
 
@@ -94,7 +94,7 @@
                     android:text="@string/rut_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/etNombreVendedor"
+                    android:layout_below="@id/etRutCliente"
                     android:textColor="@color/BlancoEntel"
                     android:layout_marginTop="18dp"
                     android:layout_marginLeft="17dp"
@@ -108,7 +108,7 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_below="@id/tvRutVendedor"
-                    android:background="@drawable/square_edittext_ingreso"
+                    android:background="@drawable/bordes_redondeados_edittext_ingreso"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="17dp"/>
 
@@ -124,7 +124,7 @@
                     android:layout_below="@id/etRutVendedor"
                     android:layout_marginTop="23dp"
                     android:layout_marginLeft="17dp"
-                    android:background="@drawable/square_boton_entrar_ingreso"/>
+                    android:background="@drawable/bordes_redondeados_boton_entrar_ingreso"/>
 
 
             </RelativeLayout>

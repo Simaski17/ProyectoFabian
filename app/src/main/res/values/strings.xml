@@ -11,6 +11,13 @@
 
     <!--MainActivity -->
     <string name="tvSelecciona_dispositivo"><b>Selecciona un dispositivo</b> para transmitir</string>
+    <string name="tvSelecciona_pantalla">Selecciona una pantalla</string>
+
+    <!--App entel -->
+    <string name="estado_cuenta">Estado de tu cuenta</string>
+    <string name="consulta_saldo">Consulta de saldo</string>
+    <string name="controla_planes">Controla tus planes</string>
+    <string name="beneficios_zona">Beneficios Zona</string>
 
     <!--LoginIngresoVendedorActivity -->
     <string name="ingreso_vendedor">Ingreso Vendedor</string>
@@ -49,6 +56,13 @@
     <string name="television_telefonia">Televisi\u00F3n + Telefon\u00EDa fija</string>
     <string name="television_internet">Televisi\u00F3n + Internet</string>
     <string name="internet_telefonia">Internet + Telefon\u00EDa fija</string>
+
+    <!--Te ayudamos -->
+    <string name="transferir_informacion"><b><i>Transferir</i></b> informaci\u00f3n a mi nuevo tel\u00e9fono</string>
+    <string name="como_cuidar_tus_megas">C\u00f3mo cuidar tus megas</string>
+    <string name="cuota">\u00f3 en 12 cuotas de</string>
+    <string name="destacamos_este_mes">Adem\u00e1s <b><i>destacamos</i></b> este mes</string>
+
 
 
 </resources>

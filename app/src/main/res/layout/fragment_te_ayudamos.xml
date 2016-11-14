@@ -1,0 +1,139 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/lltexto1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="34dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="32sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="97dp"
+                android:layout_marginTop="31dp"
+                android:text="te ayudAmos_"
+                android:textColor="@color/AzulEntel"
+                android:textSize="38sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="101dp"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="210dp"
+                android:layout_marginLeft="185dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/iphone"/>
+
+
+            <ImageView
+                android:id="@+id/icnCast"
+                android:layout_width="26dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="391dp"
+                android:layout_marginTop="194dp"
+                android:background="@drawable/cast"
+                android:backgroundTint="@color/NarajoEntel"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@string/transferir_informacion"
+                android:textColor="@color/AzulEntel"
+                android:textSize="24sp"
+                android:lineSpacingExtra="-5dp"
+                android:gravity="center"
+                android:layout_marginLeft="165dp"
+                android:layout_marginTop="235dp"/>
+
+            <ImageView
+                android:layout_width="98dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="136dp"
+                android:layout_marginTop="305dp"
+                android:background="@drawable/bordes_redondeados_botones_ayudamos"/>
+
+
+
+            <ImageView
+                android:layout_width="98dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="244dp"
+                android:layout_marginTop="305dp"
+                android:background="@drawable/bordes_redondeados_botones_ayudamos"/>
+
+            <ImageView
+                android:layout_width="98dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="352dp"
+                android:layout_marginTop="305dp"
+                android:background="@drawable/bordes_redondeados_botones_ayudamos"/>
+
+            <ImageView
+                android:id="@+id/icnCast2"
+                android:layout_width="26dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="194dp"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/cast"
+                android:backgroundTint="@color/NarajoEntel"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="@string/como_cuidar_tus_megas"
+                android:textColor="@color/AzulEntel"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:lineSpacingExtra="-4dp"
+                android:textStyle="italic|bold"
+                android:layout_marginRight="227dp"
+                android:layout_marginTop="236dp"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

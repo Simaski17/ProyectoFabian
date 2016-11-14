@@ -1,0 +1,213 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="900dp"
+            android:layout_height="580dp"
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/trianguloazulizquierdo"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/lltexto1"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="87dp"
+                android:layout_marginTop="34dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="32sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="107dp"
+                android:layout_marginTop="31dp"
+                android:text="recOmienda estas Apps_"
+                android:textColor="@color/AzulEntel"
+                android:textSize="38sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="101dp"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="470dp"
+                android:layout_marginLeft="99dp"
+                android:background="@drawable/iphone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Este mes"
+                android:textColor="@color/AzulEntel"
+                android:textSize="21sp"
+                android:layout_marginRight="354dp"
+                android:layout_marginTop="9dp"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="destacamos:"
+                android:textColor="@color/AzulEntel"
+                android:textSize="21sp"
+                android:textStyle="italic|bold"
+                android:layout_marginRight="230dp"
+                android:layout_marginTop="9dp"
+                android:layout_alignParentRight="true"/>
+
+
+            <ImageView
+                android:id="@+id/icnSpotify"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="360dp"
+                android:layout_marginTop="59dp"
+                android:background="@drawable/icn_spotify"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spotify"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="385dp"
+                android:layout_marginTop="139dp"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:id="@+id/icnNetflix"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="242dp"
+                android:layout_marginTop="59dp"
+                android:background="@drawable/icn_netflix"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Netflix"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="268dp"
+                android:layout_marginTop="139dp"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:id="@+id/icnApple"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="124dp"
+                android:layout_marginTop="59dp"
+                android:background="@drawable/icn_applemusic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apple Music"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="136dp"
+                android:layout_marginTop="139dp"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:id="@+id/icnUber"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="360dp"
+                android:layout_marginTop="179dp"
+                android:background="@drawable/icn_uber"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uber"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="391dp"
+                android:layout_marginTop="266dp"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:id="@+id/icnSnapchat"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="242dp"
+                android:layout_marginTop="179dp"
+                android:background="@drawable/icn_snapchat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Snapchat"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="261dp"
+                android:layout_marginTop="266dp"
+                android:layout_alignParentRight="true"/>
+
+            <ImageView
+                android:id="@+id/icnWaze"
+                android:layout_width="83dp"
+                android:layout_height="78dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="124dp"
+                android:layout_marginTop="179dp"
+                android:background="@drawable/icn_waze"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waze"
+                android:textColor="@color/GrisTextoOscuro"
+                android:textSize="11sp"
+                android:layout_marginRight="151dp"
+                android:layout_marginTop="266dp"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

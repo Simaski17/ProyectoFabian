@@ -17,7 +17,7 @@ import butterknife.OnClick;
 public class LoginIngresoVendedorActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.etNombreVendedor)
+    @BindView(R.id.etRutCliente)
     EditText etNombreVendedor;
     @BindView(R.id.etRutVendedor)
     EditText etRutVendedor;

@@ -3,28 +3,15 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
-  <color name="BlancoEntel">#F1F1F1</color>
+
   <color name="AzulEntel">#0154A0</color>
-  <color name="NarajoEntel">#FF6702</color>
-  <color name="GrisClaroEntel">#B3B1B3</color>
+  <color name="NarajoEntel">#ff6702</color>
+  <color name="GrisClaroEntel">#b3b1b3</color>
   <color name="GrisOscuroEntel">#636467</color>
-  <color name="medium_electric_blue">#0054a0</color>
+  <color name="GrisTextoOscuro">#4a4a4a</color>
+  <color name="BlancoEntel">#f1f1f1</color>
   <color name="blanco">#ffffff</color>
   <color name="black">#000000</color>
-  <color name="timberwolf">#d8d8d8</color>
-  <color name="manatee">#979797</color>
-  <color name="safety_orange">#ff6702</color>
-  <color name="ash_grey">#b3b1b3</color>
-  <color name="outer_space">#4a4a4a</color>
-  <color name="medium_electric_blue1">#07559f</color>
-  <color name="international_orange">#ff5a00</color>
-  <color name="platinum">#e2e2e2</color>
-  <color name="gainsboro">#dbdbdb</color>
-  <color name="dark_slate_gray">#354c71</color>
-  <color name="snow">#f9f9f9</color>
-  <color name="white_smoke">#f4f4f4</color>
-  <color name="silver">#bdbdbd</color>
-  <color name="dim_gray1">#707172</color>
-  <color name="munsell">#f1f1f1</color>
+
 </resources>
 

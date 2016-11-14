@@ -30,7 +30,7 @@
                 android:layout_height="47dp"
                 android:layout_marginLeft="27dp"
                 android:layout_marginTop="35dp"
-                android:src="@drawable/logoentelblanco" />
+                android:src="@drawable/logoentel" />
 
         </LinearLayout>
         <!--Fin Contenedor de Logo Entel-->
@@ -170,7 +170,7 @@
                     android:layout_below="@id/tvVerCatalogoLibre"
                     android:layout_marginTop="31dp"
                     android:layout_marginLeft="75dp"
-                    android:background="@drawable/square_boton_entrar_ingreso"/>
+                    android:background="@drawable/bordes_redondeados_boton_entrar_ingreso"/>
 
 
             </RelativeLayout>
@@ -179,13 +179,12 @@
             <!--Imagen de perfil-->
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image"
-                android:layout_width="110dp"
+                android:id="@+id/civImagenVendedor"
+                android:layout_width="105dp"
                 android:layout_height="105dp"
                 android:layout_marginLeft="250dp"
                 android:layout_marginTop="25dp"
-                android:src="@drawable/user"
-                app:civ_border_width="1dp"
+                android:src="@drawable/profile"
                 app:civ_border_color="@color/NarajoEntel"/>
 
         </RelativeLayout>
@@ -204,7 +203,7 @@
 
                 <!--Label atender cliente-->
                 <TextView
-                    android:id="@+id/tvIngresoVendedor"
+                    android:id="@+id/tvAtenderCliente"
                     android:text="@string/atender_nuevo_cliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -215,11 +214,11 @@
 
                 <!--Label RUT cliente-->
                 <TextView
-                    android:id="@+id/tvNombreVendedor"
+                    android:id="@+id/tvRutCliente"
                     android:text="@string/rut_cliente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvIngresoVendedor"
+                    android:layout_below="@id/tvAtenderCliente"
                     android:textColor="@color/AzulEntel"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="28dp"
@@ -227,23 +226,23 @@
 
                 <!--Campo RUT vendedor-->
                 <EditText
-                    android:id="@+id/etNombreVendedor"
+                    android:id="@+id/etRutCliente"
                     android:layout_width="407dp"
                     android:layout_height="47dp"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:layout_below="@id/tvNombreVendedor"
+                    android:layout_below="@id/tvRutCliente"
                     android:background="@drawable/bordes_edittext_ingreso_vendedor_cliente"
                     android:layout_marginTop="6dp"
                     android:layout_marginLeft="28dp"/>
 
                 <!--Label Email cliente-->
                 <TextView
-                    android:id="@+id/tvRutVendedor"
+                    android:id="@+id/tvEmailCliente"
                     android:text="@string/email_cliente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/etNombreVendedor"
+                    android:layout_below="@id/etRutCliente"
                     android:textColor="@color/AzulEntel"
                     android:layout_marginTop="17dp"
                     android:layout_marginLeft="28dp"
@@ -251,12 +250,12 @@
 
                 <!--Campo Email cliente-->
                 <EditText
-                    android:id="@+id/etRutVendedor"
+                    android:id="@+id/etEmailCliente"
                     android:layout_width="407dp"
                     android:layout_height="47dp"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:layout_below="@id/tvRutVendedor"
+                    android:layout_below="@id/tvEmailCliente"
                     android:background="@drawable/bordes_edittext_ingreso_vendedor_cliente"
                     android:layout_marginTop="6dp"
                     android:layout_marginLeft="28dp"/>
@@ -270,10 +269,10 @@
                     android:textAllCaps="false"
                     android:layout_width="407dp"
                     android:layout_height="48dp"
-                    android:layout_below="@id/etRutVendedor"
+                    android:layout_below="@id/etEmailCliente"
                     android:layout_marginTop="29dp"
                     android:layout_marginLeft="28dp"
-                    android:background="@drawable/square_boton_entrar_ingreso"/>
+                    android:background="@drawable/bordes_redondeados_boton_entrar_ingreso"/>
 
             </RelativeLayout>
             <!--Inicio Contenedor Relative Derecho-->

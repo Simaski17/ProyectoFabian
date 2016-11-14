@@ -1,0 +1,173 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp">
+
+
+    <!--Inicio Contenedor imagenes -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Inicio Imagen triangulo azul -->
+        <ImageView
+            android:id="@+id/ivTrianguloAzul"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:layout_marginLeft="310dp"
+            android:background="@drawable/trianguloazul"
+            android:layout_alignParentBottom="true"/>
+
+        <!--Inicio Imagen celular mano -->
+        <ImageView
+            android:id="@+id/ivCelularMano"
+            android:layout_width="720dp"
+            android:layout_height="574dp"
+            android:layout_marginLeft="227dp"
+            android:background="@drawable/smartphoenmano"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+    <!--Fin Contenedor imagenes -->
+
+    <!--Inicio Contenedor macth parent Texto [ descarga nuestra.... -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+
+        <!--Inicio Contenedor Texto [ descarga nuestra.... -->
+        <RelativeLayout
+            android:id="@+id/lltexto1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <!--Inicio Texto [ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="78dp"
+                android:text="[ "
+                android:textColor="@color/NarajoEntel"
+                android:textSize="32sp"
+                android:textStyle="bold|italic" />
+
+            <!--Inicio Texto descarga nuestra.... -->
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="75dp"
+                android:lineSpacingExtra="-8dp"
+                android:text="  dEscarga nuestra nueva App_"
+                android:textColor="@color/AzulEntel"
+                android:textSize="38sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+        <!--Fin Contenedor Texto [ descarga nuestra.... -->
+
+
+    </LinearLayout>
+    <!--Fin Contenedor Texto [ descarga nuestra.... -->
+
+    <!--Inicio Contenedor match parent Texto opciones  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="201dp"
+        android:orientation="vertical">
+
+        <!--Inicio Contenedor Texto opciones  -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Inicio imagen circulo texto  -->
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="49dp"
+                android:background="@drawable/circulo_app_entel"/>
+
+            <!--Inicio texto estado de....  -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_cuenta"
+                android:layout_marginLeft="102dp"
+                android:layout_marginTop="44dp"
+                android:textColor="@color/GrisOscuroEntel"
+                android:textSize="18.5sp"
+                android:textStyle="italic" />
+
+            <!--Inicio imagen circulo texto  -->
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="95dp"
+                android:background="@drawable/circulo_app_entel"/>
+
+            <!--Inicio texto Consulta de....  -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consulta_saldo"
+                android:layout_marginLeft="102dp"
+                android:layout_marginTop="89dp"
+                android:textColor="@color/GrisOscuroEntel"
+                android:textSize="18.5sp"
+                android:textStyle="italic" />
+
+            <!--Inicio imagen circulo texto  -->
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="138dp"
+                android:background="@drawable/circulo_app_entel"/>
+
+            <!--Inicio texto controla tus....  -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/controla_planes"
+                android:layout_marginLeft="102dp"
+                android:layout_marginTop="133dp"
+                android:textColor="@color/GrisOscuroEntel"
+                android:textSize="18.5sp"
+                android:textStyle="italic" />
+
+            <!--Inicio imagen circulo texto  -->
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="184dp"
+                android:background="@drawable/circulo_app_entel"/>
+
+            <!--Inicio texto Beneficios....  -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/beneficios_zona"
+                android:layout_marginLeft="102dp"
+                android:layout_marginTop="178dp"
+                android:textColor="@color/GrisOscuroEntel"
+                android:textSize="18.5sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+        <!--Fin Contenedor match parent Texto opciones  -->
+
+
+    </LinearLayout>
+    <!--Fin Contenedor match parent Texto opciones  -->
+
+
+
+</FrameLayout>

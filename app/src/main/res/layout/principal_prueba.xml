@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="112dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+    <TextView
+        android:text="Ingreso Vendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IngresoVendedor"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:text="Nombre Vendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombreVendedor"
+        app:layout_constraintRight_toLeftOf="@+id/IngresoVendedor"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="39dp"
+        app:layout_constraintTop_toBottomOf="@+id/IngresoVendedor"
+        android:layout_marginRight="32dp" />
+
+    <EditText
+        android:layout_width="396dp"
+        android:layout_height="39dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etRutCliente"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/nombreVendedor"
+        app:layout_constraintLeft_toLeftOf="@+id/nombreVendedor" />
+
+    <TextView
+        android:text="Rut Vendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvRutVendedor"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/etRutCliente"
+        app:layout_constraintLeft_toLeftOf="@+id/etRutCliente" />
+
+    <EditText
+        android:layout_width="396dp"
+        android:layout_height="39dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvRutVendedor"
+        app:layout_constraintLeft_toLeftOf="@+id/tvRutVendedor" />
+
+    <Button
+        android:text="Entrar"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        app:layout_constraintRight_toRightOf="@+id/editText2"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvRutVendedor"
+        app:layout_constraintLeft_toLeftOf="@+id/editText2"
+        android:background="#0067ff"
+        app:layout_constraintHorizontal_bias="0.0" />
+</android.support.constraint.ConstraintLayout>

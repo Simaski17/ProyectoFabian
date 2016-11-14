@@ -24,16 +24,16 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
     ImageView iconoClientes;
     @BindView(R.id.iconoNotificaciones)
     ImageView iconoNotificaciones;
-    @BindView(R.id.profile_image)
-    CircleImageView profileImage;
+    @BindView(R.id.civImagenVendedor)
+    CircleImageView civImagenVendedor;
     @BindView(R.id.tvVerCatalogoLibre)
     TextView tvVerCatalogoLibre;
     @BindView(R.id.btCerrarSesion)
     Button btEntrarVendedor;
-    @BindView(R.id.etNombreVendedor)
-    EditText etNombreVendedor;
-    @BindView(R.id.etRutVendedor)
-    EditText etRutVendedor;
+    @BindView(R.id.etRutCliente)
+    EditText etRutCliente;
+    @BindView(R.id.etEmailCliente)
+    EditText etEmailCliente;
     @BindView(R.id.btIrCatalogo)
     Button btIrCatalogo;
     @BindView(R.id.ingreso_vendedor_cliente)
@@ -69,7 +69,7 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 break;
             case R.id.ingreso_vendedor_cliente:
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(etNombreVendedor.getWindowToken(), 0);
+                inputMethodManager.hideSoftInputFromWindow(etRutCliente.getWindowToken(), 0);
                 break;
         }
     }

@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PromocionesFragment"
     android:layout_marginTop="100dp">
 
     <RelativeLayout
@@ -12,9 +11,16 @@
         android:layout_alignParentEnd="true">
 
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:layout_marginLeft="200dp"
+            android:background="@drawable/trianguloazul"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
             android:layout_width="520dp"
             android:layout_height="570dp"
-            android:layout_marginLeft="445dp"
+            android:layout_marginLeft="458dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/minatelefono"/>
 
@@ -32,8 +38,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="48.50dp"
-                    android:layout_marginTop="56dp"
+                    android:layout_marginLeft="58dp"
+                    android:layout_marginTop="24dp"
                     android:text="[ "
                     android:textColor="@color/NarajoEntel"
                     android:textSize="30sp"
@@ -48,9 +54,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Planes destAcados_"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginLeft="2dp"
+                    android:text="plAnes destAcados_"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="5dp"
                     android:textColor="@color/AzulEntel"
                     android:textSize="40sp"
                     android:textStyle="bold|italic" />
@@ -61,163 +67,54 @@
         <RelativeLayout
             android:id="@+id/rlBotonesPlanes"
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="120dp">
 
             <RelativeLayout
                 android:id="@+id/rlPlanesSmart"
-                android:layout_width="115dp"
-                android:layout_height="106dp"
-                android:background="@color/NarajoEntel"
-                android:layout_marginTop="21dp"
-                android:layout_marginLeft="47dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+                android:layout_width="117dp"
+                android:layout_height="108dp"
+                android:background="@drawable/btn_smartfun"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="186dp">
 
-                <ImageView
-                    android:id="@+id/ivBotonCast"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/blanco"
-                    android:layout_marginLeft="87dp"
-                    android:layout_marginTop="3dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPlanesMultimedia"
+                android:layout_width="117dp"
+                android:layout_height="108dp"
+                android:background="@drawable/btn_multimediacc"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="341dp">
+
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rlPlanesVoz"
-                android:layout_width="115dp"
-                android:layout_height="106dp"
-                android:background="@color/NarajoEntel"
-                android:layout_marginTop="21dp"
-                android:layout_marginLeft="170dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
-
-                <ImageView
-                    android:id="@+id/ivBotonCast2"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/blanco"
-                    android:layout_marginLeft="87dp"
-                    android:layout_marginTop="3dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlPlanesPrimerPlan"
-                android:layout_width="115dp"
-                android:layout_height="106dp"
-                android:background="@color/NarajoEntel"
-                android:layout_marginTop="21dp"
-                android:layout_marginLeft="293dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
-
-                <ImageView
-                    android:id="@+id/ivBotonCast3"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/blanco"
-                    android:layout_marginLeft="87dp"
-                    android:layout_marginTop="3dp"/>
+                android:layout_width="117dp"
+                android:layout_height="108dp"
+                android:background="@drawable/btn_voz"
+                android:layout_marginTop="165dp"
+                android:layout_marginLeft="186dp">
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rlPlanesPotabilidad"
-                android:layout_width="115dp"
-                android:layout_height="106dp"
-                android:background="@drawable/square_boton_planes_portabilidad"
-                android:layout_marginTop="21dp"
-                android:layout_marginLeft="415dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+                android:layout_width="117dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="165dp"
+                android:background="@drawable/btn_portabilidad"
+                android:layout_marginLeft="341dp">
 
-                <ImageView
-                    android:id="@+id/ivBotonCast4"
-                    android:layout_width="17dp"
-                    android:layout_height="17dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/blanco"
-                    android:layout_marginLeft="87dp"
-                    android:layout_marginTop="3dp"/>
 
             </RelativeLayout>
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/rlTextoBoton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="280dp">
-
-
-
-            <RelativeLayout
-                android:id="@+id/rlClienteIndeciso"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="43dp"
-                android:layout_marginLeft="47dp">
-
-                <TextView
-                    android:id="@+id/tvClienteIndeciso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="¿Cliente indeciso?"
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="34.50sp"
-                    android:textStyle="bold|italic" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlAyudalo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rlClienteIndeciso"
-                android:layout_marginLeft="47dp">
-
-                <TextView
-                    android:id="@+id/tvAyudalo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ayudalo a encontrar su plan"
-                    android:textColor="@color/GrisOscuroEntel"
-                    android:textSize="26.25sp"
-                    android:textStyle="italic" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlBuscadorPlanes"
-                android:layout_width="287dp"
-                android:layout_height="60dp"
-                android:layout_below="@+id/rlAyudalo"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="48dp"
-                android:background="@drawable/square_boton_buscador_planes"
-                android:backgroundTint="@color/AzulEntel"
-                android:elevation="5dp"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tvBuscadorPlanes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Buscador de planes"
-                    android:paddingRight="15dp"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-        </RelativeLayout>
 
     </RelativeLayout>
-
 
 </FrameLayout>

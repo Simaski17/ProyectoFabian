@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name=".SplashScreenActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,18 +19,15 @@
         </activity>
         <activity
             android:name=".LoginIngresoVendedorActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/myTema"></activity>
+            android:theme="@style/myTema"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".IngresoVendedorClienteActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/myTema"></activity>
+            android:theme="@style/myTema"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/myTema"></activity>
-        <activity
-            android:name=".SecretConfigActivity"
+            android:theme="@style/myTema"
             android:screenOrientation="landscape"></activity>
     </application>
 

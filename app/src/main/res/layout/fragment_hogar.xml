@@ -2,9 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="100dp"
-    android:background="@drawable/fondohogar"
-    tools:context=".PromocionesFragment">
+    android:layout_marginTop="100dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,8 +17,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="25dp"
                 android:text="[ "
                 android:textColor="@color/NarajoEntel"
                 android:textSize="30sp"
@@ -35,8 +33,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="49dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
                 android:text="Productos hOgar_"
                 android:textColor="@color/AzulEntel"
                 android:textSize="38sp"
@@ -55,13 +53,13 @@
         <RelativeLayout
             android:id="@+id/rlhogar1"
             android:layout_width="match_parent"
-            android:layout_height="140dp">
+            android:layout_height="120dp">
 
             <RelativeLayout
                 android:layout_width="222dp"
                 android:layout_height="59dp"
-                android:layout_marginLeft="159dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="11dp"
                 android:background="@drawable/all_corner_circle">
 
                 <TextView
@@ -87,8 +85,8 @@
             <RelativeLayout
                 android:layout_width="222dp"
                 android:layout_height="59dp"
-                android:layout_marginLeft="400dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginLeft="401dp"
+                android:layout_marginTop="11dp"
                 android:background="@drawable/all_corner_circle">
 
                 <TextView
@@ -114,8 +112,8 @@
             <RelativeLayout
                 android:layout_width="222dp"
                 android:layout_height="59dp"
-                android:layout_marginLeft="641dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginLeft="642dp"
+                android:layout_marginTop="11dp"
                 android:background="@drawable/all_corner_circle">
 
                 <TextView
@@ -143,13 +141,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="559dp"
+                android:layout_height="290dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/sillon"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/que_tal_un_pack"
-                android:layout_marginLeft="53dp"
-                android:layout_marginTop="29dp"
-                android:textColor="@color/NarajoEntel"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/AzulEntel"
                 android:textSize="38sp"
                 android:textStyle="italic|bold" />
 
@@ -157,8 +162,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ayudalo_encontrar_pack"
-                android:layout_marginLeft="46dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginLeft="59dp"
+                android:layout_marginTop="65dp"
                 android:textColor="@color/GrisOscuroEntel"
                 android:textSize="21sp"
                 android:textStyle="italic" />
@@ -167,9 +172,8 @@
                 android:id="@+id/rlDoblePack"
                 android:layout_width="288dp"
                 android:layout_height="60dp"
-                android:layout_below="@+id/rlAyudalo"
-                android:layout_marginTop="109dp"
-                android:layout_marginLeft="56dp"
+                android:layout_marginTop="98dp"
+                android:layout_marginLeft="68dp"
                 android:background="@color/AzulEntel"
                 android:gravity="center">
 
@@ -187,9 +191,8 @@
                 android:id="@+id/rlTriplePack"
                 android:layout_width="288dp"
                 android:layout_height="60dp"
-                android:layout_below="@+id/rlAyudalo"
-                android:layout_marginTop="184dp"
-                android:layout_marginLeft="56dp"
+                android:layout_marginTop="173dp"
+                android:layout_marginLeft="68dp"
                 android:background="@drawable/square_boton_buscador_planes"
                 android:backgroundTint="@color/AzulEntel"
                 android:gravity="center">
@@ -206,4 +209,5 @@
             </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
+
 </FrameLayout>

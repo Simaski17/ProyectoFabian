@@ -1,6 +1,5 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -11,13 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
 
@@ -44,20 +43,36 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
+    @BindView(R.id.iconoClientes)
+    ImageView iconoClientes;
+    @BindView(R.id.iconoNotificaciones)
+    ImageView iconoNotificaciones;
+    @BindView(R.id.ivGrupoVideoWallInactivo)
+    ImageView ivGrupoVideoWallInactivo;
+    @BindView(R.id.ivGrupoVideoWallActivo)
+    ImageView ivGrupoVideoWallActivo;
+    @BindView(R.id.ivGrupoPilarInactivo)
+    ImageView ivGrupoPilarInactivo;
+    @BindView(R.id.ivGrupoPilarActivo)
+    ImageView ivGrupoPilarActivo;
+    @BindView(R.id.linear_menucast_activo)
+    LinearLayout linearMenucastActivo;
+    @BindView(R.id.logoEntel)
+    ImageView logoEntel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this);
+        //Fresco.initialize(this);
 
         /*
-		 * Seteando el Fullscreen
+         * Seteando el Fullscreen
 		 */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         /*
-		 * Cargando contenido del layout
+         * Cargando contenido del layout
 		 */
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -71,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-	* Acción de clicks (botones)
+	* Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.iconoNotificaciones, R.id.linear_menucast_activo, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
@@ -90,53 +105,90 @@ public class MainActivity extends AppCompatActivity {
                     contCast = 1;
                 }
                 break;
+            case R.id.iconoClientes:
+                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.iconoNotificaciones:
+                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.linear_menucast_activo:
+                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.ivGrupoVideoWallInactivo:
+                ivGrupoVideoWallInactivo.setVisibility(View.GONE);
+                ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
+                break;
+            case R.id.ivGrupoVideoWallActivo:
+                ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
+                ivGrupoVideoWallActivo.setVisibility(View.GONE);
+                break;
+            case R.id.ivGrupoPilarInactivo:
+                ivGrupoPilarInactivo.setVisibility(View.GONE);
+                ivGrupoPilarActivo.setVisibility(View.VISIBLE);
+                break;
+            case R.id.ivGrupoPilarActivo:
+                ivGrupoPilarActivo.setVisibility(View.GONE);
+                ivGrupoPilarInactivo.setVisibility(View.VISIBLE);
+                break;
         }
     }
+
 
     /*
 	* Adaptador de los fragmentos para los tabs
 	*/
     public class SamplePagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = {"Promociones", "Planes", "Equipos", "Accesorios", "Hogar", "Preguntas Frecuentes"};
+        private final String[] TITLES = {"App entel", "Recomendamos", "Te ayudamos", "Accesorios", "Hogar", "Planes", "Equipos"};
 
         private final ArrayList<String> mTitles;
 
         public SamplePagerAdapter(FragmentManager fm) {
             super(fm);
             mTitles = new ArrayList<>();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 7; i++) {
                 mTitles.add(TITLES[i]);
             }
         }
 
+        /*
+       Captura posision para rellenar framelayout
+        */
         @Override
         public CharSequence getPageTitle(int position) {
             return mTitles.get(position);
         }
 
+        /*
+       Contador de tamano titulos viewpager
+        */
         @Override
         public int getCount() {
             return mTitles.size();
         }
 
+        /*
+        Captura posision para rellenar framelayout
+         */
         @Override
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new HomeFragment();
+                    return new AppEntelFragment();
                 case 1:
-                    return new PlanesFragment();
+                    return new RecomendamosFragment();
                 case 2:
-                    return new EquiposFragment();
+                    return new TeAyudamosFragment();
                 case 3:
                     return new AccesoriosFragment();
                 case 4:
                     return new HogarFragment();
                 case 5:
-                    return new PreguntasFrecuentesFragment();
+                    return new PlanesFragment();
+                case 6:
+                    return new EquiposFragment();
                 default:
-                    return new PromocionesFragment();
+                    return new AppEntelFragment();
             }
         }
     }
