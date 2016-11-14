@@ -22,11 +22,29 @@
         <!--Inicio Imagen celular mano -->
         <ImageView
             android:id="@+id/ivCelularMano"
-            android:layout_width="720dp"
-            android:layout_height="574dp"
-            android:layout_marginLeft="227dp"
-            android:background="@drawable/smartphoenmano"
+            android:layout_width="390dp"
+            android:layout_height="588dp"
+            android:layout_marginLeft="440dp"
+            android:background="@drawable/mano"
             android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+    <!--Fin Contenedor imagenes -->
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="350dp">
+
+        <!--Inicio Imagen celular mano -->
+        <ImageView
+            android:id="@+id/ivFondoApp"
+            android:layout_width="255dp"
+            android:layout_height="390dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="85dp"
+            android:visibility="gone"
+            android:background="@drawable/appentelfondo"/>
 
     </RelativeLayout>
     <!--Fin Contenedor imagenes -->

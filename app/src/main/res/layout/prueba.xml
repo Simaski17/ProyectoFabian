@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/appentel"
     tools:context=".MainActivity">
 
 
@@ -116,289 +117,180 @@
         android:layout_height="match_parent"
         android:layout_marginTop="100dp">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <!--Inicio Contenedor imagenes -->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp">
+            android:layout_height="match_parent">
 
 
-            <LinearLayout
-                android:orientation="vertical"
+            <!--Inicio Imagen celular mano -->
+            <ImageView
+                android:id="@+id/ivCelularMano"
+                android:layout_width="390dp"
+                android:layout_height="588dp"
+                android:layout_marginLeft="440dp"
+                android:background="@drawable/mano"
+                android:layout_alignParentBottom="true"/>
+
+
+        </RelativeLayout>
+        <!--Fin Contenedor imagenes -->
+
+        <!--Inicio Contenedor imagenes -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--Inicio Imagen celular mano -->
+            <ImageView
+                android:id="@+id/ivFondoApp"
+                android:layout_width="220dp"
+                android:layout_height="348dp"
+                android:layout_marginLeft="485dp"
+                android:layout_marginTop="70dp"
+                android:visibility="visible"
+                android:background="@drawable/appentelfondo"/>
+
+        </RelativeLayout>
+        <!--Fin Contenedor imagenes -->
+
+        <!--Inicio Contenedor macth parent Texto [ descarga nuestra.... -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <!--Inicio Contenedor Texto [ descarga nuestra.... -->
+            <RelativeLayout
+                android:id="@+id/lltexto1"
                 android:layout_width="wrap_content"
-                android:layout_height="75dp">
+                android:layout_height="200dp"
+                android:orientation="vertical">
 
+                <!--Inicio Texto [ -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="59dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="104dp"
+                    android:layout_marginTop="78dp"
                     android:text="[ "
                     android:textColor="@color/NarajoEntel"
-                    android:textSize="31sp"
+                    android:textSize="32sp"
                     android:textStyle="bold|italic" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="75dp">
-
+                <!--Inicio Texto descarga nuestra.... -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:text="equipOs destAcados_"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="2dp"
+                    android:layout_marginLeft="104dp"
+                    android:layout_marginTop="75dp"
+                    android:lineSpacingExtra="-8dp"
+                    android:text="  dEscarga nuestra nueva App_"
                     android:textColor="@color/AzulEntel"
                     android:textSize="38sp"
                     android:textStyle="bold|italic" />
-            </LinearLayout>
+            </RelativeLayout>
+            <!--Fin Contenedor Texto [ descarga nuestra.... -->
+
 
         </LinearLayout>
+        <!--Fin Contenedor Texto [ descarga nuestra.... -->
 
+        <!--Inicio Contenedor match parent Texto opciones  -->
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginTop="76dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="201dp"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="535dp"
-                android:layout_height="match_parent">
-
-                <!--RelativeLayout izquierdo-->
-                <RelativeLayout
-                    android:id="@+id/rlIzquierdo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="900dp"
-                        android:layout_height="580dp"
-                        android:layout_marginLeft="0dp"
-                        android:background="@drawable/trianguloazulizquierdo"
-                        android:layout_alignParentBottom="true"/>
-
-                </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:id="@+id/rlOtrosEquipos"
-                        android:layout_width="305dp"
-                        android:layout_height="180dp"
-                        android:layout_marginTop="84dp"
-                        android:layout_alignParentRight="true">
-
-                    <TextView
-                        android:id="@+id/tvNombreEquipo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Huawei"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginLeft="103dp"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="37sp" />
-
-                    <TextView
-                        android:id="@+id/tvModeloEquipo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="P9 Lite"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="43sp"
-                        android:layout_marginTop="38dp"
-                        android:layout_marginLeft="104dp"
-                        android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvAsterico"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="*"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="10sp"
-                            android:layout_marginTop="90dp"
-                            android:layout_marginLeft="111dp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvPrecioVenta"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Precio de Venta"
-                            android:textColor="@color/GrisOscuroEntel"
-                            android:textSize="16sp"
-                            android:layout_marginTop="88dp"
-                            android:layout_marginLeft="115dp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvSimboloDolar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="40sp"
-                            android:layout_marginTop="100dp"
-                            android:layout_marginLeft="109dp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvPrecio"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="199.990"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="40sp"
-                            android:layout_marginTop="100dp"
-                            android:layout_marginLeft="133dp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvCuotas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="\u00f3 en 12 cuotas de"
-                            android:textColor="@color/AzulEntel"
-                            android:textSize="14sp"
-                            android:layout_marginTop="148dp"
-                            android:layout_marginLeft="109dp"
-                            android:textStyle="italic"/>
-
-                        <TextView
-                            android:id="@+id/tvSimboloDolar2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$"
-                            android:textColor="@color/AzulEntel"
-                            android:textSize="22sp"
-                            android:layout_marginTop="142dp"
-                            android:layout_marginLeft="224dp"
-                            android:textStyle="italic|bold"/>
-
-                        <TextView
-                            android:id="@+id/tvPrecio2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="14.990"
-                            android:textColor="@color/AzulEntel"
-                            android:textSize="22sp"
-                            android:layout_marginTop="142dp"
-                            android:layout_marginLeft="235dp"
-                            android:textStyle="italic|bold"/>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/rlClienteModeloEspecifico"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="52dp"
-                        android:layout_below="@+id/rlOtrosEquipos"
-                        android:layout_marginLeft="52dp">
-
-                        <TextView
-                            android:id="@+id/tvClienteModeloEspecifico"
-                            android:layout_width="250dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/edClienteModeloEspecifico"
-                            android:textColor="@color/blanco"
-                            android:lineSpacingExtra="-7dp"
-                            android:textSize="27sp"
-                            android:textStyle="bold|italic" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/rlAyudalo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/rlClienteModeloEspecifico"
-                        android:layout_marginLeft="50dp">
-
-                        <TextView
-                            android:id="@+id/tvAyudalo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="2dp"
-                            android:text="ayudalo a encontrar su equipo"
-                            android:textColor="@color/blanco"
-                            android:textSize="21sp"
-                            android:textStyle="italic|bold" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/rlCatalogoEquipos"
-                        android:layout_width="288dp"
-                        android:layout_height="60dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="45dp"
-                        android:background="@drawable/square_boton_buscador_planes"
-                        android:backgroundTint="@color/BlancoEntel"
-                        android:elevation="5dp"
-                        android:gravity="center"
-                        android:layout_below="@+id/rlAyudalo">
-
-                        <TextView
-                            android:id="@+id/tvCatalogoEquipos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cat\u00e1logo de equipos"
-                            android:paddingRight="15dp"
-                            android:textColor="@color/NarajoEntel"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-                    </RelativeLayout>
-
-                </RelativeLayout>
-                <!--Fin RelativeLayout izquierdo -->
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:orientation="horizontal"
+            <!--Inicio Contenedor Texto opciones  -->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:id="@+id/rlImagenTelefono"
+                <!--Inicio imagen circulo texto  -->
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="79dp"
+                    android:layout_marginTop="49dp"
+                    android:background="@drawable/circulo_app_entel"/>
+
+                <!--Inicio texto estado de....  -->
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true">
+                    android:text="@string/estado_cuenta"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="44dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="18.5sp"
+                    android:textStyle="italic" />
 
-                    <ImageView
-                        android:id="@+id/ivImagenTelefono"
-                        android:layout_width="355dp"
-                        android:layout_height="320dp"
-                        android:layout_marginLeft="34dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/phone2"/>
+                <!--Inicio imagen circulo texto  -->
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="79dp"
+                    android:layout_marginTop="95dp"
+                    android:background="@drawable/circulo_app_entel"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Equipos relacionados"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="21sp"
-                        android:layout_marginTop="349dp"
-                        android:layout_marginLeft="38dp" />
+                <!--Inicio texto Consulta de....  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/consulta_saldo"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="89dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="18.5sp"
+                    android:textStyle="italic" />
 
-                </RelativeLayout>
+                <!--Inicio imagen circulo texto  -->
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="79dp"
+                    android:layout_marginTop="138dp"
+                    android:background="@drawable/circulo_app_entel"/>
 
+                <!--Inicio texto controla tus....  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/controla_planes"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="133dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="18.5sp"
+                    android:textStyle="italic" />
 
+                <!--Inicio imagen circulo texto  -->
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="79dp"
+                    android:layout_marginTop="184dp"
+                    android:background="@drawable/circulo_app_entel"/>
 
-            </LinearLayout>
+                <!--Inicio texto Beneficios....  -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beneficios_zona"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="178dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="18.5sp"
+                    android:textStyle="italic" />
 
+            </RelativeLayout>
+            <!--Fin Contenedor match parent Texto opciones  -->
 
 
         </LinearLayout>
+        <!--Fin Contenedor match parent Texto opciones  -->
 
     </FrameLayout>
 

@@ -47,26 +47,27 @@ public class RecomendamosFragment extends Fragment {
         return view;
     }
 
+
     @OnClick({R.id.icnSpotify, R.id.icnNetflix, R.id.icnApple, R.id.icnUber, R.id.icnSnapchat, R.id.icnWaze})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.icnSpotify:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Spotify", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.icnNetflix:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Netflix", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.icnApple:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Apple", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.icnUber:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Uber", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.icnSnapchat:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Snapchat", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.icnWaze:
-                Toast.makeText(getContext(), "Funciona", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Waze", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

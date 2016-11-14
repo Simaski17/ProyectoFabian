@@ -2,8 +2,13 @@ package com.example.jimmyhernandez.tabletvendedor;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MotionEventCompat;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,6 +18,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static android.content.ContentValues.TAG;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +28,8 @@ public class AppEntelFragment extends Fragment {
 
     @BindView(R.id.ivCelularMano)
     ImageView ivCelularMano;
+    @BindView(R.id.ivFondoApp)
+    ImageView ivFondoApp;
 
 
     public AppEntelFragment() {
@@ -34,15 +43,27 @@ public class AppEntelFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_app_entel, container, false);
         ButterKnife.bind(this, view);
-        return view;
+
+       return view;
     }
 
 
     /*
     Evento click imagen Celular Mano
      */
-    @OnClick(R.id.ivCelularMano)
-    public void onClick() {
-        Toast.makeText(getContext(), "Funciona App Entel", Toast.LENGTH_SHORT).show();
+    @OnClick({R.id.ivCelularMano, R.id.ivFondoApp})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivCelularMano:
+                Toast.makeText(getContext(), "funciona", Toast.LENGTH_SHORT).show();
+                ivFondoApp.setVisibility(view.VISIBLE);
+
+                break;
+            case R.id.ivFondoApp:
+                Toast.makeText(getContext(), "imagen levantada", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
+
+
 }
