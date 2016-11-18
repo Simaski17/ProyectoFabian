@@ -22,8 +22,6 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
 
     @BindView(R.id.iconoClientes)
     ImageView iconoClientes;
-    @BindView(R.id.iconoNotificaciones)
-    ImageView iconoNotificaciones;
     @BindView(R.id.civImagenVendedor)
     CircleImageView civImagenVendedor;
     @BindView(R.id.tvVerCatalogoLibre)
@@ -47,13 +45,10 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.iconoClientes, R.id.iconoNotificaciones, R.id.tvVerCatalogoLibre, R.id.btCerrarSesion, R.id.btIrCatalogo, R.id.ingreso_vendedor_cliente})
+    @OnClick({R.id.iconoClientes, R.id.tvVerCatalogoLibre, R.id.btCerrarSesion, R.id.btIrCatalogo, R.id.ingreso_vendedor_cliente})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iconoClientes:
-                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.iconoNotificaciones:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tvVerCatalogoLibre:

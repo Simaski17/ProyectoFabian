@@ -77,22 +77,6 @@
             </LinearLayout>
             <!--Fin Contenedor de Icono cliente-->
 
-            <!--Contenedor de Icono notificacion-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <!--Icono notificacion-->
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="28dp"
-                    android:background="@drawable/icononotificaciones"
-                    android:id="@+id/iconoNotificaciones"
-                    android:layout_marginLeft="34dp"
-                    android:layout_marginTop="50dp"/>
-
-            </LinearLayout>
-            <!--Fin Contenedor de Icono notificacion-->
 
         </LinearLayout>
         <!--Fin Contenedor de Icono cliente e icono notificacion-->
@@ -282,6 +266,7 @@
             android:clickable="true"
             android:src="@drawable/cast"
             app:backgroundTint="@color/blanco"
+            android:visibility="gone"
             app:fabSize="mini"/>
     </LinearLayout>
     <!--FIN Contenedor de boton redondo (FloatingActionButton)-->

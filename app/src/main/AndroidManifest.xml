@@ -19,16 +19,17 @@
         </activity>
         <activity
             android:name=".LoginIngresoVendedorActivity"
-            android:theme="@style/myTema"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/myTema" />
         <activity
             android:name=".IngresoVendedorClienteActivity"
-            android:theme="@style/myTema"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/myTema" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/myTema"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:theme="@style/myTema" />
+        <activity android:name=".FondoCastActivity"></activity>
     </application>
 
 </manifest>

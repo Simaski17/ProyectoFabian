@@ -69,22 +69,7 @@
             </LinearLayout>
             <!--Fin Contenedor logo cliente-->
 
-            <!--Inicio Contenedor logo notificaciones-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
 
-                <!--logo icono notificaciones-->
-                <ImageView
-                    android:id="@+id/iconoNotificaciones"
-                    android:layout_width="26dp"
-                    android:layout_height="28dp"
-                    android:layout_marginLeft="44dp"
-                    android:layout_marginTop="45dp"
-                    android:background="@drawable/icononotificaciones" />
-
-            </LinearLayout>
-            <!--Fin Contenedor logo notificaciones-->
 
         </LinearLayout>
         <!--Fin Contenedor logo cliente y logo notificaciones-->

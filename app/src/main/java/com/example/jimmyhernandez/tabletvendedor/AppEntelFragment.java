@@ -1,8 +1,14 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MotionEventCompat;
 import android.util.Log;
@@ -13,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,11 +34,9 @@ import static android.content.ContentValues.TAG;
  */
 public class AppEntelFragment extends Fragment {
 
-    @BindView(R.id.ivCelularMano)
+   // @BindView(R.id.ivCelularMano)
+    //ImageView ivCelularMano;
     ImageView ivCelularMano;
-    @BindView(R.id.ivFondoApp)
-    ImageView ivFondoApp;
-
 
     public AppEntelFragment() {
         // Required empty public constructor
@@ -42,7 +48,30 @@ public class AppEntelFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_app_entel, container, false);
-        ButterKnife.bind(this, view);
+        //ButterKnife.bind(this, view);
+
+        ivCelularMano = (ImageView) view.findViewById(R.id.ivCastsss);
+        ivCelularMano.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View vista) {
+                ImageView imv = (ImageView) vista;
+
+                Drawable d = ((ImageView) vista).getDrawable();
+                /*Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                byte[] bitmapdata = stream.toByteArray();*/
+
+                Toast.makeText(getContext(), "R: "+ d, Toast.LENGTH_SHORT).show();
+                /*Intent intent = new Intent(getContext(), FondoCastActivity.class);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
+                intent.putExtra("img", bitmapdata);
+                startActivity(intent, optionsCompat.toBundle());*/
+            }
+        });
+
+
+
 
        return view;
     }
@@ -51,19 +80,48 @@ public class AppEntelFragment extends Fragment {
     /*
     Evento click imagen Celular Mano
      */
-    @OnClick({R.id.ivCelularMano, R.id.ivFondoApp})
+   /* @OnClick(R.id.ivCelularMano)
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCelularMano:
-                Toast.makeText(getContext(), "funciona", Toast.LENGTH_SHORT).show();
-                ivFondoApp.setVisibility(view.VISIBLE);
+                ImageView imv = (ImageView) view;
 
-                break;
-            case R.id.ivFondoApp:
-                Toast.makeText(getContext(), "imagen levantada", Toast.LENGTH_SHORT).show();
+                Drawable d = ((ImageView) view).getDrawable();
+                Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                byte[] bitmapdata = stream.toByteArray();
+
+                //Toast.makeText(this, "R: "+ imv.getDrawable(), Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getContext(), FondoCastActivity.class);
+//                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
+//                intent.putExtra("img", bitmapdata);
+//                startActivity(intent, optionsCompat.toBundle());
+
+                Bitmap  bmp = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+
+                ivCelularMano.setImageBitmap(bmp); // imv.setImageBitmap(ByteArraytoDrawable(byteArray));
+
                 break;
         }
-    }
+    }*/
 
+
+   /* public void click(View view){
+        //view.getResources();
+        ImageView imv = (ImageView) view;
+
+        Drawable d = ((ImageView) view).getDrawable();
+        Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        byte[] bitmapdata = stream.toByteArray();
+
+        //Toast.makeText(this, "R: "+ imv.getDrawable(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), FondoCastActivity.class);
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
+        intent.putExtra("img", bitmapdata);
+        startActivity(intent, optionsCompat.toBundle());
+    }*/
 
 }

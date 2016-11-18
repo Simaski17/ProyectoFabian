@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout activityMain;
     @BindView(R.id.iconoClientes)
     ImageView iconoClientes;
-    @BindView(R.id.iconoNotificaciones)
-    ImageView iconoNotificaciones;
     @BindView(R.id.ivGrupoVideoWallInactivo)
     ImageView ivGrupoVideoWallInactivo;
     @BindView(R.id.ivGrupoVideoWallActivo)
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     /*
 	* Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.iconoNotificaciones, R.id.linear_menucast_activo, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
@@ -106,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.iconoClientes:
-                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.iconoNotificaciones:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.linear_menucast_activo:

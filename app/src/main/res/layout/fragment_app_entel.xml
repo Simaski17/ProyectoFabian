@@ -4,6 +4,16 @@
     android:layout_height="match_parent"
     android:layout_marginTop="100dp">
 
+    <ImageView
+        android:id="@+id/ivCastsss"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="376dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/iconcastnaranjo"
+        android:onClick="click"
+        android:transitionName="transitionname"/>
+
 
     <!--Inicio Contenedor imagenes -->
     <RelativeLayout
@@ -26,28 +36,39 @@
             android:layout_height="588dp"
             android:layout_marginLeft="440dp"
             android:background="@drawable/mano"
+            android:transitionName="transitionname"
             android:layout_alignParentBottom="true"/>
-
-    </RelativeLayout>
-    <!--Fin Contenedor imagenes -->
-
-    <RelativeLayout
-        android:layout_width="500dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="350dp">
 
         <!--Inicio Imagen celular mano -->
         <ImageView
-            android:id="@+id/ivFondoApp"
-            android:layout_width="255dp"
-            android:layout_height="390dp"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="85dp"
-            android:visibility="gone"
-            android:background="@drawable/appentelfondo"/>
+            android:id="@+id/ivCelularManoCast"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="676dp"
+            android:layout_marginTop="68dp"
+            android:background="@drawable/iconcastnaranjo"/>
 
     </RelativeLayout>
     <!--Fin Contenedor imagenes -->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="500dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="350dp">-->
+
+        <!--&lt;!&ndash;Inicio Imagen celular mano &ndash;&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/ivFondoApp"-->
+            <!--android:layout_width="255dp"-->
+            <!--android:layout_height="390dp"-->
+            <!--android:layout_marginLeft="115dp"-->
+            <!--android:layout_marginTop="85dp"-->
+            <!--android:visibility="gone"-->
+            <!--android:background="@drawable/appentelfondo"/>-->
+
+
+    <!--</RelativeLayout>-->
+    <!--&lt;!&ndash;Fin Contenedor imagenes &ndash;&gt;-->
 
     <!--Inicio Contenedor macth parent Texto [ descarga nuestra.... -->
     <LinearLayout
