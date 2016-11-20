@@ -62,6 +62,7 @@
     <string name="como_cuidar_tus_megas">C\u00f3mo cuidar tus megas</string>
     <string name="cuota">\u00f3 en 12 cuotas de</string>
     <string name="destacamos_este_mes">Adem\u00e1s <b><i>destacamos</i></b> este mes</string>
+    <string name="selecciona_dispositivo_cast"><b>Selecciona un dispositivo</b> para poder hacer cast</string>
 
 
 </resources>

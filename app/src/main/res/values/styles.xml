@@ -16,5 +16,16 @@
     <item name="android:windowFullscreen">true</item>
     <item name="android:windowContentOverlay">@null</item>
   </style>
+
+  <style name="TranslucentActivity" parent="AppTheme">
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowBackground">@color/transparencia</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowAnimationStyle">@null</item>
+  </style>
+
 </resources>
 

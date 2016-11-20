@@ -29,7 +29,9 @@
             android:name=".MainActivity"
             android:screenOrientation="landscape"
             android:theme="@style/myTema" />
-        <activity android:name=".FondoCastActivity"></activity>
+        <activity
+            android:name=".FondoCastActivity"
+            android:theme="@style/TranslucentActivity"></activity>
     </application>
 
 </manifest>

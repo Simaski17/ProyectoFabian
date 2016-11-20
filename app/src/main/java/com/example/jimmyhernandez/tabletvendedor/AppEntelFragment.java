@@ -34,9 +34,9 @@ import static android.content.ContentValues.TAG;
  */
 public class AppEntelFragment extends Fragment {
 
-   // @BindView(R.id.ivCelularMano)
-    //ImageView ivCelularMano;
+   @BindView(R.id.ivCelularMano)
     ImageView ivCelularMano;
+    //ImageView ivCelularMano;
 
     public AppEntelFragment() {
         // Required empty public constructor
@@ -48,31 +48,7 @@ public class AppEntelFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_app_entel, container, false);
-        //ButterKnife.bind(this, view);
-
-        ivCelularMano = (ImageView) view.findViewById(R.id.ivCastsss);
-        ivCelularMano.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vista) {
-                ImageView imv = (ImageView) vista;
-
-                Drawable d = ((ImageView) vista).getDrawable();
-                /*Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-                byte[] bitmapdata = stream.toByteArray();*/
-
-                Toast.makeText(getContext(), "R: "+ d, Toast.LENGTH_SHORT).show();
-                /*Intent intent = new Intent(getContext(), FondoCastActivity.class);
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
-                intent.putExtra("img", bitmapdata);
-                startActivity(intent, optionsCompat.toBundle());*/
-            }
-        });
-
-
-
-
+        ButterKnife.bind(this, view);
        return view;
     }
 
@@ -80,48 +56,25 @@ public class AppEntelFragment extends Fragment {
     /*
     Evento click imagen Celular Mano
      */
-   /* @OnClick(R.id.ivCelularMano)
+   @OnClick(R.id.ivCelularMano)
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCelularMano:
                 ImageView imv = (ImageView) view;
-
-                Drawable d = ((ImageView) view).getDrawable();
-                Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
+                imv.setDrawingCacheEnabled(true);
+                Bitmap bitmap = imv.getDrawingCache();
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 byte[] bitmapdata = stream.toByteArray();
 
-                //Toast.makeText(this, "R: "+ imv.getDrawable(), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(getContext(), FondoCastActivity.class);
-//                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
-//                intent.putExtra("img", bitmapdata);
-//                startActivity(intent, optionsCompat.toBundle());
-
-                Bitmap  bmp = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
-
-                ivCelularMano.setImageBitmap(bmp); // imv.setImageBitmap(ByteArraytoDrawable(byteArray));
+                Intent intent = new Intent(getContext(), FondoCastActivity.class);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
+                intent.putExtra("img", bitmapdata);
+                startActivity(intent, optionsCompat.toBundle());
 
                 break;
         }
-    }*/
+    }
 
-
-   /* public void click(View view){
-        //view.getResources();
-        ImageView imv = (ImageView) view;
-
-        Drawable d = ((ImageView) view).getDrawable();
-        Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-        byte[] bitmapdata = stream.toByteArray();
-
-        //Toast.makeText(this, "R: "+ imv.getDrawable(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getContext(), FondoCastActivity.class);
-        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
-        intent.putExtra("img", bitmapdata);
-        startActivity(intent, optionsCompat.toBundle());
-    }*/
 
 }

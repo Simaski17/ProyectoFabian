@@ -4,17 +4,6 @@
     android:layout_height="match_parent"
     android:layout_marginTop="100dp">
 
-    <ImageView
-        android:id="@+id/ivCastsss"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="376dp"
-        android:layout_marginTop="68dp"
-        android:background="@drawable/iconcastnaranjo"
-        android:onClick="click"
-        android:transitionName="transitionname"/>
-
-
     <!--Inicio Contenedor imagenes -->
     <RelativeLayout
         android:layout_width="match_parent"

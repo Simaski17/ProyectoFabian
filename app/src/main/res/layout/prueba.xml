@@ -6,333 +6,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/home"
+    android:background="@drawable/fondocast"
     tools:context=".MainActivity">
 
 
-    <!--Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
-    <LinearLayout
-        android:id="@+id/linear_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal">
-
-        <!--Contenedor de Logo Entel-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <!--Logo Entel-->
-            <ImageView
-                android:layout_width="54dp"
-                android:layout_height="35dp"
-                android:src="@drawable/logoentel"
-                android:layout_marginLeft="22dp"
-                android:layout_marginTop="44dp"
-                android:id="@+id/logoEntel" />
-        </LinearLayout>
-        <!--Fin Contenedor de Logo Entel-->
-
-        <!--Tabs-->
-        <io.karim.MaterialTabs
-            android:id="@+id/material_tabs"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="7.32"
-            android:background="@color/BlancoEntel"
-            android:textColor="@color/GrisOscuroEntel"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            app:mtIndicatorColor="@android:color/transparent"
-            app:mtMrlRippleColor="@color/BlancoEntel"
-            app:mtTabPaddingLeftRight="15dp"
-            app:mtTextAllCaps="false"
-            app:mtTextColorSelected="@color/NarajoEntel" />
-        <!--Fin Tabs-->
-
-        <!--Contenedor de Icono cliente e icono notificacion-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.7"
-            android:orientation="horizontal">
-
-            <!--Contenedor de Icono cliente-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <!--Icono cliente-->
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:background="@drawable/iconoclientes"
-                    android:layout_marginLeft="52dp"
-                    android:layout_marginTop="49dp"
-                    android:id="@+id/iconoClientes"/>
-
-            </LinearLayout>
-            <!--Fin Contenedor de Icono cliente-->
-
-            <!--Contenedor de Icono notificacion-->
-
-
-        </LinearLayout>
-        <!--Fin Contenedor de Icono cliente e icono notificacion-->
-
-    </LinearLayout>
-    <!-- FIN Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
-
-
-
-    <!--Contenedor ViewPager Servira para cambiar entre Fragments
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linear_top"
-        android:layout_alignParentEnd="true" />
-    FIN Contenedor ViewPager Servira para cambiar entre Fragments-->
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100dp">
-
-        Inicio Contenedor imagenes
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <!--Inicio Imagen celular mano -->
-            <ImageView
-                android:id="@+id/ivCelularMano"
-                android:layout_width="390dp"
-                android:layout_height="588dp"
-                android:layout_marginLeft="440dp"
-                android:background="@drawable/mano"
-                android:layout_alignParentBottom="true"/>
-
-
-        <!--Inicio Imagen celular mano -->
-        <ImageView
-            android:id="@+id/ivCelularManoCast"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="676dp"
-            android:layout_marginTop="68dp"
-            android:background="@drawable/iconcastnaranjo"/>
-
-
-
-        </RelativeLayout>
-        Fin Contenedor imagenes
-
-        <!--Inicio Contenedor imagenes -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <!--Inicio Imagen celular mano -->
-            <ImageView
-                android:id="@+id/ivFondoApp"
-                android:layout_width="220dp"
-                android:layout_height="348dp"
-                android:layout_marginLeft="485dp"
-                android:layout_marginTop="70dp"
-                android:visibility="visible"
-                android:background="@drawable/appentelfondo"/>
-
-        </RelativeLayout>
-        Fin Contenedor imagenes
-
-        <!--Inicio Contenedor macth parent Texto [ descarga nuestra.... -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="horizontal">
-
-            <!--Inicio Contenedor Texto [ descarga nuestra.... -->
-            <RelativeLayout
-                android:id="@+id/lltexto1"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:orientation="vertical">
-
-                <!--Inicio Texto [ -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="104dp"
-                    android:layout_marginTop="78dp"
-                    android:text="[ "
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="32sp"
-                    android:textStyle="bold|italic" />
-
-                <!--Inicio Texto descarga nuestra.... -->
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="104dp"
-                    android:layout_marginTop="75dp"
-                    android:lineSpacingExtra="-8dp"
-                    android:text="  dEscarga nuestra nueva App_"
-                    android:textColor="@color/AzulEntel"
-                    android:textSize="38sp"
-                    android:textStyle="bold|italic" />
-            </RelativeLayout>
-            <!--Fin Contenedor Texto [ descarga nuestra.... -->
-
-
-        </LinearLayout>
-        <!--Fin Contenedor Texto [ descarga nuestra.... -->
-
-        <!--Inicio Contenedor match parent Texto opciones  -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="201dp"
-            android:orientation="vertical">
-
-            <!--Inicio Contenedor Texto opciones  -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <!--Inicio imagen circulo texto  -->
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="79dp"
-                    android:layout_marginTop="49dp"
-                    android:background="@drawable/circulo_app_entel"/>
-
-                <!--Inicio texto estado de....  -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/estado_cuenta"
-                    android:layout_marginLeft="102dp"
-                    android:layout_marginTop="44dp"
-                    android:textColor="@color/GrisOscuroEntel"
-                    android:textSize="18.5sp"
-                    android:textStyle="italic" />
-
-                <!--Inicio imagen circulo texto  -->
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="79dp"
-                    android:layout_marginTop="95dp"
-                    android:background="@drawable/circulo_app_entel"/>
-
-                <!--Inicio texto Consulta de....  -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/consulta_saldo"
-                    android:layout_marginLeft="102dp"
-                    android:layout_marginTop="89dp"
-                    android:textColor="@color/GrisOscuroEntel"
-                    android:textSize="18.5sp"
-                    android:textStyle="italic" />
-
-                <!--Inicio imagen circulo texto  -->
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="79dp"
-                    android:layout_marginTop="138dp"
-                    android:background="@drawable/circulo_app_entel"/>
-
-                <!--Inicio texto controla tus....  -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/controla_planes"
-                    android:layout_marginLeft="102dp"
-                    android:layout_marginTop="133dp"
-                    android:textColor="@color/GrisOscuroEntel"
-                    android:textSize="18.5sp"
-                    android:textStyle="italic" />
-
-                <!--Inicio imagen circulo texto  -->
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="79dp"
-                    android:layout_marginTop="184dp"
-                    android:background="@drawable/circulo_app_entel"/>
-
-                <!--Inicio texto Beneficios....  -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/beneficios_zona"
-                    android:layout_marginLeft="102dp"
-                    android:layout_marginTop="178dp"
-                    android:textColor="@color/GrisOscuroEntel"
-                    android:textSize="18.5sp"
-                    android:textStyle="italic" />
-
-            </RelativeLayout>
-            <!--Fin Contenedor match parent Texto opciones  -->
-
-
-        </LinearLayout>
-        <!--Fin Contenedor match parent Texto opciones  -->
-
-    </FrameLayout>
-
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <!--Contenedor de menu cast e iconos de conexion-->
     <LinearLayout
         android:id="@+id/linear_menucast"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/NarajoEntel"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:visibility="gone">
+        android:orientation="horizontal">
 
+        <!--Contenedor de menu cast e iconos de conexion-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:paddingRight="180dp">
+            android:paddingRight="275dp">
 
+            <!--Contenedor TEXTO selecciona-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
+                <!--Contenedor TEXTO selecciona-->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:text="Selecciona un dispositivo"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="25sp"
-                    android:textStyle="bold|italic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="para transmitir"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="25sp"
+                    android:text="@string/tvSelecciona_dispositivo"
+                    android:textColor="@color/blanco"
+                    android:textSize="22sp"
+                    android:lineSpacingExtra="-5dp"
+                    android:layout_marginBottom="4dp"
                     android:textStyle="italic" />
             </LinearLayout>
+            <!--Fin Contenedor TEXTO selecciona-->
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -340,6 +57,32 @@
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivGrupoVideoWallInactivo"
+                    android:layout_width="80dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/grupovideowall_inactivo"/>
+
+                <ImageView
+                    android:id="@+id/ivGrupoVideoWallActivo"
+                    android:layout_width="80dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/grupovideowall_activo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VideoWall"
+                    android:textSize="20sp"
+                    android:textColor="@color/blanco"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"/>
 
             </LinearLayout>
 
@@ -350,10 +93,34 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/ivGrupoPilarInactivo"
+                    android:layout_width="23dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/grupopilar_inactivo"/>
 
+                <ImageView
+                    android:id="@+id/ivGrupoPilarActivo"
+                    android:layout_width="23dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:visibility="gone"
+                    android:background="@drawable/grupopilar_activo"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilar"
+                    android:textSize="20sp"
+                    android:textColor="@color/blanco"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
     <!--FIN Contenedor de menu cast e iconos de conexion-->
 
