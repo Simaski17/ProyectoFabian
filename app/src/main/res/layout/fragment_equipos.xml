@@ -125,60 +125,6 @@
                         android:layout_marginLeft="115dp"
                         android:textStyle="italic|bold"/>
 
-                    <TextView
-                        android:id="@+id/tvSimboloDolar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$"
-                        android:textColor="@color/NarajoEntel"
-                        android:textSize="40sp"
-                        android:layout_marginTop="100dp"
-                        android:layout_marginLeft="109dp"
-                        android:textStyle="italic|bold"/>
-
-                    <TextView
-                        android:id="@+id/tvPrecio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="199.990"
-                        android:textColor="@color/NarajoEntel"
-                        android:textSize="40sp"
-                        android:layout_marginTop="100dp"
-                        android:layout_marginLeft="133dp"
-                        android:textStyle="italic|bold"/>
-
-                    <TextView
-                        android:id="@+id/tvCuotas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="\u00f3 en 12 cuotas de"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="14sp"
-                        android:layout_marginTop="148dp"
-                        android:layout_marginLeft="109dp"
-                        android:textStyle="italic"/>
-
-                    <TextView
-                        android:id="@+id/tvSimboloDolar2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="22sp"
-                        android:layout_marginTop="142dp"
-                        android:layout_marginLeft="224dp"
-                        android:textStyle="italic|bold"/>
-
-                    <TextView
-                        android:id="@+id/tvPrecio2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="14.990"
-                        android:textColor="@color/AzulEntel"
-                        android:textSize="22sp"
-                        android:layout_marginTop="142dp"
-                        android:layout_marginLeft="235dp"
-                        android:textStyle="italic|bold"/>
 
                 </RelativeLayout>
 
@@ -268,6 +214,13 @@
                     android:layout_marginLeft="34dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/phone2"/>
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="280dp"
+                    android:background="@drawable/iconcastnaranjo"/>
 
                 <TextView
                     android:layout_width="wrap_content"

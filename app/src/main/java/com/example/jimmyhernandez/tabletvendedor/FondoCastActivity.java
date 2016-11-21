@@ -1,5 +1,8 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -91,8 +97,17 @@ public class FondoCastActivity extends AppCompatActivity {
 
     private int bandera = 0;
 
+    private String server;
+    private int port;
+    private String mensajeRecibido;
+    private String message;
+    private String idGrupo;
+    private String idPantalla;
+
     View v = null;
     GestureDetector detector;
+
+    PackageManager pm;
 
     String TAG = "HOLA";
     Animation derecha;
@@ -103,11 +118,32 @@ public class FondoCastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
 
+        /* pm = getApplication().getPackageManager();
+        try
+        {
+            // Raise exception if whatsapp doesn't exist
+            PackageInfo info = pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+
+            Intent waIntent = new Intent(Intent.ACTION_SEND);
+            //waIntent.setType("text/plain");
+            waIntent.setPackage("com.spotify.mobile.android.ui");
+            startActivity(waIntent);
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
+            Toast.makeText(getApplication(), "Please install whatsapp app", Toast.LENGTH_SHORT)
+                    .show();
+        }*/
+
+
+
+
         detector = new GestureDetector(new GestureListener());
 
-        //derecha = AnimationUtils.loadAnimation(this,R.anim.delizar_derecha);
+        server = "192.168.0.111";
+        port = 8080;
 
-        //gdt = new GestureDetector(new GestureListener());
+
         prueba = (ImageView) findViewById(R.id.prueba);
         prueba.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -115,10 +151,7 @@ public class FondoCastActivity extends AppCompatActivity {
 
                 detector.onTouchEvent(motionEvent);
                 v = prueba;
-                /*gdt.onTouchEvent(event);
-                rlErrorCast.setVisibility(View.VISIBLE);
 
-                prueba.setAnimation(derecha);*/
                 return true;
             }
         });
@@ -126,6 +159,7 @@ public class FondoCastActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("img");
         prueba.setImageBitmap(ByteArraytoDrawable(byteArray));
+        mensajeRecibido = extras.getString("mensaje");
 
     }
 
@@ -141,9 +175,41 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivIconCastFc.setVisibility(View.GONE);
                 rlErrorCast.setVisibility(View.VISIBLE);
             }else  if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY){
-                Log.d(TAG, "onFling: aqui9877987987" + e1.toString()+e2.toString());
-                //ClientSocket myClient = new ClientSocket(server, port, message);
-                //myClient.execute();
+                message = idGrupo+"|"+idPantalla+"|"+mensajeRecibido;
+
+
+                Log.d(TAG, "onFling: aqui9877987987" + message);
+                ClientSocket myClient = new ClientSocket(server, port, message);
+                myClient.execute();
+
+                if(mensajeRecibido.equals("spotify")){
+                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
+                        if(launchIntent != null) {
+                            startActivity(launchIntent);
+                        }
+                }else  if(mensajeRecibido.equals("netflix")){
+                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
+                    if(launchIntent != null) {
+                        startActivity(launchIntent);
+                    }
+                }else  if(mensajeRecibido.equals("uber")){
+                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
+                    if(launchIntent != null) {
+                        startActivity(launchIntent);
+                    }
+                }else  if(mensajeRecibido.equals("snapchat")){
+                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                    if(launchIntent != null) {
+                        startActivity(launchIntent);
+                    }
+                }else  if(mensajeRecibido.equals("waze")){
+                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
+                    if(launchIntent != null) {
+                        startActivity(launchIntent);
+                    }
+                }
+
+
                 final float d = v.getY();
                 v.animate().translationY(-activity_main.getHeight()).alpha(1.0f);
                 TimerTask ts = new TimerTask()
@@ -196,6 +262,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 linearMenucast.setVisibility(View.GONE);
                 ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasVideoWall.setVisibility(View.VISIBLE);
+                idGrupo = "1";
                 break;
             case R.id.ivGrupoVideoWallActivo:
                 break;
@@ -208,6 +275,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 linearMenucast.setVisibility(View.GONE);
                 ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
+                idGrupo = "2";
                 break;
             case R.id.ivGrupoPilarActivo:
                 break;
@@ -225,6 +293,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "1";
                 break;
             case R.id.ivPantallaUnoactiva:
                 break;
@@ -301,6 +370,7 @@ public class FondoCastActivity extends AppCompatActivity {
 
                 ivPantallaUnoVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "1";
                 break;
             case R.id.ivPantallaUnoVwactiva:
                 break;
@@ -320,6 +390,7 @@ public class FondoCastActivity extends AppCompatActivity {
 
                 ivPantallaDosVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "2";
                 break;
             case R.id.ivPantallaDosVwactiva:
                 break;

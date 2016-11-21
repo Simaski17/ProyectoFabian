@@ -25,7 +25,6 @@
             android:layout_height="588dp"
             android:layout_marginLeft="440dp"
             android:background="@drawable/mano"
-            android:transitionName="transitionname"
             android:layout_alignParentBottom="true"/>
 
         <!--Inicio Imagen celular mano -->
@@ -40,24 +39,24 @@
     </RelativeLayout>
     <!--Fin Contenedor imagenes -->
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="500dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginLeft="350dp">-->
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="350dp">
 
-        <!--&lt;!&ndash;Inicio Imagen celular mano &ndash;&gt;-->
-        <!--<ImageView-->
-            <!--android:id="@+id/ivFondoApp"-->
-            <!--android:layout_width="255dp"-->
-            <!--android:layout_height="390dp"-->
-            <!--android:layout_marginLeft="115dp"-->
-            <!--android:layout_marginTop="85dp"-->
-            <!--android:visibility="gone"-->
-            <!--android:background="@drawable/appentelfondo"/>-->
+        <!--Inicio Imagen celular mano -->
+        <ImageView
+            android:id="@+id/ivFondoApp"
+            android:layout_width="245dp"
+            android:layout_height="380dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="95dp"
+            android:transitionName="transitionname"
+            android:background="@drawable/appentelfondo"/>
 
 
-    <!--</RelativeLayout>-->
-    <!--&lt;!&ndash;Fin Contenedor imagenes &ndash;&gt;-->
+    </RelativeLayout>
+    <!--Fin Contenedor imagenes -->
 
     <!--Inicio Contenedor macth parent Texto [ descarga nuestra.... -->
     <LinearLayout

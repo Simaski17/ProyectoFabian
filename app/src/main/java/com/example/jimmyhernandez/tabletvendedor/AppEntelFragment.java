@@ -36,6 +36,8 @@ public class AppEntelFragment extends Fragment {
 
    @BindView(R.id.ivCelularMano)
     ImageView ivCelularMano;
+    @BindView(R.id.ivFondoApp)
+    ImageView ivFondoApp;
     //ImageView ivCelularMano;
 
     public AppEntelFragment() {
@@ -56,10 +58,11 @@ public class AppEntelFragment extends Fragment {
     /*
     Evento click imagen Celular Mano
      */
-   @OnClick(R.id.ivCelularMano)
+   @OnClick(R.id.ivFondoApp)
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.ivCelularMano:
+            case R.id.ivFondoApp:
+
                 ImageView imv = (ImageView) view;
                 imv.setDrawingCacheEnabled(true);
                 Bitmap bitmap = imv.getDrawingCache();

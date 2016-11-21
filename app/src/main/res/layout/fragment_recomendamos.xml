@@ -102,6 +102,16 @@
                 android:layout_marginTop="59dp"
                 android:background="@drawable/icn_spotify"/>
 
+
+            <ImageView
+                android:id="@+id/ivCelularManoCast"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="350dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/iconcastnaranjo"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,6 +130,14 @@
                 android:layout_marginRight="242dp"
                 android:layout_marginTop="59dp"
                 android:background="@drawable/icn_netflix"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="232dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/iconcastnaranjo"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,6 +158,14 @@
                 android:layout_marginTop="59dp"
                 android:background="@drawable/icn_applemusic"/>
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="114dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/iconcastnaranjo"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,6 +184,14 @@
                 android:layout_marginRight="360dp"
                 android:layout_marginTop="179dp"
                 android:background="@drawable/icn_uber"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="350dp"
+                android:layout_marginTop="165dp"
+                android:background="@drawable/iconcastnaranjo"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -178,6 +212,14 @@
                 android:layout_marginTop="179dp"
                 android:background="@drawable/icn_snapchat"/>
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="232dp"
+                android:layout_marginTop="165dp"
+                android:background="@drawable/iconcastnaranjo"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -196,6 +238,14 @@
                 android:layout_marginRight="124dp"
                 android:layout_marginTop="179dp"
                 android:background="@drawable/icn_waze"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="114dp"
+                android:layout_marginTop="165dp"
+                android:background="@drawable/iconcastnaranjo"/>
 
             <TextView
                 android:layout_width="wrap_content"
