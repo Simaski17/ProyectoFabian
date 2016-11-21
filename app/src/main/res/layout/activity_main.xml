@@ -72,6 +72,7 @@
                     android:background="@drawable/iconoclientes"
                     android:layout_marginLeft="52dp"
                     android:layout_marginTop="49dp"
+                    android:visibility="gone"
                     android:id="@+id/iconoClientes"/>
 
             </LinearLayout>
@@ -99,88 +100,49 @@
     <LinearLayout
         android:id="@+id/linear_menucast"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/NarajoEntel"
-        android:gravity="center_vertical"
         android:visibility="gone"
         android:orientation="horizontal">
 
-        <!--Contenedor de menu cast e iconos de conexion-->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:paddingRight="180dp">
+            android:layout_height="72dp"
+            android:layout_alignParentBottom="true">
 
-            <!--Contenedor TEXTO selecciona-->
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:text="Huawei P9"
+                android:textSize="22sp"
+                android:textStyle="italic|bold"
+                android:textColor="@color/blanco"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="14dp"/>
 
-                <!--Contenedor TEXTO selecciona-->
-                <TextView
-                    android:layout_width="290dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvSelecciona_dispositivo"
-                    android:textColor="@color/BlancoEntel"
-                    android:gravity="center"
-                    android:textSize="25sp"
-                    android:textStyle="italic" />
-            </LinearLayout>
-            <!--Fin Contenedor TEXTO selecciona-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahora en cast"
+                android:textSize="21sp"
+                android:textStyle="italic"
+                android:textColor="@color/blanco"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="35dp"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilar 2"
+                android:textSize="21sp"
+                android:textStyle="italic|bold"
+                android:textColor="@color/AzulEntel"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="35dp"/>
 
-                <ImageView
-                    android:id="@+id/ivGrupoVideoWallInactivo"
-                    android:layout_width="110dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/grupovideowall_inactivo"/>
+        </RelativeLayout>
 
-                <ImageView
-                    android:id="@+id/ivGrupoVideoWallActivo"
-                    android:layout_width="110dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:visibility="gone"
-                    android:background="@drawable/grupovideowall_activo"/>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/ivGrupoPilarInactivo"
-                    android:layout_width="30dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/grupopilar_inactivo"/>
-
-                <ImageView
-                    android:id="@+id/ivGrupoPilarActivo"
-                    android:layout_width="30dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:visibility="gone"
-                    android:background="@drawable/grupopilar_activo"/>
-
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
     <!--FIN Contenedor de menu cast e iconos de conexion-->
 
@@ -257,16 +219,16 @@
         android:paddingEnd="49dp"
         android:paddingTop="18dp"
         android:layout_alignParentBottom="true"
+        android:visibility="gone"
         android:layout_alignParentEnd="true">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_cast"
-            android:layout_width="88dp"
-            android:layout_height="88dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:clickable="true"
             android:src="@drawable/cast"
             app:backgroundTint="@color/blanco"
-            android:visibility="gone"
             app:fabSize="mini"/>
     </LinearLayout>
     <!--FIN Contenedor de boton redondo (FloatingActionButton)-->

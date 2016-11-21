@@ -80,6 +80,8 @@ public class FondoCastActivity extends AppCompatActivity {
     ImageView ivPantallaCuatroVwactiva;
     @BindView(R.id.linearSeleccionPantallasVideoWall)
     LinearLayout linearSeleccionPantallasVideoWall;
+    @BindView(R.id.activity_main)
+    RelativeLayout  activity_main;
 
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
@@ -102,10 +104,10 @@ public class FondoCastActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(final View view, final MotionEvent event) {
                 gdt.onTouchEvent(event);
+                rlErrorCast.setVisibility(View.VISIBLE);
                 ivFlechaCast.setVisibility(View.GONE);
                 tvTextoCast.setVisibility(View.GONE);
                 ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.VISIBLE);
                 prueba.setAnimation(derecha);
                 return true;
             }
@@ -134,7 +136,7 @@ public class FondoCastActivity extends AppCompatActivity {
         return bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
-    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva})
+    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva, R.id.activity_main})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCerrarFondoCast:
@@ -203,6 +205,9 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaCuatroVwactiva.setVisibility(View.VISIBLE);
                 break;
             case R.id.ivPantallaCuatroVwactiva:
+                break;
+            case R.id.activity_main:
+                finish();
                 break;
         }
     }

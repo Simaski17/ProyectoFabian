@@ -45,14 +45,6 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout activityMain;
     @BindView(R.id.iconoClientes)
     ImageView iconoClientes;
-    @BindView(R.id.ivGrupoVideoWallInactivo)
-    ImageView ivGrupoVideoWallInactivo;
-    @BindView(R.id.ivGrupoVideoWallActivo)
-    ImageView ivGrupoVideoWallActivo;
-    @BindView(R.id.ivGrupoPilarInactivo)
-    ImageView ivGrupoPilarInactivo;
-    @BindView(R.id.ivGrupoPilarActivo)
-    ImageView ivGrupoPilarActivo;
     @BindView(R.id.linear_menucast_activo)
     LinearLayout linearMenucastActivo;
     @BindView(R.id.logoEntel)
@@ -86,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     /*
 	* Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo,})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
@@ -108,22 +100,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.linear_menucast_activo:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.ivGrupoVideoWallInactivo:
-                ivGrupoVideoWallInactivo.setVisibility(View.GONE);
-                ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
-                break;
-            case R.id.ivGrupoVideoWallActivo:
-                ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
-                ivGrupoVideoWallActivo.setVisibility(View.GONE);
-                break;
-            case R.id.ivGrupoPilarInactivo:
-                ivGrupoPilarInactivo.setVisibility(View.GONE);
-                ivGrupoPilarActivo.setVisibility(View.VISIBLE);
-                break;
-            case R.id.ivGrupoPilarActivo:
-                ivGrupoPilarActivo.setVisibility(View.GONE);
-                ivGrupoPilarInactivo.setVisibility(View.VISIBLE);
                 break;
         }
     }
