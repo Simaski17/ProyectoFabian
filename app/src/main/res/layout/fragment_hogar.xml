@@ -56,6 +56,7 @@
             android:layout_height="120dp">
 
             <RelativeLayout
+                android:id="@+id/rlTelefoniaFija"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="160dp"
@@ -83,6 +84,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlTelevision"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="401dp"
@@ -110,6 +112,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlInternet"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="642dp"

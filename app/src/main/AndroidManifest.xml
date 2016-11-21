@@ -4,8 +4,10 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -31,7 +33,46 @@
             android:theme="@style/myTema" />
         <activity
             android:name=".FondoCastActivity"
-            android:theme="@style/TranslucentActivity"></activity>
+            android:theme="@style/TranslucentActivity" />
+        <activity
+            android:name=".PlanSmartFunActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".PlanMultimediaActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".PlanPortabilidadActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".PlanVozActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".HogarDoblePackActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".HogarTriplePackActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".TelefoniaFijaActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".TelevisionHdActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".InternetActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".DoblePackUnoActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".DoblePackDosActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".DoblePackTresActivity"
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".TriplePackUnoActivity"
+            android:theme="@style/myTema"></activity>
     </application>
 
 </manifest>

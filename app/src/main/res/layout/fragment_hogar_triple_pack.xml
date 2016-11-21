@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="100dp"
-    tools:context=".PromocionesFragment">
+    android:layout_marginTop="100dp">
 
     <!-- LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO"-->
     <LinearLayout
@@ -83,9 +82,11 @@
 
                 <ImageView
                     android:layout_below="@+id/tvAyuda"
-                    android:layout_width="580dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="32dp" />
+                    android:layout_width="560dp"
+                    android:layout_height="445dp"
+                    android:background="@drawable/imgpapanino"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="45dp" />
 
                 <!--Contenedor de boton redondo (FloatingActionButton)-->
                 <LinearLayout
@@ -95,16 +96,11 @@
                     android:layout_marginLeft="30dp"
                     android:gravity="center">
 
-                    <android.support.design.widget.FloatingActionButton
+                    <ImageView
                         android:layout_width="72dp"
                         android:layout_height="72dp"
                         android:clickable="true"
-                        android:src="@drawable/flecha"
-                        android:backgroundTint="@color/blanco"
-                        app:backgroundTint="@color/NarajoEntel"
-                        app:elevation="0dp"
-                        app:borderWidth="1dp"
-                        app:fabSize="mini"/>
+                        android:src="@drawable/flechanaranjaup"/>
 
                 </LinearLayout>
                 <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
@@ -133,91 +129,14 @@
                     android:id="@+id/rlTvTf"
                     android:layout_width="302dp"
                     android:layout_height="109dp"
-                    android:background="@color/NarajoEntel"
+                    android:background="@drawable/btntriplepack"
                     android:layout_marginTop="101dp"
                     android:layout_marginLeft="19dp">
 
-                    <TextView
-                        android:id="@+id/tvDoblePack"
-                        android:layout_width="230dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/television_telefonia_internet"
-                        android:textColor="@color/BlancoEntel"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginTop="53dp"
-                        android:gravity="center"
-                        android:textSize="19.7sp"
-                        android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="21dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/cast"
-                        android:backgroundTint="@color/BlancoEntel" />
 
                 </RelativeLayout>
                 <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
-
-
-                <!-- INICIO TEXTVIEW TEXTO (Revisa el...)-->
-                <TextView
-                    android:id="@+id/tvRevisa"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/rlTvTf"
-                    android:gravity="center"
-                    android:lineSpacingExtra="-5dp"
-                    android:text="@string/revisa_detalle_cada_producto"
-                    android:textColor="@color/AzulEntel"
-                    android:layout_marginLeft="76dp"
-                    android:layout_marginTop="39dp"
-                    android:textSize="21.5sp"
-                    android:textStyle="italic|normal" />
-                <!-- FIN TEXTVIEW TEXTO (Revisa el...)-->
-
-                <!-- INICIO RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
-                <RelativeLayout
-                    android:id="@+id/rlBtRedondos"
-                    android:layout_width="302dp"
-                    android:layout_height="125dp"
-                    android:layout_below="@+id/tvRevisa"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp">
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_hd"
-                        android:layout_width="76dp"
-                        android:layout_height="73dp"
-                        android:clickable="true"
-                        android:layout_marginLeft="17dp"
-                        android:layout_marginTop="10dp"
-                        app:backgroundTint="@color/NarajoEntel"
-                        app:fabSize="mini"/>
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_tlf"
-                        android:layout_width="76dp"
-                        android:layout_height="73dp"
-                        android:clickable="true"
-                        android:layout_marginLeft="111dp"
-                        android:layout_marginTop="10dp"
-                        app:backgroundTint="@color/NarajoEntel"
-                        app:fabSize="mini"/>
-
-                    <android.support.design.widget.FloatingActionButton
-                        android:id="@+id/fab_inter"
-                        android:layout_width="76dp"
-                        android:layout_height="73dp"
-                        android:clickable="true"
-                        android:layout_marginLeft="207dp"
-                        android:layout_marginTop="10dp"
-                        app:backgroundTint="@color/NarajoEntel"
-                        app:fabSize="mini"/>
-                </RelativeLayout>
-                <!-- FIN RELATIVELAYOUT CONTENEDOR 3 BOTONES REDONDOS-->
 
             </RelativeLayout>
             <!-- FIN RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->

@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:layout_marginTop="100dp">
 
+    <ImageView
+        android:layout_width="528dp"
+        android:layout_height="468dp"
+        android:background="@drawable/circuloazul"
+        android:layout_marginTop="193dp"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -55,6 +61,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <RelativeLayout
                 android:layout_width="480dp"
                 android:layout_height="450dp"
@@ -92,38 +99,9 @@
                     android:textSize="34sp"
                     android:textStyle="italic|bold"/>
 
-                <TextView
-                    android:id="@+id/tvPrecio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$ 140.990"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="193dp"
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="29sp"
-                    android:textStyle="italic|bold"/>
 
-                <TextView
-                    android:id="@+id/tvCuotas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cuota"
-                    android:layout_marginLeft="297dp"
-                    android:layout_marginTop="230dp"
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="10.5sp"
-                    android:textStyle="italic"/>
 
-                <TextView
-                    android:id="@+id/tvPrecioCuotas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$11.990"
-                    android:layout_marginLeft="383dp"
-                    android:layout_marginTop="225dp"
-                    android:textColor="@color/NarajoEntel"
-                    android:textSize="17sp"
-                    android:textStyle="italic|bold"/>
+
 
                 <ImageView
                     android:id="@+id/icnCast"
@@ -171,89 +149,15 @@
 
                 <RelativeLayout
                     android:orientation="horizontal"
-                    android:layout_width="180dp"
+                    android:layout_width="360dp"
                     android:layout_below="@+id/ly2"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="13dp"
-                        android:background="@drawable/flecha"
-                        android:layout_marginTop="80dp"/>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </android.support.v7.widget.RecyclerView>
 
-
-                    <ImageView
-                        android:id="@+id/ivCarcasa"
-                        android:layout_width="130dp"
-                        android:layout_height="110dp"
-                        android:layout_marginLeft="45dp"
-                        android:foregroundGravity="center"
-                        android:layout_marginTop="15dp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Carcasa"
-                        android:textColor="@color/GrisOscuroEntel"
-                        android:layout_marginLeft="91dp"
-                        android:layout_marginTop="117dp"
-                        android:textSize="17sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="protectora"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="83dp"
-                        android:layout_marginTop="136dp"
-                        android:textSize="17sp"
-                        android:textStyle="normal" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:orientation="horizontal"
-                    android:layout_width="180dp"
-                    android:layout_below="@+id/ly2"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="152dp"
-                        android:background="@drawable/flecha1"
-                        android:layout_marginTop="80dp"/>
-
-                    <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="110dp"
-                        android:foregroundGravity="center"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="15dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Audifonos"
-                        android:textColor="@color/GrisOscuroEntel"
-                        android:layout_marginLeft="33dp"
-                        android:layout_marginTop="117dp"
-                        android:textSize="17sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bos\u00e9 x345"
-                        android:textColor="@color/black"
-                        android:layout_marginLeft="31dp"
-                        android:layout_marginTop="136dp"
-                        android:textSize="17sp"
-                        android:textStyle="normal" />
 
                 </RelativeLayout>
 

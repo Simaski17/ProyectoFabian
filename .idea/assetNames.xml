@@ -4,6 +4,7 @@
     <option name="mapping">
       <map>
         <entry key="flecha" value="flechablanca" />
+        <entry key="fondoazul" value="circuloazulesquinaizquierda" />
       </map>
     </option>
   </component>

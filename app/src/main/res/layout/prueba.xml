@@ -6,48 +6,361 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fondocast"
+    android:background="@drawable/doblepack"
     tools:context=".MainActivity">
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!--Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
+    <LinearLayout
+        android:id="@+id/linear_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+        <!--Contenedor de Logo Entel-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--Logo Entel-->
+            <ImageView
+                android:layout_width="54dp"
+                android:layout_height="35dp"
+                android:src="@drawable/logoentel"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="44dp"
+                android:id="@+id/logoEntel" />
+        </LinearLayout>
+        <!--Fin Contenedor de Logo Entel-->
+
+        <!--Tabs-->
+        <io.karim.MaterialTabs
+            android:id="@+id/material_tabs"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="7.32"
+            android:background="@color/BlancoEntel"
+            android:textColor="@color/GrisOscuroEntel"
+            android:textSize="15sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="7dp"
+            app:mtIndicatorColor="@android:color/transparent"
+            app:mtMrlRippleColor="@color/BlancoEntel"
+            app:mtTabPaddingLeftRight="15dp"
+            app:mtTextAllCaps="false"
+            app:mtTextColorSelected="@color/NarajoEntel" />
+        <!--Fin Tabs-->
+
+        <!--Contenedor de Icono cliente e icono notificacion-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7"
+            android:orientation="horizontal">
+
+            <!--Contenedor de Icono cliente-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <!--Icono cliente-->
+                <ImageView
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
+                    android:background="@drawable/iconoclientes"
+                    android:layout_marginLeft="52dp"
+                    android:layout_marginTop="49dp"
+                    android:visibility="gone"
+                    android:id="@+id/iconoClientes"/>
+
+            </LinearLayout>
+            <!--Fin Contenedor de Icono cliente-->
+
+
+        </LinearLayout>
+        <!--Fin Contenedor de Icono cliente e icono notificacion-->
+
+    </LinearLayout>
+    <!-- FIN Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
+
+
+    <!--Contenedor ViewPager Servira para cambiar entre Fragments-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear_top"
+        android:layout_alignParentEnd="true" />
+    <!--FIN Contenedor ViewPager Servira para cambiar entre Fragments-->
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="100dp">
+
+        <!-- LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO"-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- INICIO LINEARLAYOUT IZQUIERDO"-->
+            <LinearLayout
+                android:id="@+id/linearIzquierdo"
+                android:layout_width="620dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ Doble pAck_)"-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+
+                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="47dp"
+                            android:layout_marginTop="60dp"
+                            android:text="[ "
+                            android:textColor="@color/NarajoEntel"
+                            android:textSize="31sp"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+
+                    <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( Doble pAck_)"-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="55dp"
+                            android:text="@string/doble_pack2"
+                            android:textColor="@color/AzulEntel"
+                            android:textSize="38sp"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+                    <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( Doble pAck_)"-->
+
+                </LinearLayout>
+                <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ Doble pAck_)"-->
+
+                <!-- INICIO RELATIVELAYOUT CONTENEDOR TEXTO ( Ayuda a tu....) imagen y Boton Redondo)"-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvAyuda"
+                        android:layout_width="290dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ayuda_cliente_combinacion_perfecta"
+                        android:layout_marginLeft="64dp"
+                        android:layout_marginTop="3dp"
+                        android:lineSpacingExtra="-5dp"
+                        android:textColor="@color/GrisOscuroEntel"
+                        android:textSize="21sp"
+                        android:textStyle="italic" />
+
+                    <ImageView
+                        android:layout_below="@+id/tvAyuda"
+                        android:layout_width="560dp"
+                        android:layout_height="445dp"
+                        android:background="@drawable/imgpapanino"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="45dp" />
+
+                    <!--Contenedor de boton redondo (FloatingActionButton)-->
+                    <LinearLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginTop="125dp"
+                        android:layout_marginLeft="30dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:clickable="true"
+                            android:src="@drawable/flechanaranjaup"/>
+
+                    </LinearLayout>
+                    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
+
+                </RelativeLayout>
+                <!-- FIN RELATIVELAYOUT CONTENEDOR TEXTO ( Ayuda a tu....) imagen y Boton Redondo-->
+
+            </LinearLayout>
+            <!-- FIN LINEARLAYOUT IZQUIERDO"-->
+
+
+            <!-- INICIO LINEARLAYOUT DERECHO"-->
+            <LinearLayout
+                android:id="@+id/linearDerecho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- INICIO RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
+                    <RelativeLayout
+                        android:id="@+id/rlTvTf"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/tvtlffija"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginLeft="19dp">
+
+
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + INTER-->
+                    <RelativeLayout
+                        android:id="@+id/rlTvInt"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/tvinter"
+                        android:layout_below="@+id/rlTvTf"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="19dp">
+
+
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + INTER-->
+
+                    <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + Tf-->
+                    <RelativeLayout
+                        android:id="@+id/rlIntTf"
+                        android:layout_width="302dp"
+                        android:layout_height="85dp"
+                        android:layout_below="@+id/rlTvInt"
+                        android:background="@drawable/intertlffija"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp">
+
+                    </RelativeLayout>
+                    <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + Tf-->
+
+
+                </RelativeLayout>
+                <!-- FIN RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
+
+            </LinearLayout>
+            <!-- FIN LINEARLAYOUT DERECHO"-->
+
+        </LinearLayout>
+        <!-- FIN LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO-->
+
+    </FrameLayout>
 
     <!--Contenedor de menu cast e iconos de conexion-->
     <LinearLayout
         android:id="@+id/linear_menucast"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center_vertical"
+        android:visibility="gone"
         android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Huawei P9"
+                android:textSize="22sp"
+                android:textStyle="italic|bold"
+                android:textColor="@color/blanco"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ahora en cast"
+                android:textSize="21sp"
+                android:textStyle="italic"
+                android:textColor="@color/blanco"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="35dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pilar 2"
+                android:textSize="21sp"
+                android:textStyle="italic|bold"
+                android:textColor="@color/AzulEntel"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="35dp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <!--FIN Contenedor de menu cast e iconos de conexion-->
+
+    <!--Contenedor de menu cast e iconos de conexion-->
+    <LinearLayout
+        android:id="@+id/linear_menucast_activo"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/NarajoEntel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <!--Contenedor de menu cast e iconos de conexion-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:paddingRight="275dp">
+            android:paddingRight="180dp">
 
             <!--Contenedor TEXTO selecciona-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.9"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <!--Contenedor TEXTO selecciona-->
                 <TextView
-                    android:layout_width="260dp"
+                    android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/tvSelecciona_dispositivo"
-                    android:textColor="@color/blanco"
-                    android:textSize="22sp"
-                    android:lineSpacingExtra="-5dp"
-                    android:layout_marginBottom="4dp"
-                    android:textStyle="italic" />
+                    android:text="Selecciona una pantalla"
+                    android:textColor="@color/BlancoEntel"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="italic|bold" />
             </LinearLayout>
             <!--Fin Contenedor TEXTO selecciona-->
 
@@ -58,31 +371,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/ivGrupoVideoWallInactivo"
-                    android:layout_width="80dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/grupovideowall_inactivo"/>
 
-                <ImageView
-                    android:id="@+id/ivGrupoVideoWallActivo"
-                    android:layout_width="80dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center"
-                    android:visibility="gone"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/grupovideowall_activo"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="VideoWall"
-                    android:textSize="20sp"
-                    android:textColor="@color/blanco"
-                    android:textStyle="bold"
-                    android:layout_marginTop="2dp"/>
 
             </LinearLayout>
 
@@ -93,35 +382,35 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/ivGrupoPilarInactivo"
-                    android:layout_width="23dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/grupopilar_inactivo"/>
 
-                <ImageView
-                    android:id="@+id/ivGrupoPilarActivo"
-                    android:layout_width="23dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="4dp"
-                    android:visibility="gone"
-                    android:background="@drawable/grupopilar_activo"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pilar"
-                    android:textSize="20sp"
-                    android:textColor="@color/blanco"
-                    android:textStyle="bold"
-                    android:layout_marginTop="2dp"/>
 
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <!--FIN Contenedor de menu cast e iconos de conexion-->
+
+
+    <!--Contenedor de boton redondo (FloatingActionButton)-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:paddingEnd="49dp"
+        android:paddingTop="18dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_cast"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:clickable="true"
+            android:src="@drawable/cast"
+            app:backgroundTint="@color/blanco"
+            app:fabSize="mini"/>
+    </LinearLayout>
+    <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
 
 </RelativeLayout>

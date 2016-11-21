@@ -22,7 +22,7 @@
         android:layout_width="300dp"
         android:layout_height="98dp"
         android:layout_marginTop="311dp"
-        android:layout_marginRight="75dp"
+        android:layout_marginRight="55dp"
         android:layout_alignParentRight="true"
         android:visibility="gone"
         android:background="@drawable/all_corner_circle">
@@ -84,8 +84,8 @@
 
         <ImageView
             android:id="@+id/prueba"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
+            android:layout_width="300dp"
+            android:layout_height="350dp"
             android:transitionName="transitionname"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>

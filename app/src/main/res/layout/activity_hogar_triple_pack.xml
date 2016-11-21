@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="100dp">
+
+    <!-- LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- INICIO LINEARLAYOUT IZQUIERDO"-->
+        <LinearLayout
+            android:id="@+id/linearIzquierdo"
+            android:layout_width="620dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ Triple pAck_)"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="47dp"
+                        android:text="[ "
+                        android:textColor="@color/NarajoEntel"
+                        android:textSize="31sp"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+                <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ )"-->
+
+                <!-- INICIO LINEARLAYOUT CONTENEDOR TEXTO ( Triple pAck_)"-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:text="@string/triple_pack2"
+                        android:textColor="@color/AzulEntel"
+                        android:textSize="38sp"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+                <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( Triple pAck_)"-->
+
+            </LinearLayout>
+            <!-- FIN LINEARLAYOUT CONTENEDOR TEXTO ( [ Triple pAck_)"-->
+
+            <!-- INICIO RELATIVELAYOUT CONTENEDOR TEXTO ( Recomienda a tu....) imagen y Boton Redondo)"-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvAyuda"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recomienda_entel_hogar"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="3dp"
+                    android:lineSpacingExtra="-5dp"
+                    android:textColor="@color/GrisOscuroEntel"
+                    android:textSize="21sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:layout_below="@+id/tvAyuda"
+                    android:layout_width="560dp"
+                    android:layout_height="490dp"
+                    android:background="@drawable/imgpapanino"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginLeft="45dp" />
+
+                <!--Contenedor de boton redondo (FloatingActionButton)-->
+                <LinearLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_marginTop="175dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/ivFlechaAtras"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:clickable="true"
+                        android:src="@drawable/flechanaranjaup"/>
+
+                </LinearLayout>
+                <!--FIN Contenedor de boton redondo (FloatingActionButton)-->
+
+            </RelativeLayout>
+            <!-- FIN RELATIVELAYOUT CONTENEDOR TEXTO ( Recomienda a tu....) imagen y Boton Redondo-->
+
+        </LinearLayout>
+        <!-- FIN LINEARLAYOUT IZQUIERDO"-->
+
+
+        <!-- INICIO LINEARLAYOUT DERECHO"-->
+        <LinearLayout
+            android:id="@+id/linearDerecho"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- INICIO RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
+                <RelativeLayout
+                    android:id="@+id/rlTvTf"
+                    android:layout_width="302dp"
+                    android:layout_height="109dp"
+                    android:background="@drawable/btntriplepack"
+                    android:layout_marginTop="101dp"
+                    android:layout_marginLeft="19dp">
+
+
+
+                </RelativeLayout>
+                <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
+
+            </RelativeLayout>
+            <!-- FIN RELATIVELAYOUT CONTENEDOR Botones y texto (Revisa el...)-->
+
+        </LinearLayout>
+        <!-- FIN LINEARLAYOUT DERECHO"-->
+
+    </LinearLayout>
+    <!-- FIN LINEARLAYOUT CONTENEDOR IZQUIERDO Y DERECHO-->
+
+</RelativeLayout>
+

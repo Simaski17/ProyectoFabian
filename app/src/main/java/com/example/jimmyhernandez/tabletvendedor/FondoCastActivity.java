@@ -15,6 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -83,9 +86,13 @@ public class FondoCastActivity extends AppCompatActivity {
     @BindView(R.id.activity_main)
     RelativeLayout  activity_main;
 
-    private static final int SWIPE_MIN_DISTANCE = 120;
-    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
-    GestureDetector gdt;
+    private static final int SWIPE_MIN_DISTANCE = 80;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 100;
+
+    private int bandera = 0;
+
+    View v = null;
+    GestureDetector detector;
 
     String TAG = "HOLA";
     Animation derecha;
@@ -96,19 +103,22 @@ public class FondoCastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
 
-        derecha = AnimationUtils.loadAnimation(this,R.anim.delizar_derecha);
+        detector = new GestureDetector(new GestureListener());
 
-        gdt = new GestureDetector(new GestureListener());
+        //derecha = AnimationUtils.loadAnimation(this,R.anim.delizar_derecha);
+
+        //gdt = new GestureDetector(new GestureListener());
         prueba = (ImageView) findViewById(R.id.prueba);
         prueba.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(final View view, final MotionEvent event) {
-                gdt.onTouchEvent(event);
+            public boolean onTouch(final View view, final MotionEvent motionEvent) {
+
+                detector.onTouchEvent(motionEvent);
+                v = prueba;
+                /*gdt.onTouchEvent(event);
                 rlErrorCast.setVisibility(View.VISIBLE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                prueba.setAnimation(derecha);
+
+                prueba.setAnimation(derecha);*/
                 return true;
             }
         });
@@ -119,17 +129,52 @@ public class FondoCastActivity extends AppCompatActivity {
 
     }
 
-    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener
+    {
         @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
 
-            if(e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
+            if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && bandera == 0){
+
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.VISIBLE);
+            }else  if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY){
                 Log.d(TAG, "onFling: aqui9877987987" + e1.toString()+e2.toString());
-                return true; // Bottom to top
+                //ClientSocket myClient = new ClientSocket(server, port, message);
+                //myClient.execute();
+                final float d = v.getY();
+                v.animate().translationY(-activity_main.getHeight()).alpha(1.0f);
+                TimerTask ts = new TimerTask()
+                {
+                    @Override
+                    public void run()
+                    {
+                        runOnUiThread(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                //volverEstadoNomral();
+                                v.setY(d);
+                            }
+                        });
+
+                    }
+                };
+
+
+                Timer timer = new Timer();
+                timer.schedule(ts, 400);
+                return false; // Bottom to top
             }
-            return true;
+
+
+            return false;
         }
     }
+
 
     public Bitmap ByteArraytoDrawable(byte[] byteArray) {
         Bitmap bmp;
@@ -144,65 +189,175 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivGrupoVideoWallInactivo:
                 ivGrupoVideoWallInactivo.setVisibility(View.GONE);
-                ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
                 linearMenucast.setVisibility(View.GONE);
+                ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasVideoWall.setVisibility(View.VISIBLE);
                 break;
             case R.id.ivGrupoVideoWallActivo:
                 break;
             case R.id.ivGrupoPilarInactivo:
                 ivGrupoPilarInactivo.setVisibility(View.GONE);
-                ivGrupoPilarActivo.setVisibility(View.VISIBLE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
                 linearMenucast.setVisibility(View.GONE);
+                ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
                 break;
             case R.id.ivGrupoPilarActivo:
                 break;
             case R.id.ivPantallaUnoInactiva:
                 ivPantallaUnoInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+                ivPantallaDosactiva.setVisibility(View.GONE);
+                ivPantallaTresactiva.setVisibility(View.GONE);
+                ivPantallaCuatroactiva.setVisibility(View.GONE);
+                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaUnoactiva:
                 break;
             case R.id.ivPantallaDosInactiva:
                 ivPantallaDosInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaUnoactiva.setVisibility(View.GONE);
+                ivPantallaTresactiva.setVisibility(View.GONE);
+                ivPantallaCuatroactiva.setVisibility(View.GONE);
+                ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaDosactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaDosactiva:
                 break;
             case R.id.ivPantallaTresInactiva:
                 ivPantallaTresInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaDosactiva.setVisibility(View.GONE);
+                ivPantallaUnoactiva.setVisibility(View.GONE);
+                ivPantallaCuatroactiva.setVisibility(View.GONE);
+                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
+                ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaTresactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaTresactiva:
                 break;
             case R.id.ivPantallaCuatroInactiva:
                 ivPantallaCuatroInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaDosactiva.setVisibility(View.GONE);
+                ivPantallaTresactiva.setVisibility(View.GONE);
+                ivPantallaUnoactiva.setVisibility(View.GONE);
+                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
+                ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaCuatroactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaCuatroactiva:
                 break;
             case R.id.ivPantallaUnoVwInactiva:
                 ivPantallaUnoVwInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaDosVwactiva.setVisibility(View.GONE);
+                ivPantallaTresVwactiva.setVisibility(View.GONE);
+                ivPantallaCuatroVwactiva.setVisibility(View.GONE);
+                ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaUnoVwactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaUnoVwactiva:
                 break;
             case R.id.ivPantallaDosVwInactiva:
                 ivPantallaDosVwInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaUnoVwactiva.setVisibility(View.GONE);
+                ivPantallaTresVwactiva.setVisibility(View.GONE);
+                ivPantallaCuatroVwactiva.setVisibility(View.GONE);
+                ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaDosVwactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaDosVwactiva:
                 break;
             case R.id.ivPantallaTresVwInactiva:
                 ivPantallaTresVwInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaDosVwactiva.setVisibility(View.GONE);
+                ivPantallaUnoVwactiva.setVisibility(View.GONE);
+                ivPantallaCuatroVwactiva.setVisibility(View.GONE);
+                ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaTresVwactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaTresVwactiva:
                 break;
             case R.id.ivPantallaCuatroVwInactiva:
                 ivPantallaCuatroVwInactiva.setVisibility(View.GONE);
+                ivFlechaCast.setVisibility(View.GONE);
+                tvTextoCast.setVisibility(View.GONE);
+                ivIconCastFc.setVisibility(View.GONE);
+                rlErrorCast.setVisibility(View.GONE);
+
+                ivPantallaDosVwactiva.setVisibility(View.GONE);
+                ivPantallaTresVwactiva.setVisibility(View.GONE);
+                ivPantallaUnoVwactiva.setVisibility(View.GONE);
+                ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
+                ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
+
                 ivPantallaCuatroVwactiva.setVisibility(View.VISIBLE);
+                bandera = 1;
                 break;
             case R.id.ivPantallaCuatroVwactiva:
                 break;
