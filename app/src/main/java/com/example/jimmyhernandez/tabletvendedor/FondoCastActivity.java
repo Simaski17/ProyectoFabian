@@ -110,32 +110,12 @@ public class FondoCastActivity extends AppCompatActivity {
     PackageManager pm;
 
     String TAG = "HOLA";
-    Animation derecha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
-
-        /* pm = getApplication().getPackageManager();
-        try
-        {
-            // Raise exception if whatsapp doesn't exist
-            PackageInfo info = pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-
-            Intent waIntent = new Intent(Intent.ACTION_SEND);
-            //waIntent.setType("text/plain");
-            waIntent.setPackage("com.spotify.mobile.android.ui");
-            startActivity(waIntent);
-        }
-        catch (PackageManager.NameNotFoundException e)
-        {
-            Toast.makeText(getApplication(), "Please install whatsapp app", Toast.LENGTH_SHORT)
-                    .show();
-        }*/
-
-
 
 
         detector = new GestureDetector(new GestureListener());
@@ -181,35 +161,6 @@ public class FondoCastActivity extends AppCompatActivity {
                 Log.d(TAG, "onFling: aqui9877987987" + message);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
-
-                if(mensajeRecibido.equals("spotify")){
-                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
-                        if(launchIntent != null) {
-                            startActivity(launchIntent);
-                        }
-                }else  if(mensajeRecibido.equals("netflix")){
-                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
-                    if(launchIntent != null) {
-                        startActivity(launchIntent);
-                    }
-                }else  if(mensajeRecibido.equals("uber")){
-                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
-                    if(launchIntent != null) {
-                        startActivity(launchIntent);
-                    }
-                }else  if(mensajeRecibido.equals("snapchat")){
-                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                    if(launchIntent != null) {
-                        startActivity(launchIntent);
-                    }
-                }else  if(mensajeRecibido.equals("waze")){
-                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
-                    if(launchIntent != null) {
-                        startActivity(launchIntent);
-                    }
-                }
-
-
                 final float d = v.getY();
                 v.animate().translationY(-activity_main.getHeight()).alpha(1.0f);
                 TimerTask ts = new TimerTask()
@@ -224,6 +175,42 @@ public class FondoCastActivity extends AppCompatActivity {
                             {
                                 //volverEstadoNomral();
                                 v.setY(d);
+                                if(mensajeRecibido.equals("spotify")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("apple")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.apple.android.music");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("netflix")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("uber")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("snapchat")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("waze")){
+                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }else  if(mensajeRecibido.equals("appentel")){
+                                    Intent launchIntent = new Intent(FondoCastActivity.this, MainActivity.class);
+                                    if(launchIntent != null) {
+                                        startActivity(launchIntent);
+                                    }
+                                }
                             }
                         });
 
@@ -233,8 +220,10 @@ public class FondoCastActivity extends AppCompatActivity {
 
                 Timer timer = new Timer();
                 timer.schedule(ts, 400);
+
                 return false; // Bottom to top
             }
+
 
 
             return false;

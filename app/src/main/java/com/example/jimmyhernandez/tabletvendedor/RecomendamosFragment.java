@@ -74,16 +74,6 @@ public class RecomendamosFragment extends Fragment {
         switch (view.getId()) {
             case R.id.icnSpotify:
                 mensaje = "spotify";
-
-
-
-               /* Intent launchIntent = getActivity().getPackageManager().getLaunchIntentForPackage("");
-                if(launchIntent != null) {
-                    startActivity(launchIntent);
-                }*/
-
-
-
                 imv = (ImageView) view;
                 cast(icnSpotify);
                 break;

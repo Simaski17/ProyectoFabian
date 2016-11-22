@@ -40,6 +40,8 @@ public class AppEntelFragment extends Fragment {
     ImageView ivFondoApp;
     //ImageView ivCelularMano;
 
+    private  String mensaje;
+
     public AppEntelFragment() {
         // Required empty public constructor
     }
@@ -62,7 +64,7 @@ public class AppEntelFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFondoApp:
-
+                mensaje = "appentel";
                 ImageView imv = (ImageView) view;
                 imv.setDrawingCacheEnabled(true);
                 Bitmap bitmap = imv.getDrawingCache();
@@ -73,6 +75,7 @@ public class AppEntelFragment extends Fragment {
                 Intent intent = new Intent(getContext(), FondoCastActivity.class);
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
                 intent.putExtra("img", bitmapdata);
+                intent.putExtra("mensaje", mensaje);
                 startActivity(intent, optionsCompat.toBundle());
 
                 break;
