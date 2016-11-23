@@ -13,4 +13,12 @@
         android:layout_height="match_parent"
         android:background="@drawable/plantelefoniafija"></ImageView>
 
+    <ImageView
+        android:id="@+id/ivCerrarTelefoniaFija"
+        android:layout_width="75dp"
+        android:layout_height="72dp"
+        android:background="@drawable/cerrarnaranjo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"/>
+
 </RelativeLayout>

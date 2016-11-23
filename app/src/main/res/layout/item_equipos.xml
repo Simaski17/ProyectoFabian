@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="170dp">
+    android:layout_width="150dp"
+    android:layout_height="150dp">
 
     <ImageView
-        android:id="@+id/ivImagenAccesorio"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
+        android:id="@+id/ivImagenEquipo"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"/>
 
 
     <TextView
-        android:id="@+id/tvNombreAccesorio"
+        android:id="@+id/tvMarcaEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
@@ -23,7 +23,7 @@
         android:textStyle="normal" />
 
     <TextView
-        android:id="@+id/tvDescripcionAccesorio"
+        android:id="@+id/tvNombreEquipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"

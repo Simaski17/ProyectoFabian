@@ -1,12 +1,17 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +22,11 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -36,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.vp)
     ViewPager pager;
     @BindView(R.id.linear_menucast)
-    LinearLayout linearMenucast;
+    RelativeLayout linearMenucast;
     @BindView(R.id.fab_cast)
     FloatingActionButton fabCast;
     @BindView(R.id.linearLayout)
@@ -49,12 +59,31 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearMenucastActivo;
     @BindView(R.id.logoEntel)
     ImageView logoEntel;
+    @BindView(R.id.ivGrupoVideoWallActivo)
+    ImageView ivGrupoVideoWallActivo;
+    @BindView(R.id.ivGrupoPilarActivo)
+    ImageView ivGrupoPilarActivo;
+    @BindView(R.id.ivBotonCastDesconect)
+    ImageView ivBotonCastDesconect;
+    @BindView(R.id.ivGrupoVideoWallInactivo)
+    ImageView ivGrupoVideoWallInactivo;
+    @BindView(R.id.ivGrupoPilarInactivo)
+    ImageView ivGrupoPilarInactivo;
+
+    private String idGrupo;
+    private String idPantalla;
+    private String server;
+    private String message;
+    private int port;
+    private int unicode;
+
+    String TAG = "HOLA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Fresco.initialize(this);
-
+        unicode = 0;
         /*
          * Seteando el Fullscreen
 		 */
@@ -68,32 +97,25 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         /*
-		 * Adaptación de los Fragmentos para los Tabs
+         * Adaptación de los Fragmentos para los Tabs
 		 */
+
+        port = 8080;
+
         SamplePagerAdapter adapter = new SamplePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         materialTabs.setViewPager(pager);
     }
 
     /*
-	* Acción de clicks  animacion seleccione dispositivo
+    * Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo,})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivBotonCastDesconect})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
-                if (contCast == 1) {
-                    YoYo.with(Techniques.SlideOutDown).duration(200).playOn(linearMenucast);
-                    contCast = 0;
-                }
                 break;
             case R.id.fab_cast:
-                if (contCast == 0) {
-                    Toast.makeText(this, "Aqui", Toast.LENGTH_SHORT).show();
-                    YoYo.with(Techniques.SlideInUp).duration(200).playOn(linearMenucast);
-                    linearMenucast.setVisibility(View.VISIBLE);
-                    contCast = 1;
-                }
                 break;
             case R.id.iconoClientes:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
@@ -101,6 +123,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.linear_menucast_activo:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.ivBotonCastDesconect:
+                message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+                ClientSocket myClient = new ClientSocket(server, port, message);
+                myClient.execute();
+                YoYo.with(Techniques.SlideOutDown).duration(200).playOn(linearMenucast);
+                linearMenucast.setVisibility(View.GONE);
+                break;
+        }
+    }
+
+
+    public void prueba(boolean aqui) {
+        if (aqui) {
+            Log.d(TAG, "PRUEBA ACTIVADA");
         }
     }
 
@@ -163,4 +199,70 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onMessage(Message event) {
+        //mytextview.setText(event.getMessage());
+        idGrupo = event.getIdGrupo();
+        idPantalla = event.getIdPantalla();
+        server = event.getServer();
+        linearMenucast.setVisibility(View.VISIBLE);
+
+        if (idGrupo.equals("1")) {
+            ivGrupoPilarActivo.setVisibility(View.GONE);
+            ivGrupoPilarInactivo.setVisibility(View.VISIBLE);
+        }else if(idGrupo.equals("2")){
+            ivGrupoVideoWallActivo.setVisibility(View.GONE);
+            ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            switch (unicode) {
+                case 0:
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                    // Setting Dialog Title
+                    alertDialog.setTitle("Salir de la Aplicaci\u00f3n");
+                    // Setting Dialog Message
+                    alertDialog.setMessage("\u00bfQuieres salir de la aplicaci\u00f3n?");
+                    // Setting Icon to Dialog
+                    // alertDialog.setIcon(R.drawable.delete);
+                    // On pressing Settings button
+                    alertDialog.setPositiveButton("No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            });
+                    // on pressing cancel button
+                    alertDialog.setNegativeButton("Si",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    EventBus.getDefault().unregister(this);
+                                    MainActivity.this.finish();
+                                }
+                            });
+                    // Showing Alert Message
+                    alertDialog.show();
+
+                    break;
+            }
+
+        }
+        return true;
+    }
+
 }

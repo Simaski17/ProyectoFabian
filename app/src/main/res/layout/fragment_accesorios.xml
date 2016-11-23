@@ -75,7 +75,8 @@
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/foto_accesorio"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"/>
 
                 <ImageView
                     android:layout_width="35dp"
@@ -91,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="BeoPlay S3"
-                    android:layout_marginLeft="273dp"
+                    android:layout_marginLeft="278dp"
                     android:layout_marginTop="122dp"
                     android:textColor="@color/NarajoEntel"
                     android:textSize="30sp" />
@@ -102,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Speaker"
-                    android:layout_marginLeft="274dp"
+                    android:layout_marginLeft="279dp"
                     android:layout_marginTop="150dp"
                     android:textColor="@color/NarajoEntel"
                     android:textSize="34sp"

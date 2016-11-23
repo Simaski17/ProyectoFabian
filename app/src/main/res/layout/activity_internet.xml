@@ -13,4 +13,12 @@
         android:layout_height="match_parent"
         android:background="@drawable/planinternet"></ImageView>
 
+    <ImageView
+        android:id="@+id/ivCerrarPlanInternet"
+        android:layout_width="75dp"
+        android:layout_height="72dp"
+        android:background="@drawable/cerrarnaranjo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"/>
+
 </RelativeLayout>

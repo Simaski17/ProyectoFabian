@@ -110,7 +110,7 @@ public class RecomendamosFragment extends Fragment {
         imvf.setDrawingCacheEnabled(true);
         Bitmap bitmap = imvf.getDrawingCache();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] bitmapdata = stream.toByteArray();
 
         Intent intent = new Intent(getContext(), FondoCastActivity.class);

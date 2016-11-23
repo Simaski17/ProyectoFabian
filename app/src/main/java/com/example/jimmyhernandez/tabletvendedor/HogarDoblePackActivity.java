@@ -35,7 +35,6 @@ public class HogarDoblePackActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFlechaAtras:
-                intenciones(MainActivity.class);
                 finish();
                 break;
             case R.id.rlTvTf:

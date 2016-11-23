@@ -229,7 +229,15 @@
                     android:textColor="@color/AzulEntel"
                     android:textSize="21sp"
                     android:layout_marginTop="349dp"
-                    android:layout_marginLeft="38dp" />
+                    android:layout_marginLeft="88dp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerEquipos"
+                    android:layout_width="465dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="395dp">
+
+                </android.support.v7.widget.RecyclerView>
 
             </RelativeLayout>
 

@@ -29,8 +29,6 @@ public class HogarTriplePackActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFlechaAtras:
-                Intent intent = new Intent(HogarTriplePackActivity.this, MainActivity.class);
-                startActivity(intent);
                 finish();
                 break;
             case R.id.rlTvTf:

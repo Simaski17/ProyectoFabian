@@ -1,25 +1,23 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -41,8 +39,8 @@ public class FondoCastActivity extends AppCompatActivity {
     TextView tvTextoCast;
     @BindView(R.id.ivIconCastFc)
     ImageView ivIconCastFc;
-//    @BindView(R.id.prueba)
-     ImageView prueba;
+    //    @BindView(R.id.prueba)
+    ImageView prueba;
     @BindView(R.id.ivGrupoVideoWallInactivo)
     ImageView ivGrupoVideoWallInactivo;
     @BindView(R.id.ivGrupoVideoWallActivo)
@@ -90,12 +88,23 @@ public class FondoCastActivity extends AppCompatActivity {
     @BindView(R.id.linearSeleccionPantallasVideoWall)
     LinearLayout linearSeleccionPantallasVideoWall;
     @BindView(R.id.activity_main)
-    RelativeLayout  activity_main;
+    RelativeLayout activity_main;
+    @BindView(R.id.ivBotonSi)
+    ImageView ivBotonSi;
+    @BindView(R.id.ivBotonNo)
+    ImageView ivBotonNo;
+    @BindView(R.id.rlPreguntaApp)
+    RelativeLayout rlPreguntaApp;
+    @BindView(R.id.rlCerrarCast)
+    RelativeLayout rlCerrarCast;
 
-    private static final int SWIPE_MIN_DISTANCE = 80;
-    private static final int SWIPE_THRESHOLD_VELOCITY = 100;
+    private static final int SWIPE_MIN_DISTANCE = 1;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 10;
+
+
 
     private int bandera = 0;
+    private int unicode;
 
     private String server;
     private int port;
@@ -111,18 +120,16 @@ public class FondoCastActivity extends AppCompatActivity {
 
     String TAG = "HOLA";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
-
+        unicode = 0;
 
         detector = new GestureDetector(new GestureListener());
-
-        server = "192.168.0.111";
         port = 8080;
-
 
         prueba = (ImageView) findViewById(R.id.prueba);
         prueba.setOnTouchListener(new View.OnTouchListener() {
@@ -143,72 +150,163 @@ public class FondoCastActivity extends AppCompatActivity {
 
     }
 
-    private class GestureListener extends GestureDetector.SimpleOnGestureListener
-    {
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
 
-            if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && bandera == 0){
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+
+            if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && bandera == 0) {
 
                 ivFlechaCast.setVisibility(View.GONE);
                 tvTextoCast.setVisibility(View.GONE);
                 ivIconCastFc.setVisibility(View.GONE);
                 rlErrorCast.setVisibility(View.VISIBLE);
-            }else  if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY){
-                message = idGrupo+"|"+idPantalla+"|"+mensajeRecibido;
+            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
+                message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
 
 
-                Log.d(TAG, "onFling: aqui9877987987" + message);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
                 final float d = v.getY();
                 v.animate().translationY(-activity_main.getHeight()).alpha(1.0f);
-                TimerTask ts = new TimerTask()
-                {
+                TimerTask ts = new TimerTask() {
                     @Override
-                    public void run()
-                    {
-                        runOnUiThread(new Runnable()
-                        {
+                    public void run() {
+                        runOnUiThread(new Runnable() {
                             @Override
-                            public void run()
-                            {
+                            public void run() {
                                 //volverEstadoNomral();
                                 v.setY(d);
-                                if(mensajeRecibido.equals("spotify")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("apple")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.apple.android.music");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("netflix")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("uber")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("snapchat")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("waze")){
-                                    Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
-                                    if(launchIntent != null) {
-                                        startActivity(launchIntent);
-                                    }
-                                }else  if(mensajeRecibido.equals("appentel")){
+                                if (mensajeRecibido.equals("spotify")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("apple")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.apple.android.music");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("netflix")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    //Log.d(TAG, "onFling: aqui9877987987" + e2.getY() );
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("uber")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("snapchat")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("waze")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
+                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
+                                            if (launchIntent != null) {
+                                                startActivity(launchIntent);
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            finish();
+                                        }
+                                    });
+                                } else if (mensajeRecibido.equals("appentel")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    prueba.setVisibility(View.GONE);
+                                    rlPreguntaApp.setVisibility(View.VISIBLE);
                                     Intent launchIntent = new Intent(FondoCastActivity.this, MainActivity.class);
-                                    if(launchIntent != null) {
+                                    if (launchIntent != null) {
                                         startActivity(launchIntent);
+                                        finish();
                                     }
                                 }
                             }
@@ -225,7 +323,6 @@ public class FondoCastActivity extends AppCompatActivity {
             }
 
 
-
             return false;
         }
     }
@@ -236,7 +333,7 @@ public class FondoCastActivity extends AppCompatActivity {
         return bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
-    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva, R.id.activity_main})
+    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva, R.id.rlCerrarCast})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCerrarFondoCast:
@@ -265,6 +362,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
                 idGrupo = "2";
+                server = "192.168.0.111";
                 break;
             case R.id.ivGrupoPilarActivo:
                 break;
@@ -277,9 +375,9 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaDosactiva.setVisibility(View.GONE);
                 ivPantallaTresactiva.setVisibility(View.GONE);
                 ivPantallaCuatroactiva.setVisibility(View.GONE);
-                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
-                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
-                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "1";
@@ -354,12 +452,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaCuatroVwactiva.setVisibility(View.GONE);
                 ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
-                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
-                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
 
                 ivPantallaUnoVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "1";
+                server = "192.168.0.104";
                 break;
             case R.id.ivPantallaUnoVwactiva:
                 break;
@@ -374,12 +473,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaCuatroVwactiva.setVisibility(View.GONE);
                 ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
-                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
-                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
+//                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
 
                 ivPantallaDosVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "2";
+                server = "192.168.0.105";
                 break;
             case R.id.ivPantallaDosVwactiva:
                 break;
@@ -421,10 +521,25 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaCuatroVwactiva:
                 break;
-            case R.id.activity_main:
+            case R.id.rlCerrarCast:
                 finish();
                 break;
         }
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            switch (unicode) {
+                case 0:
+                    Intent intent = new Intent(FondoCastActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+            }
+
+        }
+        return true;
+    }
+
 
 }

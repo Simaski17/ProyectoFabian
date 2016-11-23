@@ -18,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -34,11 +35,13 @@ import static android.content.ContentValues.TAG;
  */
 public class AppEntelFragment extends Fragment {
 
-   @BindView(R.id.ivCelularMano)
+    @BindView(R.id.ivCelularMano)
     ImageView ivCelularMano;
     @BindView(R.id.ivFondoApp)
     ImageView ivFondoApp;
     //ImageView ivCelularMano;
+
+    MainActivity mainActivity;
 
     private  String mensaje;
 
@@ -53,23 +56,27 @@ public class AppEntelFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_app_entel, container, false);
         ButterKnife.bind(this, view);
-       return view;
+        //RelativeLayout rl = (RelativeLayout) getActivity().findViewById(R.id.linear_menucast);
+        //rl.setVisibility(View.VISIBLE);
+
+        return view;
     }
 
 
     /*
     Evento click imagen Celular Mano
      */
-   @OnClick(R.id.ivFondoApp)
+    @OnClick(R.id.ivFondoApp)
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFondoApp:
+
                 mensaje = "appentel";
                 ImageView imv = (ImageView) view;
                 imv.setDrawingCacheEnabled(true);
                 Bitmap bitmap = imv.getDrawingCache();
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byte[] bitmapdata = stream.toByteArray();
 
                 Intent intent = new Intent(getContext(), FondoCastActivity.class);
