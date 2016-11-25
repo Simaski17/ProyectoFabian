@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -14,10 +15,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -126,6 +130,7 @@ public class FondoCastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
+        Log.d(TAG, "FODOCASTACTIVITY oncreate"+idGrupo);
         unicode = 0;
 
         detector = new GestureDetector(new GestureListener());
@@ -148,12 +153,14 @@ public class FondoCastActivity extends AppCompatActivity {
         prueba.setImageBitmap(ByteArraytoDrawable(byteArray));
         mensajeRecibido = extras.getString("mensaje");
 
+
     }
 
 
     private class GestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            Log.d(TAG, "FODOCASTACTIVITY onfling"+idGrupo);
 
             if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && bandera == 0) {
 
@@ -175,146 +182,29 @@ public class FondoCastActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //volverEstadoNomral();
                                 v.setY(d);
                                 if (mensajeRecibido.equals("spotify")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.spotify.music");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.spotify.music");
                                 } else if (mensajeRecibido.equals("apple")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.apple.android.music");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.apple.android.music");
                                 } else if (mensajeRecibido.equals("netflix")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    //Log.d(TAG, "onFling: aqui9877987987" + e2.getY() );
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.netflix.mediaclient");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.netflix.mediaclient");
                                 } else if (mensajeRecibido.equals("uber")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.ubercab");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.ubercab");
                                 } else if (mensajeRecibido.equals("snapchat")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.snapchat.android");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.snapchat.android");
                                 } else if (mensajeRecibido.equals("waze")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-                                    prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    ivBotonSi.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage("com.waze");
-                                            if (launchIntent != null) {
-                                                startActivity(launchIntent);
-                                                finish();
-                                            }
-                                        }
-                                    });
-                                    ivBotonNo.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            finish();
-                                        }
-                                    });
+                                    pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
                                     EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
                                     prueba.setVisibility(View.GONE);
-                                    rlPreguntaApp.setVisibility(View.VISIBLE);
-                                    Intent launchIntent = new Intent(FondoCastActivity.this, MainActivity.class);
-                                    if (launchIntent != null) {
-                                        startActivity(launchIntent);
                                         finish();
-                                    }
                                 }
                             }
                         });
 
                     }
                 };
-
 
                 Timer timer = new Timer();
                 timer.schedule(ts, 400);
@@ -529,17 +419,58 @@ public class FondoCastActivity extends AppCompatActivity {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
-            switch (unicode) {
-                case 0:
-                    Intent intent = new Intent(FondoCastActivity.this, MainActivity.class);
-                    startActivity(intent);
+            Log.d(TAG, "FODOCASTACTIVITY boton atras"+idGrupo);
                     finish();
-                    break;
-            }
-
         }
         return true;
     }
 
 
+    public void pregunta(final String nombrePaquete){
+        Log.d(TAG, "FODOCASTACTIVITY pregunta"+idGrupo);
+        EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+        EventBus.getDefault().postSticky(new Recordar(idGrupo, idPantalla, server));
+        prueba.setVisibility(View.GONE);
+        rlPreguntaApp.setVisibility(View.VISIBLE);
+        ivBotonSi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent launchIntent = getApplication().getPackageManager().getLaunchIntentForPackage(nombrePaquete);
+                if (launchIntent != null) {
+                    startActivity(launchIntent);
+                    finish();
+
+                }
+            }
+        });
+        ivBotonNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG, "FODOCASTACTIVITY onpause"+idGrupo);
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "FODOCASTACTIVITY onresume"+idGrupo);
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onRecordar(Recordar event){
+        Log.d(TAG, "FODOCASTACTIVITY eventbus"+idGrupo);
+        idGrupo = event.getIdGrupo();
+        idPantalla = event.getIdPantalla();
+        server = event.getServer();
+    }
 }

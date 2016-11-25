@@ -51,8 +51,7 @@ public class AppEntelFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_app_entel, container, false);
         ButterKnife.bind(this, view);
@@ -81,6 +80,7 @@ public class AppEntelFragment extends Fragment {
 
                 Intent intent = new Intent(getContext(), FondoCastActivity.class);
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
+
                 intent.putExtra("img", bitmapdata);
                 intent.putExtra("mensaje", mensaje);
                 startActivity(intent, optionsCompat.toBundle());

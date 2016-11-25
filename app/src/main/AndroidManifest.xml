@@ -31,7 +31,7 @@
             android:theme="@style/myTema" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"
+             android:screenOrientation="landscape"
             android:theme="@style/myTema" />
         <activity
             android:name=".FondoCastActivity"

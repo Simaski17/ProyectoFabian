@@ -59,7 +59,7 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 break;
             case R.id.btIrCatalogo:
                 Intent miIntent = new Intent(IngresoVendedorClienteActivity.this, MainActivity.class);
-                IngresoVendedorClienteActivity.this.startActivity(miIntent);
+                 IngresoVendedorClienteActivity.this.startActivity(miIntent);
                 IngresoVendedorClienteActivity.this.finish();
                 break;
             case R.id.ingreso_vendedor_cliente:
