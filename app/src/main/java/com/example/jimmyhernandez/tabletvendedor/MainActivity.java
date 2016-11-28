@@ -75,8 +75,9 @@ public class MainActivity extends AppCompatActivity {
     private String idPantalla;
     private String server;
     private String message;
+    private String mensaje;
     private int port;
-
+    private  int bandera = 0;
     String TAG = "HOLA";
 
     @Override
@@ -130,11 +131,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.ivBotonCastDesconect:
                 message = idGrupo + "|" + idPantalla + "|" + "disconnect";
-                //EventBus.getDefault().postSticky(new Message("hola", idPantalla, server));
+                EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 Log.d(TAG, "MAINACTIVITY Boton Cast"+idGrupo);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
                 linearMenucast.setVisibility(View.GONE);
+                //bandera = 0;
                 break;
         }
     }
@@ -203,9 +205,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "MAINACTIVITY onResume"+idGrupo);
         EventBus.getDefault().register(this);
-        if(idGrupo == "cerrar"){
+        if(idGrupo == "cerrar" || mensaje == "cerrar"){
             linearMenucast.setVisibility(View.GONE);
         }
     }
@@ -213,27 +214,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "MAINACTIVITY onPause"+idGrupo);
         EventBus.getDefault().unregister(this);
     }
 
 
     @Override
     protected void onDestroy() {
-        Log.d(TAG, "MAINACTIVITY onDestroy"+idGrupo);
         super.onDestroy();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onMessage(Message event) {
-        Log.d(TAG, "MAINACTIVITY onMessage"+idGrupo);
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
         if(idGrupo == "cerrar"){
             linearMenucast.setVisibility(View.GONE);
-        }else {
+        }else{
             linearMenucast.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void  onRecordar(Recordar event) {
+        mensaje = event.getMensaje();
+        if(mensaje == "cerrar"){
+            linearMenucast.setVisibility(View.GONE);
         }
     }
 

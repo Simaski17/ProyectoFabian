@@ -130,7 +130,6 @@ public class FondoCastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
-        Log.d(TAG, "FODOCASTACTIVITY oncreate"+idGrupo);
         unicode = 0;
 
         detector = new GestureDetector(new GestureListener());
@@ -197,6 +196,7 @@ public class FondoCastActivity extends AppCompatActivity {
                                     pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
                                     EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                         finish();
                                 }
@@ -227,14 +227,12 @@ public class FondoCastActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCerrarFondoCast:
+                //EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 finish();
                 break;
             case R.id.ivGrupoVideoWallInactivo:
                 ivGrupoVideoWallInactivo.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
+                varComunes();
                 linearMenucast.setVisibility(View.GONE);
                 ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasVideoWall.setVisibility(View.VISIBLE);
@@ -244,10 +242,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivGrupoPilarInactivo:
                 ivGrupoPilarInactivo.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
+                varComunes();
                 linearMenucast.setVisibility(View.GONE);
                 ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
@@ -258,16 +253,10 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaUnoInactiva:
                 ivPantallaUnoInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
+                varComunes();
                 ivPantallaDosactiva.setVisibility(View.GONE);
                 ivPantallaTresactiva.setVisibility(View.GONE);
                 ivPantallaCuatroactiva.setVisibility(View.GONE);
-//                ivPantallaDosInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaTresInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "1";
@@ -276,18 +265,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaDosInactiva:
                 ivPantallaDosInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaUnoactiva.setVisibility(View.GONE);
                 ivPantallaTresactiva.setVisibility(View.GONE);
                 ivPantallaCuatroactiva.setVisibility(View.GONE);
                 ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
                 ivPantallaTresInactiva.setVisibility(View.VISIBLE);
                 ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaDosactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 break;
@@ -295,18 +279,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaTresInactiva:
                 ivPantallaTresInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaDosactiva.setVisibility(View.GONE);
                 ivPantallaUnoactiva.setVisibility(View.GONE);
                 ivPantallaCuatroactiva.setVisibility(View.GONE);
                 ivPantallaDosInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
                 ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaTresactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 break;
@@ -314,18 +293,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaCuatroInactiva:
                 ivPantallaCuatroInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaDosactiva.setVisibility(View.GONE);
                 ivPantallaTresactiva.setVisibility(View.GONE);
                 ivPantallaUnoactiva.setVisibility(View.GONE);
                 ivPantallaDosInactiva.setVisibility(View.VISIBLE);
                 ivPantallaTresInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaCuatroactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 break;
@@ -333,18 +307,11 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaUnoVwInactiva:
                 ivPantallaUnoVwInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaDosVwactiva.setVisibility(View.GONE);
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaCuatroVwactiva.setVisibility(View.GONE);
                 ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaUnoVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "1";
@@ -354,18 +321,11 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaDosVwInactiva:
                 ivPantallaDosVwInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaUnoVwactiva.setVisibility(View.GONE);
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaCuatroVwactiva.setVisibility(View.GONE);
                 ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
-//                ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaDosVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "2";
@@ -375,18 +335,13 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaTresVwInactiva:
                 ivPantallaTresVwInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+                varComunes();
                 ivPantallaDosVwactiva.setVisibility(View.GONE);
                 ivPantallaUnoVwactiva.setVisibility(View.GONE);
                 ivPantallaCuatroVwactiva.setVisibility(View.GONE);
                 ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
                 ivPantallaCuatroVwInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaTresVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 break;
@@ -394,42 +349,41 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaCuatroVwInactiva:
                 ivPantallaCuatroVwInactiva.setVisibility(View.GONE);
-                ivFlechaCast.setVisibility(View.GONE);
-                tvTextoCast.setVisibility(View.GONE);
-                ivIconCastFc.setVisibility(View.GONE);
-                rlErrorCast.setVisibility(View.GONE);
-
+               varComunes();
                 ivPantallaDosVwactiva.setVisibility(View.GONE);
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaUnoVwactiva.setVisibility(View.GONE);
                 ivPantallaDosVwInactiva.setVisibility(View.VISIBLE);
                 ivPantallaTresVwInactiva.setVisibility(View.VISIBLE);
                 ivPantallaUnoVwInactiva.setVisibility(View.VISIBLE);
-
                 ivPantallaCuatroVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 break;
             case R.id.ivPantallaCuatroVwactiva:
                 break;
             case R.id.rlCerrarCast:
+                //EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 finish();
                 break;
         }
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
-            Log.d(TAG, "FODOCASTACTIVITY boton atras"+idGrupo);
-                    finish();
-        }
-        return true;
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
+    public void varComunes(){
+        ivFlechaCast.setVisibility(View.GONE);
+        tvTextoCast.setVisibility(View.GONE);
+        ivIconCastFc.setVisibility(View.GONE);
+        rlErrorCast.setVisibility(View.GONE);
+    }
 
     public void pregunta(final String nombrePaquete){
-        Log.d(TAG, "FODOCASTACTIVITY pregunta"+idGrupo);
         EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
-        EventBus.getDefault().postSticky(new Recordar(idGrupo, idPantalla, server));
+        EventBus.getDefault().postSticky(new Recordar(idGrupo));
         prueba.setVisibility(View.GONE);
         rlPreguntaApp.setVisibility(View.VISIBLE);
         ivBotonSi.setOnClickListener(new View.OnClickListener() {
@@ -452,7 +406,7 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
 
-    @Override
+/*    @Override
     public void onPause() {
         super.onPause();
         Log.d(TAG, "FODOCASTACTIVITY onpause"+idGrupo);
@@ -472,5 +426,5 @@ public class FondoCastActivity extends AppCompatActivity {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
-    }
+    }*/
 }
