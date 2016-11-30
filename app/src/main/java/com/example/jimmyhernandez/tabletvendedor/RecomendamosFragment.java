@@ -18,6 +18,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 
@@ -47,6 +51,9 @@ public class RecomendamosFragment extends Fragment {
 
     ImageView imv;
     private  String mensaje;
+    private String idGrupo = "grupo";
+    private String idPantalla = "pantalla";
+    private String server = "server";
 
     String TAG = "HOLA";
 
@@ -120,7 +127,7 @@ public class RecomendamosFragment extends Fragment {
         startActivity(intent, optionsCompat.toBundle());
     }
 
-    public void  LaunchComponent (String packageName, String name){
+   /* public void  LaunchComponent (String packageName, String name){
 
         Log.d(TAG, "Nombre paquete " + packageName);
         Intent i = new Intent(Intent.ACTION_MAIN);
@@ -130,6 +137,26 @@ public class RecomendamosFragment extends Fragment {
         startActivity(i);
 
 
+    }*/
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onMessage(Message event) {
+        idGrupo = event.getIdGrupo();
+        idPantalla = event.getIdPantalla();
+        server = event.getServer();
     }
 
 }

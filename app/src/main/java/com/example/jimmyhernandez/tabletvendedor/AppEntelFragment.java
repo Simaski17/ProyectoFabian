@@ -21,6 +21,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.ByteArrayOutputStream;
 
 import butterknife.BindView;
@@ -40,6 +44,11 @@ public class AppEntelFragment extends Fragment {
     @BindView(R.id.ivFondoApp)
     ImageView ivFondoApp;
     //ImageView ivCelularMano;
+    String TAG = "HOLA";
+
+    private String idGrupo = "grupo";
+    private String idPantalla = "pantalla";
+    private String server = "server";
 
     MainActivity mainActivity;
 
@@ -57,6 +66,8 @@ public class AppEntelFragment extends Fragment {
         ButterKnife.bind(this, view);
         //RelativeLayout rl = (RelativeLayout) getActivity().findViewById(R.id.linear_menucast);
         //rl.setVisibility(View.VISIBLE);
+        mainActivity = new MainActivity();
+
 
         return view;
     }
@@ -69,8 +80,8 @@ public class AppEntelFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivFondoApp:
-
                 mensaje = "appentel";
+                Log.d(TAG, "APPENTEL "+idGrupo);
                 ImageView imv = (ImageView) view;
                 imv.setDrawingCacheEnabled(true);
                 Bitmap bitmap = imv.getDrawingCache();
@@ -80,13 +91,34 @@ public class AppEntelFragment extends Fragment {
 
                 Intent intent = new Intent(getContext(), FondoCastActivity.class);
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
-
+                //EventBus.getDefault().postSticky(new FondoCastRecordar(id));
                 intent.putExtra("img", bitmapdata);
                 intent.putExtra("mensaje", mensaje);
                 startActivity(intent, optionsCompat.toBundle());
 
                 break;
         }
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onMessage(Message event) {
+        idGrupo = event.getIdGrupo();
+        idPantalla = event.getIdPantalla();
+        server = event.getServer();
     }
 
 

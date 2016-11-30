@@ -32,8 +32,7 @@ import butterknife.OnClick;
 
 public class FondoCastActivity extends AppCompatActivity {
 
-    //ImageView imv;
-    @BindView(R.id.ivCerrarFondoCast)
+     @BindView(R.id.ivCerrarFondoCast)
     ImageView ivCerrarFondoCast;
     @BindView(R.id.rlErrorCast)
     RelativeLayout rlErrorCast;
@@ -108,7 +107,6 @@ public class FondoCastActivity extends AppCompatActivity {
 
 
     private int bandera = 0;
-    private int unicode;
 
     private String server;
     private int port;
@@ -130,7 +128,6 @@ public class FondoCastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fondo_cast);
         ButterKnife.bind(this);
-        unicode = 0;
 
         detector = new GestureDetector(new GestureListener());
         port = 8080;
@@ -247,7 +244,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
                 idGrupo = "2";
-                server = "192.168.0.111";
+                server = "192.168.0.101";
                 break;
             case R.id.ivGrupoPilarActivo:
                 break;
@@ -406,7 +403,7 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
 
-/*    @Override
+    @Override
     public void onPause() {
         super.onPause();
         Log.d(TAG, "FODOCASTACTIVITY onpause"+idGrupo);
@@ -421,10 +418,10 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public void onRecordar(Recordar event){
+    public void onFondoRecordar(FondoCastRecordar event){
         Log.d(TAG, "FODOCASTACTIVITY eventbus"+idGrupo);
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
-    }*/
+    }
 }

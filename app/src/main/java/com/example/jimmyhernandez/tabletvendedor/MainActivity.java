@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     private String message;
     private String mensaje;
     private int port;
-    private  int bandera = 0;
     String TAG = "HOLA";
 
     @Override
@@ -230,7 +229,17 @@ public class MainActivity extends AppCompatActivity {
         server = event.getServer();
         if(idGrupo == "cerrar"){
             linearMenucast.setVisibility(View.GONE);
-        }else{
+        }else if(idGrupo == "2"){
+            ivGrupoPilarActivo.setVisibility(View.VISIBLE);
+            ivGrupoPilarInactivo.setVisibility(View.GONE);
+            ivGrupoVideoWallActivo.setVisibility(View.GONE);
+            ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
+            linearMenucast.setVisibility(View.VISIBLE);
+        }else {
+            ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
+            ivGrupoVideoWallInactivo.setVisibility(View.GONE);
+            ivGrupoPilarActivo.setVisibility(View.GONE);
+            ivGrupoPilarInactivo.setVisibility(View.VISIBLE);
             linearMenucast.setVisibility(View.VISIBLE);
         }
     }
