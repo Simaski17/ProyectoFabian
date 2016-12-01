@@ -8,11 +8,13 @@ public class Message  {
     private String idGrupo;
     private String idPantalla;
     private String server;
+    private String cast;
 
-    public Message(String idGrupo, String idPantalla, String server) {
+    public Message(String idGrupo, String idPantalla, String server, String cast) {
         this.idGrupo = idGrupo;
         this.idPantalla = idPantalla;
         this.server = server;
+        this.cast = cast;
     }
 
     public String getServer() {
@@ -38,4 +40,14 @@ public class Message  {
     public void setIdPantalla(String idPantalla) {
         this.idPantalla = idPantalla;
     }
+
+    public String getCast() {
+        return cast;
+    }
+
+    public void setCast(String cast) {
+        this.cast = cast;
+    }
+
+
 }

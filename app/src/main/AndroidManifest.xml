@@ -24,10 +24,12 @@
         <activity
             android:name=".LoginIngresoVendedorActivity"
             android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"
             android:theme="@style/myTema" />
         <activity
             android:name=".IngresoVendedorClienteActivity"
             android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"
             android:theme="@style/myTema" />
         <activity
             android:name=".MainActivity"

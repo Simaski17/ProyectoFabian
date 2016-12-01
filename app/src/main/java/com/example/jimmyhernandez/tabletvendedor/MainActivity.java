@@ -1,9 +1,7 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,17 +10,15 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
 import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
 
 import org.greenrobot.eventbus.EventBus;
@@ -70,11 +66,18 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivGrupoVideoWallInactivo;
     @BindView(R.id.ivGrupoPilarInactivo)
     ImageView ivGrupoPilarInactivo;
+    @BindView(R.id.tvNombreCast)
+    TextView tvNombreCast;
+    @BindView(R.id.tvTipoDispCast)
+    TextView tvTipoDispCast;
+    @BindView(R.id.tvNumeroPantCast)
+    TextView tvNumeroPantCast;
 
     private String idUsuario = "user";
     private String idGrupo = "group";
     private String idPantalla = "screen";
     private String server = "server";
+    private String cast;
 
 
     private String message;
@@ -85,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "MAINACTIVITY onCreate"+idGrupo);
         //Fresco.initialize(this);
         /*
          * Seteando el Fullscreen
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 		 */
 
 
-        if(idGrupo == "hola"){
+        if (idGrupo == "hola") {
             linearMenucast.setVisibility(View.GONE);
         }
         port = 8080;
@@ -135,14 +137,14 @@ public class MainActivity extends AppCompatActivity {
                 EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
-                EventBus.getDefault().postSticky(new Message("group", "screen", "server"));
+                EventBus.getDefault().postSticky(new Message("group", "screen", "server",""));
                 linearMenucast.setVisibility(View.GONE);
                 break;
         }
     }
 
     /*
-	* Adaptador de los fragmentos para los tabs
+    * Adaptador de los fragmentos para los tabs
 	*/
     public class SamplePagerAdapter extends FragmentPagerAdapter {
 
@@ -204,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         EventBus.getDefault().register(this);
-        if(idGrupo == "cerrar" || mensaje == "cerrar"){
+        if (idGrupo == "cerrar" || mensaje == "cerrar") {
             linearMenucast.setVisibility(View.GONE);
         }
     }
@@ -226,28 +228,34 @@ public class MainActivity extends AppCompatActivity {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
-        Log.d(TAG, "MAINACTIVITY EVENTBUS "+idGrupo);
-        if(idGrupo == "cerrar"){
+        cast = event.getCast();
+        tvNombreCast.setText(cast);
+        Log.d(TAG, "MAINACTIVITY EVENTBUS " + idGrupo);
+        if (idGrupo == "cerrar") {
             linearMenucast.setVisibility(View.GONE);
-        }else if(idGrupo == "2"){
+        } else if (idGrupo == "2") {
             ivGrupoPilarActivo.setVisibility(View.VISIBLE);
             ivGrupoPilarInactivo.setVisibility(View.GONE);
             ivGrupoVideoWallActivo.setVisibility(View.GONE);
             ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
             linearMenucast.setVisibility(View.VISIBLE);
-        }else if(idGrupo == "1"){
+            tvTipoDispCast.setText("Pilar");
+            tvNumeroPantCast.setText(idPantalla);
+        } else if (idGrupo == "1") {
             ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
             ivGrupoVideoWallInactivo.setVisibility(View.GONE);
             ivGrupoPilarActivo.setVisibility(View.GONE);
             ivGrupoPilarInactivo.setVisibility(View.VISIBLE);
             linearMenucast.setVisibility(View.VISIBLE);
+            tvTipoDispCast.setText("VideoWall");
+            tvNumeroPantCast.setText(idPantalla);
         }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public void  onRecordar(Recordar event) {
+    public void onRecordar(Recordar event) {
         mensaje = event.getMensaje();
-        if(mensaje == "cerrar"){
+        if (mensaje == "cerrar") {
             linearMenucast.setVisibility(View.GONE);
         }
     }
@@ -272,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.setNegativeButton("Si",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));
+                        EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server,""));
                         finish();
                     }
                 });

@@ -176,7 +176,7 @@ public class FondoCastActivity extends AppCompatActivity {
             } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group")  {
 
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-
+                Log.d(TAG, "FONDOACTIVITY MENSAJE " + mensajeRecibido);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
                 final float d = v.getY();
@@ -201,7 +201,7 @@ public class FondoCastActivity extends AppCompatActivity {
                                 } else if (mensajeRecibido.equals("waze")) {
                                     pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                     finish();
@@ -219,7 +219,7 @@ public class FondoCastActivity extends AppCompatActivity {
 
             }else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-
+                Log.d(TAG, "FONDOACTIVITY MENSAJE " + mensajeRecibido);
 
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
@@ -245,7 +245,7 @@ public class FondoCastActivity extends AppCompatActivity {
                                 } else if (mensajeRecibido.equals("waze")) {
                                     pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                         finish();
@@ -280,11 +280,6 @@ public class FondoCastActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.ivGrupoVideoWallInactivo:
-                //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-                /*message = idGrupo + "|" + idPantalla + "|" + "disconnect";
-                ClientSocket myClientVw = new ClientSocket(server, port, message);
-                myClientVw.execute();
-                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));*/
                 ivGrupoVideoWallInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
@@ -295,11 +290,6 @@ public class FondoCastActivity extends AppCompatActivity {
             case R.id.ivGrupoVideoWallActivo:
                 break;
             case R.id.ivGrupoPilarInactivo:
-                //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-                /*message = idGrupo + "|" + idPantalla + "|" + "disconnect";
-                ClientSocket myClientPilar = new ClientSocket(server, port, message);
-                myClientPilar.execute();
-                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));*/
                 ivGrupoPilarInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
@@ -421,7 +411,6 @@ public class FondoCastActivity extends AppCompatActivity {
             case R.id.ivPantallaCuatroVwactiva:
                 break;
             case R.id.rlCerrarCast:
-                //EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 finish();
                 break;
         }
@@ -441,7 +430,7 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
     public void pregunta(final String nombrePaquete){
-        EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+        EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
         EventBus.getDefault().postSticky(new Recordar(idGrupo));
         prueba.setVisibility(View.GONE);
         rlPreguntaApp.setVisibility(View.VISIBLE);
