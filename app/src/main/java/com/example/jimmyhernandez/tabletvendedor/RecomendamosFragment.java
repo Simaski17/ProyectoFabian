@@ -51,9 +51,11 @@ public class RecomendamosFragment extends Fragment {
 
     ImageView imv;
     private  String mensaje;
-    private String idGrupo = "grupo";
-    private String idPantalla = "pantalla";
+    private String idUsuario = "user";
+    private String idGrupo = "group";
+    private String idPantalla = "screen";
     private String server = "server";
+    private int bandera = 0;
 
     String TAG = "HOLA";
 
@@ -70,6 +72,8 @@ public class RecomendamosFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recomendamos, container, false);
         ButterKnife.bind(this, view);
+
+
 
 
         return view;
@@ -124,6 +128,10 @@ public class RecomendamosFragment extends Fragment {
         ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
         intent.putExtra("img", bitmapdata);
         intent.putExtra("mensaje", mensaje);
+        intent.putExtra("idGrupo", idGrupo);
+        intent.putExtra("idPantalla", idPantalla);
+        intent.putExtra("server", server);
+        intent.putExtra("bandera", bandera);
         startActivity(intent, optionsCompat.toBundle());
     }
 
@@ -157,6 +165,11 @@ public class RecomendamosFragment extends Fragment {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
+        if(idGrupo != "group" ){
+            bandera = 1;
+        }else{
+            bandera = 0;
+        }
     }
 
 }

@@ -46,9 +46,11 @@ public class AppEntelFragment extends Fragment {
     //ImageView ivCelularMano;
     String TAG = "HOLA";
 
-    private String idGrupo = "grupo";
-    private String idPantalla = "pantalla";
+    private String idUsuario = "user";
+    private String idGrupo = "group";
+    private String idPantalla = "screen";
     private String server = "server";
+    private int bandera = 0;
 
     MainActivity mainActivity;
 
@@ -69,6 +71,7 @@ public class AppEntelFragment extends Fragment {
         mainActivity = new MainActivity();
 
 
+
         return view;
     }
 
@@ -81,7 +84,6 @@ public class AppEntelFragment extends Fragment {
         switch (view.getId()) {
             case R.id.ivFondoApp:
                 mensaje = "appentel";
-                Log.d(TAG, "APPENTEL "+idGrupo);
                 ImageView imv = (ImageView) view;
                 imv.setDrawingCacheEnabled(true);
                 Bitmap bitmap = imv.getDrawingCache();
@@ -94,6 +96,10 @@ public class AppEntelFragment extends Fragment {
                 //EventBus.getDefault().postSticky(new FondoCastRecordar(id));
                 intent.putExtra("img", bitmapdata);
                 intent.putExtra("mensaje", mensaje);
+                intent.putExtra("idGrupo", idGrupo);
+                intent.putExtra("idPantalla", idPantalla);
+                intent.putExtra("server", server);
+                intent.putExtra("bandera", bandera);
                 startActivity(intent, optionsCompat.toBundle());
 
                 break;
@@ -119,6 +125,11 @@ public class AppEntelFragment extends Fragment {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
+        if(idGrupo != "group" ){
+            bandera = 1;
+        }else{
+            bandera = 0;
+        }
     }
 
 

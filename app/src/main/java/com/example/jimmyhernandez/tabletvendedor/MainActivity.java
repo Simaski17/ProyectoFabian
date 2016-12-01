@@ -71,9 +71,12 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.ivGrupoPilarInactivo)
     ImageView ivGrupoPilarInactivo;
 
-    private String idGrupo = "hola";
-    private String idPantalla;
-    private String server;
+    private String idUsuario = "user";
+    private String idGrupo = "group";
+    private String idPantalla = "screen";
+    private String server = "server";
+
+
     private String message;
     private String mensaje;
     private int port;
@@ -102,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(idGrupo == "hola"){
-            Log.d(TAG, "MAINACTIVITY If"+idGrupo);
             linearMenucast.setVisibility(View.GONE);
         }
         port = 8080;
@@ -131,16 +133,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ivBotonCastDesconect:
                 message = idGrupo + "|" + idPantalla + "|" + "disconnect";
                 EventBus.getDefault().postSticky(new Recordar("cerrar"));
-                Log.d(TAG, "MAINACTIVITY Boton Cast"+idGrupo);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
+                EventBus.getDefault().postSticky(new Message("group", "screen", "server"));
                 linearMenucast.setVisibility(View.GONE);
-                //bandera = 0;
                 break;
         }
     }
-
-
 
     /*
 	* Adaptador de los fragmentos para los tabs
@@ -227,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
+        Log.d(TAG, "MAINACTIVITY EVENTBUS "+idGrupo);
         if(idGrupo == "cerrar"){
             linearMenucast.setVisibility(View.GONE);
         }else if(idGrupo == "2"){
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
             ivGrupoVideoWallActivo.setVisibility(View.GONE);
             ivGrupoVideoWallInactivo.setVisibility(View.VISIBLE);
             linearMenucast.setVisibility(View.VISIBLE);
-        }else {
+        }else if(idGrupo == "1"){
             ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
             ivGrupoVideoWallInactivo.setVisibility(View.GONE);
             ivGrupoPilarActivo.setVisibility(View.GONE);

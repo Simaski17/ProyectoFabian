@@ -148,6 +148,13 @@ public class FondoCastActivity extends AppCompatActivity {
         byte[] byteArray = extras.getByteArray("img");
         prueba.setImageBitmap(ByteArraytoDrawable(byteArray));
         mensajeRecibido = extras.getString("mensaje");
+        idGrupo = extras.getString("idGrupo");
+        idPantalla = extras.getString("idPantalla");
+        server = extras.getString("server");
+        bandera = extras.getInt("bandera");
+
+        //Log.d(TAG, "FONDOCASTACTIVITY GRUPO "+idGrupo);
+
 
 
     }
@@ -156,15 +163,59 @@ public class FondoCastActivity extends AppCompatActivity {
     private class GestureListener extends GestureDetector.SimpleOnGestureListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            Log.d(TAG, "FODOCASTACTIVITY onfling"+idGrupo);
-
             if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && bandera == 0) {
 
                 ivFlechaCast.setVisibility(View.GONE);
                 tvTextoCast.setVisibility(View.GONE);
                 ivIconCastFc.setVisibility(View.GONE);
                 rlErrorCast.setVisibility(View.VISIBLE);
-            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
+            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group") {
+                //message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+
+                message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
+
+                Log.d(TAG, "FONDOCASTACTIVITY MENSAJE UNO "+message);
+                ClientSocket myClient = new ClientSocket(server, port, message);
+                myClient.execute();
+                final float d = v.getY();
+                v.animate().translationY(-activity_main.getHeight()).alpha(1.0f);
+                TimerTask ts = new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                v.setY(d);
+                                if (mensajeRecibido.equals("spotify")) {
+                                    pregunta("com.spotify.music");
+                                } else if (mensajeRecibido.equals("apple")) {
+                                    pregunta("com.apple.android.music");
+                                } else if (mensajeRecibido.equals("netflix")) {
+                                    pregunta("com.netflix.mediaclient");
+                                } else if (mensajeRecibido.equals("uber")) {
+                                    pregunta("com.ubercab");
+                                } else if (mensajeRecibido.equals("snapchat")) {
+                                    pregunta("com.snapchat.android");
+                                } else if (mensajeRecibido.equals("waze")) {
+                                    pregunta("com.waze");
+                                } else if (mensajeRecibido.equals("appentel")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                }
+                            }
+                        });
+
+                    }
+                };
+
+                Timer timer = new Timer();
+                timer.schedule(ts, 400);
+
+                return false; // Bottom to top
+
+            }else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
 
 
@@ -224,10 +275,14 @@ public class FondoCastActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCerrarFondoCast:
-                //EventBus.getDefault().postSticky(new Recordar("cerrar"));
                 finish();
                 break;
             case R.id.ivGrupoVideoWallInactivo:
+                //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
+                message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+                ClientSocket myClientVw = new ClientSocket(server, port, message);
+                myClientVw.execute();
+                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));
                 ivGrupoVideoWallInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
@@ -238,6 +293,11 @@ public class FondoCastActivity extends AppCompatActivity {
             case R.id.ivGrupoVideoWallActivo:
                 break;
             case R.id.ivGrupoPilarInactivo:
+                //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
+                message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+                ClientSocket myClientPilar = new ClientSocket(server, port, message);
+                myClientPilar.execute();
+                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));
                 ivGrupoPilarInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
@@ -326,7 +386,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaDosVwactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "2";
-                server = "192.168.0.105";
+                server = "192.168.0.100";
                 break;
             case R.id.ivPantallaDosVwactiva:
                 break;
@@ -406,20 +466,17 @@ public class FondoCastActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        Log.d(TAG, "FODOCASTACTIVITY onpause"+idGrupo);
         EventBus.getDefault().unregister(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(TAG, "FODOCASTACTIVITY onresume"+idGrupo);
         EventBus.getDefault().register(this);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
     public void onFondoRecordar(FondoCastRecordar event){
-        Log.d(TAG, "FODOCASTACTIVITY eventbus"+idGrupo);
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();
