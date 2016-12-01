@@ -153,8 +153,12 @@ public class FondoCastActivity extends AppCompatActivity {
         server = extras.getString("server");
         bandera = extras.getInt("bandera");
 
-        //Log.d(TAG, "FONDOCASTACTIVITY GRUPO "+idGrupo);
 
+        if(idGrupo.equals("group") || idGrupo.equals("cerrar")){
+            linearMenucast.setVisibility(View.VISIBLE);
+            bandera = 0;
+
+        }
 
 
     }
@@ -169,12 +173,10 @@ public class FondoCastActivity extends AppCompatActivity {
                 tvTextoCast.setVisibility(View.GONE);
                 ivIconCastFc.setVisibility(View.GONE);
                 rlErrorCast.setVisibility(View.VISIBLE);
-            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group") {
-                //message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group")  {
 
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
 
-                Log.d(TAG, "FONDOCASTACTIVITY MENSAJE UNO "+message);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
                 final float d = v.getY();
@@ -279,10 +281,10 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivGrupoVideoWallInactivo:
                 //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-                message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+                /*message = idGrupo + "|" + idPantalla + "|" + "disconnect";
                 ClientSocket myClientVw = new ClientSocket(server, port, message);
                 myClientVw.execute();
-                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));
+                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));*/
                 ivGrupoVideoWallInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
@@ -294,10 +296,10 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivGrupoPilarInactivo:
                 //message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-                message = idGrupo + "|" + idPantalla + "|" + "disconnect";
+                /*message = idGrupo + "|" + idPantalla + "|" + "disconnect";
                 ClientSocket myClientPilar = new ClientSocket(server, port, message);
                 myClientPilar.execute();
-                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));
+                EventBus.getDefault().postSticky(new Message("cerrar", idPantalla, server));*/
                 ivGrupoPilarInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
