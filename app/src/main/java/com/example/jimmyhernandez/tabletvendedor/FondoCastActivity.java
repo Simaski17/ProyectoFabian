@@ -176,7 +176,6 @@ public class FondoCastActivity extends AppCompatActivity {
             } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group")  {
 
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
-                Log.d(TAG, "FONDOACTIVITY MENSAJE " + mensajeRecibido);
                 ClientSocket myClient = new ClientSocket(server, port, message);
                 myClient.execute();
                 final float d = v.getY();

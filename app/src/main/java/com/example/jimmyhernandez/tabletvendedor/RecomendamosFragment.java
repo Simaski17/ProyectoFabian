@@ -135,17 +135,6 @@ public class RecomendamosFragment extends Fragment {
         startActivity(intent, optionsCompat.toBundle());
     }
 
-   /* public void  LaunchComponent (String packageName, String name){
-
-        Log.d(TAG, "Nombre paquete " + packageName);
-        Intent i = new Intent(Intent.ACTION_MAIN);
-        PackageManager manager = getActivity().getPackageManager();
-        i = manager.getLaunchIntentForPackage(packageName);
-        i.addCategory(Intent.CATEGORY_LAUNCHER);
-        startActivity(i);
-
-
-    }*/
 
     @Override
     public void onResume() {
