@@ -8,14 +8,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
 
@@ -32,7 +30,7 @@ import butterknife.OnClick;
 
 public class FondoCastActivity extends AppCompatActivity {
 
-     @BindView(R.id.ivCerrarFondoCast)
+    @BindView(R.id.ivCerrarFondoCast)
     ImageView ivCerrarFondoCast;
     @BindView(R.id.rlErrorCast)
     RelativeLayout rlErrorCast;
@@ -103,7 +101,10 @@ public class FondoCastActivity extends AppCompatActivity {
 
     private static final int SWIPE_MIN_DISTANCE = 1;
     private static final int SWIPE_THRESHOLD_VELOCITY = 10;
-
+    @BindView(R.id.ivFlechaAtrasPilar)
+    ImageView ivFlechaAtrasPilar;
+    @BindView(R.id.ivFlechaAtrasVideoWall)
+    ImageView ivFlechaAtrasVideoWall;
 
 
     private int bandera = 0;
@@ -154,7 +155,7 @@ public class FondoCastActivity extends AppCompatActivity {
         bandera = extras.getInt("bandera");
 
 
-        if(idGrupo.equals("group") || idGrupo.equals("cerrar")){
+        if (idGrupo.equals("group") || idGrupo.equals("cerrar")) {
             linearMenucast.setVisibility(View.VISIBLE);
             bandera = 0;
 
@@ -173,7 +174,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 tvTextoCast.setVisibility(View.GONE);
                 ivIconCastFc.setVisibility(View.GONE);
                 rlErrorCast.setVisibility(View.VISIBLE);
-            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group")  {
+            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY && idGrupo != "group") {
 
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
                 ClientSocket myClient = new ClientSocket(server, port, message);
@@ -200,7 +201,17 @@ public class FondoCastActivity extends AppCompatActivity {
                                 } else if (mensajeRecibido.equals("waze")) {
                                     pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                } else if (mensajeRecibido.equals("transferirInfo")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                } else if (mensajeRecibido.equals("cuidarMegas")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                     finish();
@@ -216,7 +227,7 @@ public class FondoCastActivity extends AppCompatActivity {
 
                 return false; // Bottom to top
 
-            }else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
+            } else if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE && Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
                 message = idGrupo + "|" + idPantalla + "|" + mensajeRecibido;
                 Log.d(TAG, "FONDOACTIVITY MENSAJE " + mensajeRecibido);
 
@@ -244,10 +255,10 @@ public class FondoCastActivity extends AppCompatActivity {
                                 } else if (mensajeRecibido.equals("waze")) {
                                     pregunta("com.waze");
                                 } else if (mensajeRecibido.equals("appentel")) {
-                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
-                                        finish();
+                                    finish();
                                 }
                             }
                         });
@@ -272,27 +283,27 @@ public class FondoCastActivity extends AppCompatActivity {
         return bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
-    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva, R.id.rlCerrarCast})
+    @OnClick({R.id.ivCerrarFondoCast, R.id.ivGrupoVideoWallInactivo, R.id.ivGrupoVideoWallActivo, R.id.ivGrupoPilarInactivo, R.id.ivGrupoPilarActivo, R.id.ivPantallaUnoInactiva, R.id.ivPantallaUnoactiva, R.id.ivPantallaDosInactiva, R.id.ivPantallaDosactiva, R.id.ivPantallaTresInactiva, R.id.ivPantallaTresactiva, R.id.ivPantallaCuatroInactiva, R.id.ivPantallaCuatroactiva, R.id.ivPantallaUnoVwInactiva, R.id.ivPantallaUnoVwactiva, R.id.ivPantallaDosVwInactiva, R.id.ivPantallaDosVwactiva, R.id.ivPantallaTresVwInactiva, R.id.ivPantallaTresVwactiva, R.id.ivPantallaCuatroVwInactiva, R.id.ivPantallaCuatroVwactiva, R.id.rlCerrarCast, R.id.ivFlechaAtrasPilar, R.id.ivFlechaAtrasVideoWall})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivCerrarFondoCast:
                 finish();
                 break;
             case R.id.ivGrupoVideoWallInactivo:
-                ivGrupoVideoWallInactivo.setVisibility(View.GONE);
+                //ivGrupoVideoWallInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
-                ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
+                //ivGrupoVideoWallActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasVideoWall.setVisibility(View.VISIBLE);
                 idGrupo = "1";
                 break;
             case R.id.ivGrupoVideoWallActivo:
                 break;
             case R.id.ivGrupoPilarInactivo:
-                ivGrupoPilarInactivo.setVisibility(View.GONE);
+                //ivGrupoPilarInactivo.setVisibility(View.GONE);
                 varComunes();
                 linearMenucast.setVisibility(View.GONE);
-                ivGrupoPilarActivo.setVisibility(View.VISIBLE);
+                //ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
                 idGrupo = "2";
                 server = "192.168.0.101";
@@ -397,7 +408,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 break;
             case R.id.ivPantallaCuatroVwInactiva:
                 ivPantallaCuatroVwInactiva.setVisibility(View.GONE);
-               varComunes();
+                varComunes();
                 ivPantallaDosVwactiva.setVisibility(View.GONE);
                 ivPantallaTresVwactiva.setVisibility(View.GONE);
                 ivPantallaUnoVwactiva.setVisibility(View.GONE);
@@ -412,6 +423,14 @@ public class FondoCastActivity extends AppCompatActivity {
             case R.id.rlCerrarCast:
                 finish();
                 break;
+            case R.id.ivFlechaAtrasPilar:
+                linearSeleccionPantallasPilar.setVisibility(View.GONE);
+                linearMenucast.setVisibility(View.VISIBLE);
+                break;
+            case R.id.ivFlechaAtrasVideoWall:
+                linearSeleccionPantallasVideoWall.setVisibility(View.GONE);
+                linearMenucast.setVisibility(View.VISIBLE);
+                break;
         }
     }
 
@@ -421,15 +440,15 @@ public class FondoCastActivity extends AppCompatActivity {
         finish();
     }
 
-    public void varComunes(){
+    public void varComunes() {
         ivFlechaCast.setVisibility(View.GONE);
         tvTextoCast.setVisibility(View.GONE);
         ivIconCastFc.setVisibility(View.GONE);
         rlErrorCast.setVisibility(View.GONE);
     }
 
-    public void pregunta(final String nombrePaquete){
-        EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server,mensajeRecibido));
+    public void pregunta(final String nombrePaquete) {
+        EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
         EventBus.getDefault().postSticky(new Recordar(idGrupo));
         prueba.setVisibility(View.GONE);
         rlPreguntaApp.setVisibility(View.VISIBLE);
@@ -466,7 +485,7 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public void onFondoRecordar(FondoCastRecordar event){
+    public void onFondoRecordar(FondoCastRecordar event) {
         idGrupo = event.getIdGrupo();
         idPantalla = event.getIdPantalla();
         server = event.getServer();

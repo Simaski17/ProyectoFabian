@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivMail;
     @BindView(R.id.ivCerrarSesion)
     ImageView ivCerrarSesion;
-    @BindView(R.id.rlSesion)
-    RelativeLayout rlSesion;
+    /*@BindView(R.id.rlSesion)
+    RelativeLayout rlSesion;*/
 
     private String idUsuario = "user";
     private String idGrupo = "group";
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     /*
     * Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivBotonCastDesconect, R.id.ivMail, R.id.ivCerrarSesion, R.id.rlSesion})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivBotonCastDesconect, R.id.ivMail, R.id.ivCerrarSesion})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
@@ -167,11 +167,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.ivCerrarSesion:
                 break;
-            case R.id.rlSesion:
+            /*case R.id.rlSesion:
                 Toast.makeText(this, "nail", Toast.LENGTH_SHORT).show();
-                /*YoYo.with(Techniques.SlideInUp).duration(200).playOn(ivCerrarSesion);
-                ivCerrarSesion.setVisibility(View.VISIBLE);*/
-                break;
+                *//*YoYo.with(Techniques.SlideInUp).duration(200).playOn(ivCerrarSesion);
+                ivCerrarSesion.setVisibility(View.VISIBLE);*//*
+                break;*/
         }
     }
 

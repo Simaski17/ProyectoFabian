@@ -34,6 +34,7 @@ public class HogarTriplePackActivity extends AppCompatActivity {
             case R.id.rlTvTf:
                 Intent intent1 = new Intent(HogarTriplePackActivity.this, TriplePackUnoActivity.class);
                 startActivity(intent1);
+                finish();
                 break;
         }
     }

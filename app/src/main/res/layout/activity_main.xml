@@ -10,6 +10,24 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/ivMail"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="@drawable/mail"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"/>
+
+    <ImageView
+        android:id="@+id/ivCerrarSesion"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="@drawable/cerrarsesion"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"/>
+
     <!--Contenedor de Logo Entel, Tabs, logo cliente y logo notificaciones-->
     <LinearLayout
         android:id="@+id/linear_top"
@@ -212,7 +230,7 @@
 
             <ImageView
                 android:id="@+id/ivBotonCastDesconect"
-                android:layout_width="75dp"
+                android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="23dp"
