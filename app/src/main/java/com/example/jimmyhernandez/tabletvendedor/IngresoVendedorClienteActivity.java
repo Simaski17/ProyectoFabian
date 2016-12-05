@@ -3,6 +3,7 @@ package com.example.jimmyhernandez.tabletvendedor;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -36,13 +37,18 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
     Button btIrCatalogo;
     @BindView(R.id.ingreso_vendedor_cliente)
     RelativeLayout ingreso_vendedor_cliente;
-
+    Vibrator v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso_vendedor_cliente);
         ButterKnife.bind(this);
+
+        v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+
+
     }
 
     @OnClick({R.id.iconoClientes, R.id.tvVerCatalogoLibre, R.id.btCerrarSesion, R.id.btIrCatalogo, R.id.ingreso_vendedor_cliente})
@@ -55,7 +61,10 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btCerrarSesion:
-                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
+                v.vibrate(50);
+                Intent intent = new Intent(IngresoVendedorClienteActivity.this, LoginIngresoVendedorActivity.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.btIrCatalogo:
                 Intent miIntent = new Intent(IngresoVendedorClienteActivity.this, MainActivity.class);
