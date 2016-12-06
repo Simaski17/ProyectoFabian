@@ -4,6 +4,8 @@
     <option name="mapping">
       <map>
         <entry key="flecha" value="flechablanca" />
+        <entry key="flecha1" value="flechanaranjaabajo" />
+        <entry key="flecha6" value="flechanaranjaarriba" />
         <entry key="fondoazul" value="circuloazulesquinaizquierda" />
       </map>
     </option>

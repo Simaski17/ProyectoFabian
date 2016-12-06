@@ -3,7 +3,7 @@
     package="com.example.jimmyhernandez.tabletvendedor">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -25,16 +25,16 @@
         <activity
             android:name=".LoginIngresoVendedorActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/myTema" />
+            android:theme="@style/myTema"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".IngresoVendedorClienteActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/myTema" />
+            android:theme="@style/myTema"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".MainActivity"
-             android:screenOrientation="landscape"
+            android:screenOrientation="landscape"
             android:theme="@style/myTema" />
         <activity
             android:name=".FondoCastActivity"
@@ -77,7 +77,10 @@
             android:theme="@style/myTema" />
         <activity
             android:name=".TriplePackUnoActivity"
-            android:theme="@style/myTema"></activity>
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".CatalogoEquiposActivity"
+            android:theme="@style/myTema"/>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -8,9 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
@@ -18,6 +25,10 @@ import java.util.List;
  */
 public class EquiposFragment extends Fragment {
 
+    @BindView(R.id.rlCatalogoEquipos)
+    RelativeLayout rlCatalogoEquipos;
+    @BindView(R.id.ivImagenTelefono)
+    ImageView ivImagenTelefono;
     private List<ItemEquipos> equipoList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ListaEquiposAdapter mAdapter;
@@ -31,7 +42,7 @@ public class EquiposFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-         View v = inflater.inflate(R.layout.fragment_equipos, container, false);
+        View v = inflater.inflate(R.layout.fragment_equipos, container, false);
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerEquipos);
         mAdapter = new ListaEquiposAdapter(equipoList);
@@ -43,10 +54,11 @@ public class EquiposFragment extends Fragment {
 
         initializeData();
 
+        ButterKnife.bind(this, v);
         return v;
     }
 
-    private void initializeData(){
+    private void initializeData() {
         ItemEquipos item = new ItemEquipos(R.drawable.imgcuidarmegas, "Huawei P9", "Kirin");
         equipoList.add(item);
 
@@ -75,7 +87,17 @@ public class EquiposFragment extends Fragment {
         equipoList.add(item);
 
 
-
     }
 
+    @OnClick({R.id.rlCatalogoEquipos, R.id.ivImagenTelefono})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.rlCatalogoEquipos:
+                Intent intent = new Intent(getContext(),CatalogoEquiposActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ivImagenTelefono:
+                break;
+        }
+    }
 }
