@@ -66,7 +66,7 @@
 
                 <!--Label nombre vendedor-->
                 <TextView
-                    android:id="@+id/tvRutCliente"
+                    android:id="@+id/tvNombreVendedor"
                     android:text="@string/nombre_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,12 +78,10 @@
 
                 <!--Campo nombre vendedor-->
                 <EditText
-                    android:id="@+id/etRutCliente"
+                    android:id="@+id/etNombreVendedor"
                     android:layout_width="350dp"
                     android:layout_height="49dp"
-                    android:inputType="textPersonName"
-                    android:ems="10"
-                    android:layout_below="@id/tvRutCliente"
+                    android:layout_below="@id/tvNombreVendedor"
                     android:background="@drawable/bordes_redondeados_edittext_ingreso"
                     android:layout_marginTop="7dp"
                     android:layout_marginLeft="17dp"/>
@@ -94,7 +92,7 @@
                     android:text="@string/rut_vendedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/etRutCliente"
+                    android:layout_below="@id/etNombreVendedor"
                     android:textColor="@color/BlancoEntel"
                     android:layout_marginTop="18dp"
                     android:layout_marginLeft="17dp"
@@ -105,8 +103,7 @@
                     android:id="@+id/etRutVendedor"
                     android:layout_width="350dp"
                     android:layout_height="49dp"
-                    android:inputType="textPersonName"
-                    android:ems="10"
+                    android:inputType="textPassword"
                     android:layout_below="@id/tvRutVendedor"
                     android:background="@drawable/bordes_redondeados_edittext_ingreso"
                     android:layout_marginTop="5dp"
@@ -126,6 +123,33 @@
                     android:layout_marginLeft="17dp"
                     android:background="@drawable/bordes_redondeados_boton_entrar_ingreso"/>
 
+                <RelativeLayout
+                    android:id="@+id/rlProgress"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_marginBottom="100dp" />
+
+                    <TextView
+                        android:id="@+id/tv_progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_progress"
+                        android:textStyle="bold"
+                        android:textColor="@color/blanco"
+                        android:layout_alignTop="@+id/progressBar"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="55dp" />
+                </RelativeLayout>
 
             </RelativeLayout>
             <!-- FIN RELATIVELAYOUT-->

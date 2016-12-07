@@ -67,6 +67,7 @@ public class PlanesFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivPlanesSmart:
+                //mensaje = "planSmarFun";
                 mensaje = "cuidarMegas";
                 clase = "planes";
                 imv = (ImageView) view;
@@ -74,21 +75,24 @@ public class PlanesFragment extends Fragment {
                 EventBus.getDefault().postSticky(new MensajeClaseCast("planSmarFun"));
                 break;
             case R.id.ivPlanesMultimedia:
-                mensaje = "ivPlanesMultimedia";
+                //mensaje = "planMultimedia";
+                mensaje = "cuidarMegas";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesMultimedia);
                 EventBus.getDefault().postSticky(new MensajeClaseCast("planMultimedia"));
                 break;
             case R.id.ivPlanesVoz:
-                mensaje = "ivPlanesVoz";
+                //mensaje = "planVoz";
+                mensaje = "cuidarMegas";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesVoz);
                 EventBus.getDefault().postSticky(new MensajeClaseCast("planVoz"));
                 break;
             case R.id.ivPlanesPotabilidad:
-                mensaje = "ivPlanesPotabilidad";
+                //mensaje = "planPortabilidad";
+                mensaje = "cuidarMegas";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesPotabilidad);

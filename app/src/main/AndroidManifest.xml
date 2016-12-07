@@ -46,15 +46,6 @@
             android:name=".HogarTriplePackActivity"
             android:theme="@style/myTema" />
         <activity
-            android:name=".TelefoniaFijaActivity"
-            android:theme="@style/myTema" />
-        <activity
-            android:name=".TelevisionHdActivity"
-            android:theme="@style/myTema" />
-        <activity
-            android:name=".InternetActivity"
-            android:theme="@style/myTema" />
-        <activity
             android:name=".DoblePackUnoActivity"
             android:theme="@style/myTema" />
         <activity

@@ -307,23 +307,19 @@ public class FondoCastActivity extends AppCompatActivity {
     }
 
     private void mensajesCast(String mensajeRecibido) {
-        if(clase != "clase"){
-            //mensajeRecibido = "spotify";
-            Log.e(TAG, "MENSAJE: "+mensajeRecibido);
-            Log.e(TAG, "MENSAJE: "+clase);
+        if(clase.equals("clase")){
+            //Log.e(TAG, "MENSAJE: "+clase);
+            EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+            EventBus.getDefault().postSticky(new Recordar(idGrupo));
+            prueba.setVisibility(View.GONE);
+            finish();
+        }else {
             EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
             EventBus.getDefault().postSticky(new Recordar(idGrupo));
             prueba.setVisibility(View.GONE);
             finish();
             Intent intent = new Intent(getApplicationContext(), PlanesCastActivity.class );
             startActivity(intent);
-
-        }else {
-
-            EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
-            EventBus.getDefault().postSticky(new Recordar(idGrupo));
-            prueba.setVisibility(View.GONE);
-            finish();
         }
     }
 

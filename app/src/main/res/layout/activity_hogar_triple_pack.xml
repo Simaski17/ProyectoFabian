@@ -124,8 +124,8 @@
                 android:layout_height="match_parent">
 
                 <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
-                <RelativeLayout
-                    android:id="@+id/rlTvTf"
+                <ImageView
+                    android:id="@+id/ivTvTf"
                     android:layout_width="302dp"
                     android:layout_height="109dp"
                     android:background="@drawable/btntriplepack"
@@ -134,7 +134,7 @@
 
 
 
-                </RelativeLayout>
+                </ImageView>
                 <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF + INTER-->
 
             </RelativeLayout>

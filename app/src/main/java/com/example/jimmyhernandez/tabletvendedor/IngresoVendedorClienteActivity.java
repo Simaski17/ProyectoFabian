@@ -3,8 +3,10 @@ package com.example.jimmyhernandez.tabletvendedor;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -39,6 +41,8 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
     RelativeLayout ingreso_vendedor_cliente;
     Vibrator v;
 
+    private String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,9 +71,11 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.btIrCatalogo:
-                Intent miIntent = new Intent(IngresoVendedorClienteActivity.this, MainActivity.class);
-                 IngresoVendedorClienteActivity.this.startActivity(miIntent);
-                IngresoVendedorClienteActivity.this.finish();
+                v.vibrate(50);
+                attemptLogin();
+               /* Intent miIntent = new Intent(IngresoVendedorClienteActivity.this, MainActivity.class);
+                IngresoVendedorClienteActivity.this.startActivity(miIntent);*/
+                //IngresoVendedorClienteActivity.this.finish();
                 break;
             case R.id.ingreso_vendedor_cliente:
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -77,4 +83,85 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    private void attemptLogin() {
+
+        // Reset errors.
+        etRutCliente.setError(null);
+        etEmailCliente.setError(null);
+
+        // Store values at the time of the login attempt.
+        String usuario = etRutCliente.getText().toString();
+        String password = etEmailCliente.getText().toString();
+
+        boolean cancel = false;
+        View focusView = null;
+
+        // Check for a valid email address.
+        if (TextUtils.isEmpty(usuario)) {
+            etRutCliente.setError(getString(R.string.error_campo_requirido));
+            focusView = etRutCliente;
+            cancel = true;
+        }/* else if (!isUsuarioValido(usuario)) {
+            etRutCliente.setError(getString(R.string.error_longitud_requerida));
+            focusView = etRutCliente;
+            cancel = true;
+        }*/ else if (TextUtils.isEmpty(password)) {
+            etEmailCliente.setError(getString(R.string.error_campo_requirido));
+            focusView = etEmailCliente;
+            cancel = true;
+        } /*else if (!isPasswordValido(password)) {
+            etEmailCliente.setError(getString(R.string.error_longitud_requerida));
+            focusView = etEmailCliente;
+            cancel = true;
+        } else if (isUsuarioValido(usuario) && isPasswordValido(password)) {
+            String[] pieces = {"admin1234", "admin5678"};
+            String mUsuario = etRutCliente.getText().toString();
+            String mPassword = etEmailCliente.getText().toString();
+            if (!pieces[0].equals(mUsuario)) {
+                etRutCliente.setError(getString(R.string.error_incorrect_usuario));
+                focusView = etRutCliente;
+                cancel = true;
+            } else if (!pieces[1].equals(mPassword)) {
+                etEmailCliente.setError(getString(R.string.error_incorrect_password));
+                focusView = etEmailCliente;
+                cancel = true;
+            } */else {
+            email = etEmailCliente.getText().toString();
+            etRutCliente.setText("");
+            etEmailCliente.setText("");
+            Intent miIntent = new Intent(IngresoVendedorClienteActivity.this, MainActivity.class);
+            miIntent.putExtra("email", email);
+            IngresoVendedorClienteActivity.this.startActivity(miIntent);
+
+                /*new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Intent miIntent = new Intent(LoginIngresoVendedorActivity.this, IngresoVendedorClienteActivity.class);
+                        LoginIngresoVendedorActivity.this.startActivity(miIntent);
+                        LoginIngresoVendedorActivity.this.finish();
+                    }
+                }, 3000);*/
+            //}
+
+        }
+
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+        }
+    }
+
+    private boolean isUsuarioValido(String usuario) {
+        //TODO: Replace this with your own logic
+        return usuario.length() > 7;
+    }
+
+    private boolean isPasswordValido(String password) {
+        //TODO: Replace this with your own logic
+        return password.length() > 7;
+    }
+
 }

@@ -126,8 +126,8 @@
 
 
                 <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
-                <RelativeLayout
-                    android:id="@+id/rlTvTf"
+                <ImageView
+                    android:id="@+id/ivTvTf"
                     android:layout_width="302dp"
                     android:layout_height="85dp"
                     android:background="@drawable/tvtlffija"
@@ -135,34 +135,34 @@
                     android:layout_marginLeft="19dp">
 
 
-                </RelativeLayout>
+                </ImageView>
                 <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON TV + TLF-->
 
                 <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + INTER-->
-                <RelativeLayout
-                    android:id="@+id/rlTvInt"
+                <ImageView
+                    android:id="@+id/ivTvInt"
                     android:layout_width="302dp"
                     android:layout_height="85dp"
                     android:background="@drawable/tvinter"
-                    android:layout_below="@+id/rlTvTf"
+                    android:layout_below="@+id/ivTvTf"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="19dp">
 
 
-                </RelativeLayout>
+                </ImageView>
                 <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + INTER-->
 
                 <!-- INICIO RELATIVELAYOUT CONTENEDOR BOTON TV + Tf-->
-                <RelativeLayout
-                    android:id="@+id/rlIntTf"
+                <ImageView
+                    android:id="@+id/ivIntTf"
                     android:layout_width="302dp"
                     android:layout_height="85dp"
-                    android:layout_below="@+id/rlTvInt"
+                    android:layout_below="@+id/ivTvInt"
                     android:background="@drawable/intertlffija"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="20dp">
 
-                </RelativeLayout>
+                </ImageView>
                 <!-- FIN RELATIVELAYOUT CONTENEDOR BOTON BOTON TV + Tf-->
 
 

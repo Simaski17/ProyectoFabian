@@ -24,6 +24,11 @@
     <string name="nombre_vendedor">Nombre vendedor</string>
     <string name="rut_vendedor">RUT vendedor</string>
     <string name="entrar">entrar</string>
+    <string name="error_longitud_requerida">Debe contener minimo de 8 Caracteres</string>
+    <string name="error_incorrect_usuario">Este usuario es incorrecto</string>
+    <string name="error_incorrect_password">Este password es incorrecto</string>
+    <string name="error_campo_requirido">Este campo es requerido</string>
+    <string name="name_progress">Iniciando Sesion...</string>
 
     <!--IngresoVendedorClienteActivity -->
     <string name="nombre_ejecutivo">Ignacio Ramirez</string>

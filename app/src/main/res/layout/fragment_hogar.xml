@@ -55,89 +55,34 @@
             android:layout_width="match_parent"
             android:layout_height="120dp">
 
-            <RelativeLayout
-                android:id="@+id/rlTelefoniaFija"
+            <ImageView
+                android:id="@+id/ivTelefoniaFija"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="160dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/all_corner_circle">
+                android:background="@drawable/telefonia">
+            </ImageView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/telefonia_fija"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="21.7sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="21dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="184dp"
-                    android:layout_marginTop="19dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/BlancoEntel" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlTelevision"
+            <ImageView
+                android:id="@+id/ivTelevision"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="401dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/all_corner_circle">
+                android:background="@drawable/television">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/television_hd"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="21.7sp"
-                    android:textStyle="bold" />
+            </ImageView>
 
-                <ImageView
-                    android:layout_width="21dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="184dp"
-                    android:layout_marginTop="19dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/BlancoEntel" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlInternet"
+            <ImageView
+                android:id="@+id/ivInternet"
                 android:layout_width="222dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="642dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/all_corner_circle">
+                android:background="@drawable/internet">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/internet"
-                    android:layout_marginLeft="53dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/BlancoEntel"
-                    android:textSize="21.7sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="21dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="184dp"
-                    android:layout_marginTop="19dp"
-                    android:background="@drawable/cast"
-                    android:backgroundTint="@color/BlancoEntel" />
-
-            </RelativeLayout>
+            </ImageView>
         </RelativeLayout>
 
         <RelativeLayout

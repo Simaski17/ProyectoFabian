@@ -2,6 +2,7 @@ package com.example.jimmyhernandez.tabletvendedor;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -77,20 +78,23 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivMail;
     @BindView(R.id.ivCerrarSesion)
     ImageView ivCerrarSesion;
-    /*@BindView(R.id.rlSesion)
-    RelativeLayout rlSesion;*/
+    @BindView(R.id.tvMail)
+    TextView tvMail;
+
 
     private String idUsuario = "user";
     private String idGrupo = "group";
     private String idPantalla = "screen";
     private String server = "server";
     private String cast;
+    private String email;
 
 
     private String message;
     private String mensaje;
     private int port;
     String TAG = "HOLA";
+    Vibrator v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,10 +112,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        /*
-         * Adaptación de los Fragmentos para los Tabs
-		 */
-
+        v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        Bundle extras = getIntent().getExtras();
+        email = extras.getString("email");
+        tvMail.setText(email);
 
         /*fabCast.setOnClickListener(new View.OnClickListener() {
             -            @Override
@@ -162,10 +166,12 @@ public class MainActivity extends AppCompatActivity {
                 linearMenucast.setVisibility(View.GONE);
                 break;
             case R.id.ivMail:
-
-                contCast = 1;
+                YoYo.with(Techniques.SlideInRight).duration(600).playOn(ivCerrarSesion);
+                ivCerrarSesion.setVisibility(View.VISIBLE);
                 break;
             case R.id.ivCerrarSesion:
+                v.vibrate(50);
+                finish();
                 break;
             /*case R.id.rlSesion:
                 Toast.makeText(this, "nail", Toast.LENGTH_SHORT).show();
@@ -174,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                 break;*/
         }
     }
-
 
 
     /*
