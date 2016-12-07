@@ -35,6 +35,7 @@ public class TeAyudamosFragment extends Fragment {
     private ImageView imv;
     private String mensaje;
     private String idUsuario = "user";
+    private String clase = "clase";
     private String idGrupo = "group";
     private String idPantalla = "screen";
     private String server = "server";
@@ -90,6 +91,7 @@ public class TeAyudamosFragment extends Fragment {
         ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
         intent.putExtra("img", bitmapdata);
         intent.putExtra("mensaje", mensaje);
+        intent.putExtra("clase", clase);
         intent.putExtra("idGrupo", idGrupo);
         intent.putExtra("idPantalla", idPantalla);
         intent.putExtra("server", server);

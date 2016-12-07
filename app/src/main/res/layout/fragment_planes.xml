@@ -77,18 +77,18 @@
             android:layout_height="match_parent"
             android:layout_marginTop="120dp">
 
-            <RelativeLayout
-                android:id="@+id/rlPlanesSmart"
+            <ImageView
+                android:id="@+id/ivPlanesSmart"
                 android:layout_width="117dp"
                 android:layout_height="108dp"
                 android:background="@drawable/btn_smartfun"
                 android:layout_marginTop="27dp"
                 android:layout_marginLeft="186dp">
 
-            </RelativeLayout>
+            </ImageView>
 
-            <RelativeLayout
-                android:id="@+id/rlPlanesMultimedia"
+            <ImageView
+                android:id="@+id/ivPlanesMultimedia"
                 android:layout_width="117dp"
                 android:layout_height="108dp"
                 android:background="@drawable/btn_multimediacc"
@@ -96,20 +96,20 @@
                 android:layout_marginLeft="341dp">
 
 
-            </RelativeLayout>
+            </ImageView>
 
-            <RelativeLayout
-                android:id="@+id/rlPlanesVoz"
+            <ImageView
+                android:id="@+id/ivPlanesVoz"
                 android:layout_width="117dp"
                 android:layout_height="108dp"
                 android:background="@drawable/btn_voz"
                 android:layout_marginTop="165dp"
                 android:layout_marginLeft="186dp">
 
-            </RelativeLayout>
+            </ImageView>
 
-            <RelativeLayout
-                android:id="@+id/rlPlanesPotabilidad"
+            <ImageView
+                android:id="@+id/ivPlanesPotabilidad"
                 android:layout_width="117dp"
                 android:layout_height="108dp"
                 android:layout_marginTop="165dp"
@@ -117,7 +117,7 @@
                 android:layout_marginLeft="341dp">
 
 
-            </RelativeLayout>
+            </ImageView>
 
         </RelativeLayout>
 

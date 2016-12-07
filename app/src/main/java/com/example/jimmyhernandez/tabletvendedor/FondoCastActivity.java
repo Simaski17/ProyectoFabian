@@ -115,6 +115,7 @@ public class FondoCastActivity extends AppCompatActivity {
     private String message;
     private String idGrupo;
     private String idPantalla;
+    private String clase;
 
     View v = null;
     GestureDetector detector;
@@ -122,6 +123,8 @@ public class FondoCastActivity extends AppCompatActivity {
     PackageManager pm;
 
     String TAG = "HOLA";
+
+    Class cls;
 
 
     @Override
@@ -149,10 +152,17 @@ public class FondoCastActivity extends AppCompatActivity {
         byte[] byteArray = extras.getByteArray("img");
         prueba.setImageBitmap(ByteArraytoDrawable(byteArray));
         mensajeRecibido = extras.getString("mensaje");
+        clase = extras.getString("clase");
         idGrupo = extras.getString("idGrupo");
         idPantalla = extras.getString("idPantalla");
         server = extras.getString("server");
         bandera = extras.getInt("bandera");
+
+        try {
+            cls = Class.forName(clase);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
         if (idGrupo.equals("group") || idGrupo.equals("cerrar")) {
@@ -200,7 +210,9 @@ public class FondoCastActivity extends AppCompatActivity {
                                     pregunta("com.snapchat.android");
                                 } else if (mensajeRecibido.equals("waze")) {
                                     pregunta("com.waze");
-                                } else if (mensajeRecibido.equals("appentel")) {
+                                } else{
+                                    mensajesCast(mensajeRecibido);
+                                } /*if (mensajeRecibido.equals("appentel")) {
                                     EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
@@ -215,7 +227,12 @@ public class FondoCastActivity extends AppCompatActivity {
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                     finish();
-                                }
+                                }else if (mensajeRecibido.equals("cuidarMegas")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                }*/
                             }
                         });
 
@@ -259,7 +276,19 @@ public class FondoCastActivity extends AppCompatActivity {
                                     EventBus.getDefault().postSticky(new Recordar(idGrupo));
                                     prueba.setVisibility(View.GONE);
                                     finish();
-                                }
+                                }else{
+                                    mensajesCast(mensajeRecibido);
+                                } /*if (mensajeRecibido.equals("transferirInfo")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                } else if (mensajeRecibido.equals("cuidarMegas")) {
+                                    EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+                                    EventBus.getDefault().postSticky(new Recordar(idGrupo));
+                                    prueba.setVisibility(View.GONE);
+                                    finish();
+                                }*/
                             }
                         });
 
@@ -274,6 +303,27 @@ public class FondoCastActivity extends AppCompatActivity {
 
 
             return false;
+        }
+    }
+
+    private void mensajesCast(String mensajeRecibido) {
+        if(clase != "clase"){
+            //mensajeRecibido = "spotify";
+            Log.e(TAG, "MENSAJE: "+mensajeRecibido);
+            Log.e(TAG, "MENSAJE: "+clase);
+            EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+            EventBus.getDefault().postSticky(new Recordar(idGrupo));
+            prueba.setVisibility(View.GONE);
+            finish();
+            Intent intent = new Intent(getApplicationContext(), PlanesCastActivity.class );
+            startActivity(intent);
+
+        }else {
+
+            EventBus.getDefault().postSticky(new Message(idGrupo, idPantalla, server, mensajeRecibido));
+            EventBus.getDefault().postSticky(new Recordar(idGrupo));
+            prueba.setVisibility(View.GONE);
+            finish();
         }
     }
 

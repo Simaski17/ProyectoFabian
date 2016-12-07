@@ -40,18 +40,6 @@
             android:name=".FondoCastActivity"
             android:theme="@style/TranslucentActivity" />
         <activity
-            android:name=".PlanSmartFunActivity"
-            android:theme="@style/myTema" />
-        <activity
-            android:name=".PlanMultimediaActivity"
-            android:theme="@style/myTema" />
-        <activity
-            android:name=".PlanPortabilidadActivity"
-            android:theme="@style/myTema" />
-        <activity
-            android:name=".PlanVozActivity"
-            android:theme="@style/myTema" />
-        <activity
             android:name=".HogarDoblePackActivity"
             android:theme="@style/myTema" />
         <activity
@@ -80,7 +68,10 @@
             android:theme="@style/myTema" />
         <activity
             android:name=".CatalogoEquiposActivity"
-            android:theme="@style/myTema"/>
+            android:theme="@style/myTema" />
+        <activity
+            android:name=".PlanesCastActivity"
+            android:theme="@style/myTema"></activity>
     </application>
 
 </manifest>

@@ -50,6 +50,7 @@ public class AppEntelFragment extends Fragment {
     private String idGrupo = "group";
     private String idPantalla = "screen";
     private String server = "server";
+    private String clase = "clase";
     private int bandera = 0;
 
     MainActivity mainActivity;
@@ -96,6 +97,7 @@ public class AppEntelFragment extends Fragment {
                 //EventBus.getDefault().postSticky(new FondoCastRecordar(id));
                 intent.putExtra("img", bitmapdata);
                 intent.putExtra("mensaje", mensaje);
+                intent.putExtra("clase", clase);
                 intent.putExtra("idGrupo", idGrupo);
                 intent.putExtra("idPantalla", idPantalla);
                 intent.putExtra("server", server);

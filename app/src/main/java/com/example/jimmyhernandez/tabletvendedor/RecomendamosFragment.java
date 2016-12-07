@@ -51,6 +51,7 @@ public class RecomendamosFragment extends Fragment {
 
     ImageView imv;
     private  String mensaje;
+    private String clase = "clase";
     private String idUsuario = "user";
     private String idGrupo = "group";
     private String idPantalla = "screen";
@@ -128,6 +129,7 @@ public class RecomendamosFragment extends Fragment {
         ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), imv, "transitionname");
         intent.putExtra("img", bitmapdata);
         intent.putExtra("mensaje", mensaje);
+        intent.putExtra("clase", clase);
         intent.putExtra("idGrupo", idGrupo);
         intent.putExtra("idPantalla", idPantalla);
         intent.putExtra("server", server);
