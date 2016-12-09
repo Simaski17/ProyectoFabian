@@ -1,7 +1,10 @@
 package com.example.jimmyhernandez.tabletvendedor;
 
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
 import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,17 +26,33 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
+import com.example.jimmyhernandez.tabletvendedor.models.Elemento;
+import com.example.jimmyhernandez.tabletvendedor.models.Functions;
+import com.example.jimmyhernandez.tabletvendedor.models.OutObject;
+import com.example.jimmyhernandez.tabletvendedor.models.Session;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.karim.MaterialTabs;
+
+import static com.example.jimmyhernandez.tabletvendedor.models.Functions.fileNameJson;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
     private int port;
     String TAG = "HOLA";
     Vibrator v;
+    final Handler hh = new Handler();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,18 +139,6 @@ public class MainActivity extends AppCompatActivity {
         email = extras.getString("email");
         tvMail.setText(email);
 
-        /*fabCast.setOnClickListener(new View.OnClickListener() {
-            -            @Override
-            -            public void onClick(View view) {
-                -                if (contCast == 0) {
-                    -                    YoYo.with(Techniques.SlideInUp).duration(200).playOn(linearMenuCast);
-                    -                    linearMenuCast.setVisibility(View.VISIBLE);
-                    -                    contCast = 1;
-                    -                }
-                -
-                        -            }
-            -        });
-        -*/
 
 
         if (idGrupo == "hola") {
@@ -139,7 +149,122 @@ public class MainActivity extends AppCompatActivity {
         SamplePagerAdapter adapter = new SamplePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         materialTabs.setViewPager(pager);
+        Serialize();
+        //  obtenerJson();
+
+
     }
+
+    public void Serialize()
+    {
+
+        Thread th = new Thread(new Runnable()
+        {
+            public void run()
+            {
+                try
+                {
+
+                    //Metodo que realiza una accion que requiere ser llamada en segundo plano u otro Hilo
+                    String path = Environment.getExternalStorageDirectory().getAbsolutePath() + Functions.dirHome + fileNameJson;
+                    File f = new File(path);
+                    if (f.exists())
+                    {
+                        File file = new File(path);
+                        int length = (int) file.length();
+                        byte[] bytes = new byte[length];
+                        FileInputStream in = new FileInputStream(file);
+                        try
+                        {
+                            in.read(bytes);
+                        } finally
+                        {
+                            in.close();
+                        }
+                        Functions.jsonData = new String(bytes);
+                        Log.i("Json Read:", Functions.jsonData);
+                    }
+
+                } catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+                //Handler que ejecuta el metodo cuando termina el Hilo
+                hh.postDelayed(toObject, 3000);
+            }
+        });//end thread
+        th.start();
+    }
+
+    final Runnable toObject = new Runnable()
+    {
+        public void run()
+        {
+            GsonBuilder gsonb = new GsonBuilder();
+            Gson gson = gsonb.create();
+            JSONObject j;
+            OutObject gig = null;
+            try
+            {
+                j = new JSONObject(Functions.jsonData);
+                gig = gson.fromJson(j.toString(), OutObject.class);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            Session.objSession = gig;
+
+            ArrayList<Elemento> lista = Session.objSession.getListacategorias();
+
+            for (int i = 0; i < lista.size(); i++)
+            {
+                lista.get(i).getNombre();
+
+                Log.d("Nombre", lista.get(i).getNombre());
+
+            }
+        }
+    };
+
+
+
+    /*public void obtenerJson(){
+
+
+        new AsyncTask<Void,Void,Void>(){
+            String urlJson = "http://192.168.1.106/archivo/document.json";
+            StringBuilder response = null;
+            String respuesta = "";
+            File SDCardRoot = new File (Environment.getExternalStorageDirectory().getAbsolutePath() + "/SourceApp/");
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    URL url = new URL(urlJson);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestProperty("charset", "utf-8");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    response = new StringBuilder();
+                    String inputLine;
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+                    respuesta = response.toString();
+                    File file = new File(SDCardRoot,"Objects.json");
+                    FileOutputStream fileOutput = new FileOutputStream(file);
+                    fileOutput.write(respuesta.getBytes());
+                } catch (Exception  e) {
+                    respuesta = "Error->" + e.getMessage();
+                }
+                return null;
+            }
+        }.execute();
+
+    }*/
+
+
+
+
 
     /*
     * Acción de clicks  animacion seleccione dispositivo
