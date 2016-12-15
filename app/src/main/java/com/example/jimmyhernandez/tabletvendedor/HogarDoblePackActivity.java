@@ -58,7 +58,7 @@ public class HogarDoblePackActivity extends AppCompatActivity {
             case R.id.ivTvTf:
                 //intenciones(DoblePackUnoActivity.class);
                 //mensaje = "planTelefoniaFija";
-                mensaje = "cuidarMegas";
+                mensaje = "doblepack_telefonia_tv";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivTvTf);
@@ -67,7 +67,7 @@ public class HogarDoblePackActivity extends AppCompatActivity {
             case R.id.ivTvInt:
                 //intenciones(DoblePackDosActivity.class);
                 //mensaje = "planTelefoniaFija";
-                mensaje = "cuidarMegas";
+                mensaje = "doblepack_internet_tv";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivTvInt);
@@ -76,7 +76,7 @@ public class HogarDoblePackActivity extends AppCompatActivity {
             case R.id.ivIntTf:
                 //intenciones(DoblePackTresActivity.class);
                 //mensaje = "planTelefoniaFija";
-                mensaje = "cuidarMegas";
+                mensaje = "doblepack_internet_telefonia";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivIntTf);

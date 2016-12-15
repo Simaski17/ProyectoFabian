@@ -45,42 +45,42 @@
             android:background="@color/BlancoEntel"
             android:textColor="@color/GrisOscuroEntel"
             android:textSize="18sp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="7dp"
             app:mtIndicatorColor="@android:color/transparent"
             app:mtMrlRippleColor="@color/BlancoEntel"
-            app:mtTabPaddingLeftRight="15dp"
+            app:mtTabPaddingLeftRight="17dp"
             app:mtTextAllCaps="false"
             app:mtTextColorSelected="@color/NarajoEntel" />
         <!--Fin Tabs-->
 
         <!--Contenedor de Icono cliente e icono notificacion-->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.7"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1.7"-->
+            <!--android:orientation="horizontal">-->
 
-            <!--Contenedor de Icono cliente-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+            <!--&lt;!&ndash;Contenedor de Icono cliente&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent">-->
 
-                <!--Icono cliente-->
-                <ImageView
-                    android:layout_width="29dp"
-                    android:layout_height="29dp"
-                    android:background="@drawable/iconoclientes"
-                    android:layout_marginLeft="52dp"
-                    android:layout_marginTop="49dp"
-                    android:visibility="gone"
-                    android:id="@+id/iconoClientes"/>
+                <!--&lt;!&ndash;Icono cliente&ndash;&gt;-->
+                <!--<ImageView-->
+                    <!--android:layout_width="29dp"-->
+                    <!--android:layout_height="29dp"-->
+                    <!--android:background="@drawable/iconoclientes"-->
+                    <!--android:layout_marginLeft="52dp"-->
+                    <!--android:layout_marginTop="49dp"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:id="@+id/iconoClientes"/>-->
 
-            </LinearLayout>
-            <!--Fin Contenedor de Icono cliente-->
+            <!--</LinearLayout>-->
+            <!--&lt;!&ndash;Fin Contenedor de Icono cliente&ndash;&gt;-->
 
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
         <!--Fin Contenedor de Icono cliente e icono notificacion-->
 
     </LinearLayout>

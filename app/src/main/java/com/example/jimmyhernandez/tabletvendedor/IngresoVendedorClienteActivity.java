@@ -16,6 +16,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,6 +47,14 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
     RelativeLayout ingreso_vendedor_cliente;
     Vibrator v;
 
+    private String server;
+    private int port;
+    private String mensajeRecibido;
+    private String message;
+    private String idGrupo;
+    private String idPantalla;
+    private String clase;
+
     private String email;
 
     @Override
@@ -51,6 +65,7 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
 
         v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
+        port = 9090;
 
 
     }
@@ -66,6 +81,49 @@ public class IngresoVendedorClienteActivity extends AppCompatActivity {
                 break;
             case R.id.btCerrarSesion:
                 v.vibrate(50);
+
+                message = "2" + "|" + "1" + "|" + "chao";
+                server  = "172.17.163.187";
+
+                EventBus.getDefault().postSticky(new DesesperadoUno("172.17.163.180", port,message));
+                EventBus.getDefault().postSticky(new DesesperadoDos( "172.17.163.58", port,message));
+                EventBus.getDefault().postSticky(new DesesperadoDos( "172.17.163.58", port,message));
+                EventBus.getDefault().postSticky(new DesesperadoDos( "172.17.163.58", port,message));
+                EventBus.getDefault().postSticky(new DesesperadoDos( "172.17.163.58", port,message));
+                EventBus.getDefault().postSticky(new DesesperadoDos( "172.17.163.58", port,message));
+
+                /*ArrayList<String> servidores = new ArrayList<String>();
+                *//*servidores.add("172.17.163.59");
+                servidores.add("172.17.163.56");*//*
+                servidores.add("172.17.163.58");
+                servidores.add("172.17.163.187");
+                *//*servidores.add("172.17.163.180");
+                servidores.add("172.17.163.52");*//*
+
+                for (int i = 0; i < servidores.size(); i++) {
+                    ClientSocket myClient = new ClientSocket(servidores.get(i), port, message);
+                    myClient.execute();
+                }*/
+
+
+                /*new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ClientSocket myClient = new ClientSocket("172.17.163.187", port, message);
+                        myClient.execute();
+                    }
+                }).start();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ClientSocket myClient = new ClientSocket("172.17.163.58", port, message);
+                        myClient.execute();
+                    }
+                }).start();*/
+
+
+
                 Intent intent = new Intent(IngresoVendedorClienteActivity.this, LoginIngresoVendedorActivity.class);
                 startActivity(intent);
                 finish();

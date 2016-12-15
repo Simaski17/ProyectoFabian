@@ -52,7 +52,7 @@ public class HogarTriplePackActivity extends AppCompatActivity {
             case R.id.ivTvTf:
                 //intenciones(DoblePackUnoActivity.class);
                 //mensaje = "planTelefoniaFija";
-                mensaje = "cuidarMegas";
+                mensaje = "triplepack";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivTvTf);

@@ -134,7 +134,7 @@ public class FondoCastActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         detector = new GestureDetector(new GestureListener());
-        port = 8080;
+        port = 9090;
 
         prueba = (ImageView) findViewById(R.id.prueba);
         prueba.setOnTouchListener(new View.OnTouchListener() {
@@ -352,7 +352,6 @@ public class FondoCastActivity extends AppCompatActivity {
                 //ivGrupoPilarActivo.setVisibility(View.VISIBLE);
                 linearSeleccionPantallasPilar.setVisibility(View.VISIBLE);
                 idGrupo = "2";
-                server = "192.168.0.101";
                 break;
             case R.id.ivGrupoPilarActivo:
                 break;
@@ -365,6 +364,7 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaUnoactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
                 idPantalla = "1";
+                server = "172.17.177.4";
                 break;
             case R.id.ivPantallaUnoactiva:
                 break;
@@ -379,6 +379,8 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaDosactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "2";
+                server = "172.17.177.5";
                 break;
             case R.id.ivPantallaDosactiva:
                 break;
@@ -393,6 +395,8 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaCuatroInactiva.setVisibility(View.VISIBLE);
                 ivPantallaTresactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "3";
+                server = "172.17.177.6";
                 break;
             case R.id.ivPantallaTresactiva:
                 break;
@@ -407,6 +411,8 @@ public class FondoCastActivity extends AppCompatActivity {
                 ivPantallaUnoInactiva.setVisibility(View.VISIBLE);
                 ivPantallaCuatroactiva.setVisibility(View.VISIBLE);
                 bandera = 1;
+                idPantalla = "4";
+                server = "172.17.177.7";
                 break;
             case R.id.ivPantallaCuatroactiva:
                 break;

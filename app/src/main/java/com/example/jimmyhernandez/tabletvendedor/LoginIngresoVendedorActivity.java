@@ -7,12 +7,22 @@ import android.os.Handler;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.example.jimmyhernandez.tabletvendedor.CLS.ClientSocket;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +43,10 @@ public class LoginIngresoVendedorActivity extends AppCompatActivity {
     @BindView(R.id.rlProgress)
     RelativeLayout rlProgress;
 
+    private String server;
+    private  int port;
+    private String message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +54,7 @@ public class LoginIngresoVendedorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
 
     }
 
@@ -114,6 +129,10 @@ public class LoginIngresoVendedorActivity extends AppCompatActivity {
                         Intent miIntent = new Intent(LoginIngresoVendedorActivity.this, IngresoVendedorClienteActivity.class);
                         LoginIngresoVendedorActivity.this.startActivity(miIntent);
                         LoginIngresoVendedorActivity.this.finish();
+
+
+
+
                     }
                 }, 3000);
             }
@@ -136,5 +155,88 @@ public class LoginIngresoVendedorActivity extends AppCompatActivity {
         //TODO: Replace this with your own logic
         return password.length() > 7;
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoUno(DesesperadoUno event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+                   myClient.execute();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoDos(DesesperadoDos event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+        myClient.execute();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoTres(DesesperadoTres event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+        myClient.execute();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoCuatro(DesesperadoCuatro event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+        myClient.execute();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoCinco(DesesperadoCinco event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+        myClient.execute();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void DesesperadoSeis(DesesperadoSeis event) {
+
+        server = event.getServer();
+        port = event.getPort();
+        message = event.getMessage();
+
+        ClientSocket myClient = new ClientSocket(server, port, message);
+        myClient.execute();
+    }
+
+
+
+
 
 }

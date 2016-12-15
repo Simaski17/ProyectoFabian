@@ -68,7 +68,7 @@ public class PlanesFragment extends Fragment {
         switch (view.getId()) {
             case R.id.ivPlanesSmart:
                 //mensaje = "planSmarFun";
-                mensaje = "cuidarMegas";
+                mensaje = "puno";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesSmart);
@@ -76,7 +76,7 @@ public class PlanesFragment extends Fragment {
                 break;
             case R.id.ivPlanesMultimedia:
                 //mensaje = "planMultimedia";
-                mensaje = "cuidarMegas";
+                mensaje = "pdos";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesMultimedia);
@@ -84,7 +84,7 @@ public class PlanesFragment extends Fragment {
                 break;
             case R.id.ivPlanesVoz:
                 //mensaje = "planVoz";
-                mensaje = "cuidarMegas";
+                mensaje = "ptres";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesVoz);
@@ -92,7 +92,7 @@ public class PlanesFragment extends Fragment {
                 break;
             case R.id.ivPlanesPotabilidad:
                 //mensaje = "planPortabilidad";
-                mensaje = "cuidarMegas";
+                mensaje = "pcuatro";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivPlanesPotabilidad);

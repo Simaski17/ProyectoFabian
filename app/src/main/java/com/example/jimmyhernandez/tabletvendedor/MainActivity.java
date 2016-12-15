@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout linearLayout;
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
-    @BindView(R.id.iconoClientes)
-    ImageView iconoClientes;
+//    @BindView(R.id.iconoClientes)
+//    ImageView iconoClientes;
     @BindView(R.id.linear_menucast_activo)
     LinearLayout linearMenucastActivo;
     @BindView(R.id.logoEntel)
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         if (idGrupo == "hola") {
             linearMenucast.setVisibility(View.GONE);
         }
-        port = 8080;
+        port = 9090;
 
         SamplePagerAdapter adapter = new SamplePagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -269,16 +269,16 @@ public class MainActivity extends AppCompatActivity {
     /*
     * Acción de clicks  animacion seleccione dispositivo
 	*/
-    @OnClick({R.id.linear_menucast, R.id.fab_cast, R.id.iconoClientes, R.id.linear_menucast_activo, R.id.ivBotonCastDesconect, R.id.ivMail, R.id.ivCerrarSesion})
+    @OnClick({R.id.linear_menucast, R.id.fab_cast,  R.id.linear_menucast_activo, R.id.ivBotonCastDesconect, R.id.ivMail, R.id.ivCerrarSesion})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.linear_menucast:
                 break;
             case R.id.fab_cast:
                 break;
-            case R.id.iconoClientes:
-                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.iconoClientes:
+//                Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
+//                break;
             case R.id.linear_menucast_activo:
                 Toast.makeText(this, "Funciona", Toast.LENGTH_SHORT).show();
                 break;
@@ -312,14 +312,14 @@ public class MainActivity extends AppCompatActivity {
 	*/
     public class SamplePagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = {"App entel", "Recomendamos", "Te ayudamos", "Accesorios", "Hogar", "Planes", "Equipos"};
+        private final String[] TITLES = {"App entel", "Recomendamos", "Te ayudamos", "Hogar", "Planes"};
 
         private final ArrayList<String> mTitles;
 
         public SamplePagerAdapter(FragmentManager fm) {
             super(fm);
             mTitles = new ArrayList<>();
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 5; i++) {
                 mTitles.add(TITLES[i]);
             }
         }
@@ -352,14 +352,14 @@ public class MainActivity extends AppCompatActivity {
                     return new RecomendamosFragment();
                 case 2:
                     return new TeAyudamosFragment();
+//                case 3:
+//                    return new AccesoriosFragment();
                 case 3:
-                    return new AccesoriosFragment();
-                case 4:
                     return new HogarFragment();
-                case 5:
+                case 4:
                     return new PlanesFragment();
-                case 6:
-                    return new EquiposFragment();
+//                case 6:
+//                    return new EquiposFragment();
                 default:
                     return new AppEntelFragment();
             }

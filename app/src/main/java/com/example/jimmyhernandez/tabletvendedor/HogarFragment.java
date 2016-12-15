@@ -68,7 +68,7 @@ public class HogarFragment extends Fragment {
         switch (view.getId()) {
             case R.id.ivTelefoniaFija:
                 //mensaje = "planTelefoniaFija";
-                mensaje = "cuidarMegas";
+                mensaje = "telefonia";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivTelefoniaFija);
@@ -76,7 +76,7 @@ public class HogarFragment extends Fragment {
                 break;
             case R.id.ivTelevision:
                 //mensaje = "planTelevisionHD";
-                mensaje = "cuidarMegas";
+                mensaje = "tvh";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivTelevision);
@@ -84,7 +84,7 @@ public class HogarFragment extends Fragment {
                 break;
             case R.id.ivInternet:
                 //mensaje = "planInternet";
-                mensaje = "cuidarMegas";
+                mensaje = "internet";
                 clase = "planes";
                 imv = (ImageView) view;
                 cast(ivInternet);
